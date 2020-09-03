@@ -1,0 +1,43 @@
+* {
+    text-decoration: none !important;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+.body-class {
+    min-height: calc(100vh - 116px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 56px;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-buttons {
+    margin: 8px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+/* Price */
+.price {
+    font-weight: bold;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 0px;
+}
+
+/* Carousel Stuff */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    opacity: 0 !important;
+}
