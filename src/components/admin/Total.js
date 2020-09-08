@@ -12,12 +12,13 @@ import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import BackToAdmin from './reusables/BackToAdmin';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
-        marginTop: 60,
         width: '100%',
         maxWidth: 400,
-        borderBottom: '2px solid #3f51b5',
+        borderBottom: `2px solid ${theme.palette.primary.main}`,
+        marginTop: 64,
+        marginBottom: 64,
     },
     header: {
         fontFamily: 'Open Sans',
@@ -31,7 +32,7 @@ const useStyles = makeStyles({
         border: 'none !important',
         padding: 16,
     },
-});
+}));
 
 const API = keys.salesPerMaskAPI;
 

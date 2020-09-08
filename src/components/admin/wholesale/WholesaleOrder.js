@@ -25,12 +25,13 @@ import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 import Timestamper from '../../misc/Timestamper';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
-        marginTop: 60,
+        marginTop: 64,
+        marginBottom: 64,
         width: '100%',
         maxWidth: 900,
-        borderBottom: '2px solid #3f51b5',
+        borderBottom: `2px solid ${theme.palette.primary.main}`,
         padding: 8,
         paddingBottom: 0,
     },
@@ -59,7 +60,7 @@ const useStyles = makeStyles({
         paddingLeft: 16,
         color: 'rgba(0,0,0,.7)',
     },
-});
+}));
 
 const getItemAPI = keys.wholesaleItemAPI;
 const putItemAPI = keys.wholesalePutAPI;

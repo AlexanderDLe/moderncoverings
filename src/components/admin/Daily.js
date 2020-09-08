@@ -21,12 +21,13 @@ import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import BackToAdmin from './reusables/BackToAdmin';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
-        marginTop: 60,
+        marginTop: 64,
+        marginBottom: 64,
         width: '100%',
         maxWidth: 600,
-        borderBottom: '2px solid #3f51b5',
+        borderBottom: `2px solid ${theme.palette.primary.main}`,
         padding: 8,
         paddingBottom: 0,
     },
@@ -65,7 +66,7 @@ const useStyles = makeStyles({
     totalBox: {
         paddingBottom: 0,
     },
-});
+}));
 
 const calculateTimestamp = () => {
     let timestamp = moment().tz('America/Los_Angeles').format().toString();

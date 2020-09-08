@@ -27,12 +27,12 @@ import Timestamper from '../misc/Timestamper';
 
 import TodoHistory from './todo/TodoHistory';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         marginTop: 60,
         width: '100%',
         maxWidth: 900,
-        borderBottom: '2px solid #3f51b5',
+        borderBottom: `2px solid ${theme.palette.primary.main}`,
         padding: 8,
         paddingBottom: 0,
     },
@@ -75,11 +75,12 @@ const useStyles = makeStyles({
     showMoreDiv: {
         textAlign: 'center',
         marginTop: 16,
+        marginBottom: 64,
     },
     showMoreButton: {
         borderRadius: 3,
     },
-});
+}));
 
 const API = keys.todoMasksAPI;
 const designAPI = keys.designsAPI;

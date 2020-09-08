@@ -14,12 +14,13 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import BackToAdmin from './reusables/BackToAdmin';
 import DesignItem from './design/DesignItem';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
-        marginTop: 60,
+        marginTop: 64,
+        marginBottom: 64,
         width: '100%',
         maxWidth: 300,
-        borderBottom: '2px solid #3f51b5',
+        borderBottom: `2px solid ${theme.palette.primary.main}`,
     },
     header: {
         fontFamily: 'Open Sans',
@@ -29,7 +30,7 @@ const useStyles = makeStyles({
         border: 'none !important',
         padding: 16,
     },
-});
+}));
 
 const API = keys.designsAPI;
 const header = {

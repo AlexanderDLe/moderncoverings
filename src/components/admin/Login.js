@@ -13,12 +13,12 @@ import Logo from '../../img/LogoSmall.jpg';
 
 const PIN = keys.PIN;
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         marginTop: 60,
         width: '100%',
         maxWidth: 250,
-        borderBottom: '2px solid #3f51b5',
+        borderBottom: `2px solid ${theme.palette.primary.main}`,
         padding: 8,
         paddingBottom: 0,
     },
@@ -45,7 +45,7 @@ const useStyles = makeStyles({
     text: {
         color: 'rgba(0,0,0,.5)',
     },
-});
+}));
 
 export default ({ authenticated, setAuthenticated }) => {
     const classes = useStyles();

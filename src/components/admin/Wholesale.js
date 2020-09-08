@@ -21,12 +21,13 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import BackToAdmin from './reusables/BackToAdmin';
 import WholesaleRow from './wholesale/WholesaleRow';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
-        marginTop: 60,
+        marginTop: 64,
+        marginBottom: 64,
         width: '100%',
         maxWidth: 700,
-        borderBottom: '2px solid #3f51b5',
+        borderBottom: `2px solid ${theme.palette.primary.main}`,
         padding: 8,
         paddingBottom: 0,
     },
@@ -52,7 +53,7 @@ const useStyles = makeStyles({
     link: {
         color: 'rgba(0,0,0,.87)',
     },
-});
+}));
 
 const API = keys.wholesalePutAPI;
 const deleteItemAPI = keys.wholesaleItemAPI;

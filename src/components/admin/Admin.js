@@ -9,12 +9,12 @@ import Button from '@material-ui/core/Button';
 
 import Logo from '../../img/LogoSmall.jpg';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         marginTop: 60,
         width: '100%',
         maxWidth: 250,
-        borderBottom: '2px solid #3f51b5',
+        borderBottom: `2px solid ${theme.palette.primary.main}`,
         padding: 8,
         paddingBottom: 0,
     },
@@ -39,7 +39,7 @@ const useStyles = makeStyles({
         marginTop: -32,
         marginBottom: -16,
     },
-});
+}));
 
 export default ({ authenticated, setAuthenticated }) => {
     const classes = useStyles();
