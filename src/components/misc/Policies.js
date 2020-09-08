@@ -2,31 +2,37 @@ import React, { useEffect } from 'react';
 import Card from '@material-ui/core/Card';
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
         maxWidth: 750,
-        borderBottom: '2px solid #3f51b5',
+        borderBottom: `2px solid ${theme.palette.primary.main}`,
         padding: 16,
         margin: 24,
         marginTop: 40,
+        borderRadius: 0,
+    },
+    Raleway: {
+        fontFamily: 'Raleway',
     },
     question: {
         paddingLeft: 10,
         fontSize: '1.15rem',
         paddingTop: 12,
+        fontFamily: 'Raleway',
+        fontWeight: 600,
         position: 'relative',
         '&::before': {
             content: '""',
             display: 'block',
             height: 'calc(100% - 12px)',
             width: '2px',
-            backgroundColor: '#3f51b5',
+            backgroundColor: theme.palette.primary.main,
             position: 'absolute',
             left: '-0px',
         },
     },
-});
+}));
 
 function Policies() {
     const classes = useStyles();
@@ -36,8 +42,8 @@ function Policies() {
     }, []);
 
     return (
-        <Card className={classes.root} elevation={3}>
-            <h2>Policies</h2>
+        <Card className={classes.root} elevation={1}>
+            <h2 className={classes.Raleway}>Policies</h2>
             <hr />
             <h5 className={classes.question}>Return/Exchange Policy</h5>
             <p>
@@ -48,7 +54,7 @@ function Policies() {
             <h5 className={classes.question}>Customer Service Policy</h5>
             <p>
                 If you have questions or comments about this policy, you may
-                email us at contact@cafacemasks.com.
+                email us at moderncoverings6@gmail.com.
             </p>
             <h5 className={classes.question}>Privacy Policy</h5>
             <p>
@@ -57,7 +63,7 @@ function Policies() {
                 information and your right to privacy. If you have any questions
                 or concerns about our notice, or our practices with regards to
                 your personal information, please contact us at
-                contact@cafacemasks.com.
+                moderncoverings6@gmail.com.
                 <br />
                 <br />
                 In this privacy notice, we seek to explain to you in the
@@ -102,7 +108,7 @@ function Policies() {
             </h5>
             <p>
                 If you have questions or comments about this policy, you may
-                email us at contact@cafacemasks.com
+                email us at moderncoverings6@gmail.com
             </p>
         </Card>
     );

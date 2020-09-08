@@ -27,10 +27,10 @@ function SelectionHero() {
     const landingImage = useMemo(() => {
         return navMediaQuery535
             ? {
-                  img1: require(`../../img/LandingPhotos/LandingPhoto3.jpg`),
+                  img1: require(`../../img/LandingPhotos/LandingPhoto4.jpg`),
               }
             : {
-                  img1: require(`../../img/LandingPhotos/LandingPhoto3.jpg`),
+                  img1: require(`../../img/LandingPhotos/LandingPhoto4.jpg`),
               };
     }, [navMediaQuery535]);
 

@@ -71,7 +71,7 @@ export default ({ authenticated, setAuthenticated }) => {
                 <img
                     src={Logo}
                     className={classes.logo}
-                    alt="CAfacemasks Logo"
+                    alt="Modern Coverings Logo"
                 />
                 <Typography
                     className={classes.header}

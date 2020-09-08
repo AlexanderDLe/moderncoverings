@@ -7,8 +7,9 @@ import { useMediaQuery } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { selection } from '../masks/MaskDesigns';
-import SelectionHero from './SelectionHero';
-import SelectionFilter from './SelectionFilter';
+// import SelectionHero from './SelectionHero';
+import MCSelectionHero from './MCSelectionHero';
+// import SelectionFilter from './SelectionFilter';
 import SelectionContainer from './SelectionContainer';
 
 const useStyles = makeStyles((theme) => ({
@@ -110,7 +111,8 @@ export default ({
     const navMediaQuery = useMediaQuery('(min-width:900px)');
 
     const classes = useStyles();
-    const [filter, setFilter] = useState('All');
+    // const [filter, setFilter] = useState('All');
+    const [filter] = useState('All');
     const [customOpen, setCustomOpen] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -122,7 +124,7 @@ export default ({
     let animal = [];
     let hawaiian = [];
     let floral = [];
-    let shield = [];
+    // let shield = [];
 
     // Categorization
     const sortCategories = (selectionToSort) => {
@@ -151,9 +153,9 @@ export default ({
                 case 'bandana':
                     bandana.push(item);
                     break;
-                case 'shield':
-                    shield.push(item);
-                    break;
+                // case 'shield':
+                //     shield.push(item);
+                //     break;
                 default:
                     break;
             }
@@ -170,15 +172,15 @@ export default ({
 
     const selectionPadding = useMemo(() => {
         return navMediaQuery
-            ? { paddingTop: '24px', paddingBottom: '24px' }
+            ? { paddingTop: '24px', paddingBottom: '64px' }
             : {};
     }, [navMediaQuery]);
 
     return (
         <React.Fragment>
             <main className={classes.main}>
-                {isIE || isFirefox ? '' : <SelectionHero />}
-                <SelectionFilter filter={filter} setFilter={setFilter} />
+                {isIE || isFirefox ? '' : <MCSelectionHero />}
+                {/* <SelectionFilter filter={filter} setFilter={setFilter} /> */}
                 {loading ? (
                     <div className={classes.LoadingDiv}>
                         <CircularProgress />
@@ -200,7 +202,7 @@ export default ({
                         animal={animal}
                         hawaiian={hawaiian}
                         floral={floral}
-                        shield={shield}
+                        // shield={shield}
                         customOpen={customOpen}
                         setCustomOpen={setCustomOpen}
                     />

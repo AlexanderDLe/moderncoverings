@@ -3,8 +3,8 @@ import {
     CarouselProvider,
     Slider,
     Slide,
-    ButtonBack,
-    ButtonNext,
+    // ButtonBack,
+    // ButtonNext,
 } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import Typography from '@material-ui/core/Typography';
@@ -12,26 +12,24 @@ import { useMediaQuery } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+// import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+// import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
-import StarRateIcon from '@material-ui/icons/StarRate';
+// import StarRateIcon from '@material-ui/icons/StarRate';
 
 const useStyles = makeStyles((theme) => ({
     testimonialSection: {
-        backgroundColor: '#fff',
-        // padding: theme.spacing(6, 0, 6),
-        // paddingBottom: 0,
+        backgroundColor: 'rgb(250,250,255)',
     },
     sectionTitle: {
-        fontFamily: 'Open Sans',
+        fontFamily: 'Raleway',
     },
     authorText: {
         fontSize: '1rem',
     },
     carouselContainer: {
         padding: 16,
-        paddingTop: 0,
+        paddingTop: 16,
     },
     carouselProvider: {
         textAlign: 'center',
@@ -52,14 +50,14 @@ function Carousel({ queryStyles }) {
 
     const carouselHeight = useMemo(() => {
         return navMediaQuery580
-            ? 45
+            ? 30
             : navMediaQuery500
-            ? 52
+            ? 35
             : navMediaQuery400
-            ? 75
+            ? 50
             : navMediaQuery320
-            ? 100
-            : 110;
+            ? 80
+            : 90;
     }, [
         navMediaQuery580,
         navMediaQuery500,
@@ -91,13 +89,13 @@ function Carousel({ queryStyles }) {
                 >
                     - {author}
                 </Typography>
-                <div>
+                {/* <div>
                     <StarRateIcon className={classes.star} />
                     <StarRateIcon className={classes.star} />
                     <StarRateIcon className={classes.star} />
                     <StarRateIcon className={classes.star} />
                     <StarRateIcon className={classes.star} />
-                </div>
+                </div> */}
             </Slide>
         );
     };
@@ -116,7 +114,7 @@ function Carousel({ queryStyles }) {
                 className={classes.sectionTitle}
                 style={queryStyles.sectionTitle}
             >
-                Testimonials
+                Reviews
             </Typography>
             <Container className={classes.carouselContainer} maxWidth="sm">
                 <CarouselProvider
@@ -129,36 +127,36 @@ function Carousel({ queryStyles }) {
                 >
                     <Slider>
                         {renderSlide(
-                            'I am very particular for buying masks for myself and family members so I have to search for a company who can provide good quality masks with reasonable prices. I found these masks able to provide what I’m looking for. I’m very happy once I tried it on. It fit my face snuggly and I can breathe with it. I encourage everyone to buy these masks.',
-                            'Gina Le',
+                            'I had to let you know how much I love my mask. This is the first mask I’ve warn that doesn’t make my face feel like it’s in a sauna. I’ve tried other masks that are made with moisture wicking fabric but all that does is keep the mask dry and my face wet. Gross. And they aren’t as pretty as your masks are!',
+                            'Lisa Chopard',
                             0,
                             0
                         )}
                         {renderSlide(
-                            'I brought it home and my mom loved it and stole them from me. I had to get more! I like them. They’re comfortable, covers my face, and is not too heavy. I can breath easily through them. Would highly recommend.',
-                            'Oscar Mejia',
+                            'I received my masks I ordered. I wanted to let you know I love them !! I’ve ordered other masks before but yours are the best. I’ve had recommended to others & I will purchase more in the future. They are the best !!',
+                            'Mary Morrow',
                             1,
                             24
                         )}
                         {renderSlide(
-                            'Just got my "bandana" pattern masks today, I\'m amazed at the quality for such a low price and highly recommend them. They\'re made here in California, I love that too, and took about 7 days between order and delivery. Thanks CA Facemasks.',
-                            'Linda Garcini',
+                            'Just wanted to let you know I received my masks and I absolutely love them....the looks, the quality, the comfort, and the speed of which they got here. Thank you.',
+                            'Cindy Jiricek',
                             2,
-                            24
+                            32
                         )}
                         {renderSlide(
-                            'Just got my mask in the mail today. Wow, very impressed with the quality. Thanks for making such a great mask.',
-                            'Vicki Newell',
+                            `Thank you so much! I've tried lots of masks and yours are my favorite! I love that they are very structured, have many layers, and so many colors/styles from which to choose! I find them so comfortable! This is my 2nd order! Thanks again!`,
+                            'Diane Richards',
                             3,
-                            48
+                            16
                         )}
                     </Slider>
-                    <ButtonBack className="slide-buttons">
+                    {/* <ButtonBack className="slide-buttons">
                         <ChevronLeftIcon />
                     </ButtonBack>
                     <ButtonNext className="slide-buttons">
                         <ChevronRightIcon />
-                    </ButtonNext>
+                    </ButtonNext> */}
                 </CarouselProvider>
             </Container>
         </div>

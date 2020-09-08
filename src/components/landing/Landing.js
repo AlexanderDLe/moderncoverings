@@ -4,8 +4,7 @@ import { useMediaQuery } from '@material-ui/core';
 
 import LandingHero from './LandingHero';
 import LandingCopy from './LandingCopy';
-import BestSellers from './BestSellers';
-
+// import BestSellers from './BestSellers';
 const LandingCDC = lazy(() => import('./LandingCDC'));
 const Cards = lazy(() => import('./Cards'));
 const Testimonials = lazy(() => import('./Testimonials'));
@@ -61,10 +60,10 @@ export default () => {
             <LandingHero queryStyles={queryStyles} />
             <LandingCopy queryStyles={queryStyles} />
             <Suspense fallback={<div className={classes.fallback} />}>
-                <LandingCDC queryStyles={queryStyles} />
                 <Cards />
-                <BestSellers queryStyles={queryStyles} />
+                {/* <BestSellers queryStyles={queryStyles} /> */}
                 <Testimonials queryStyles={queryStyles} />
+                <LandingCDC queryStyles={queryStyles} />
             </Suspense>
         </main>
     );

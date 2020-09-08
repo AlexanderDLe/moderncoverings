@@ -6,7 +6,7 @@ import Container from '@material-ui/core/Container';
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
-        backgroundColor: '#37474f',
+        backgroundColor: 'rgb(42,42,42)',
     },
     container: {
         maxWidth: 700,
@@ -49,7 +49,7 @@ function SelectionFilter({ filter, setFilter }) {
     const classes = useStyles();
     const navMediaQuery = useMediaQuery('(min-width:900px)');
 
-    const renderFilterItem = (name) => {
+    /* const renderFilterItem = (name) => {
         let active = filter === name ? true : false;
         return (
             <div onClick={() => setFilter(name)} className={classes.filterItem}>
@@ -63,9 +63,9 @@ function SelectionFilter({ filter, setFilter }) {
                 ></div>
             </div>
         );
-    };
+    }; */
 
-    const over600 = () => {
+    /* const over600 = () => {
         return (
             <div className={classes.fullContainer}>
                 {renderFilterItem('All')}
@@ -80,7 +80,7 @@ function SelectionFilter({ filter, setFilter }) {
                 {renderFilterItem('Custom')}
             </div>
         );
-    };
+    }; */
 
     const rootStyle = useMemo(() => {
         return navMediaQuery
@@ -91,7 +91,7 @@ function SelectionFilter({ filter, setFilter }) {
     return (
         <div className={classes.root} style={rootStyle}>
             <Container className={classes.container}>
-                {navMediaQuery ? over600() : ''}
+                {navMediaQuery ? '' : ''}
             </Container>
         </div>
     );

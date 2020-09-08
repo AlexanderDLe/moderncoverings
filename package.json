@@ -10,6 +10,7 @@
         "@testing-library/react": "^9.5.0",
         "@testing-library/user-event": "^7.2.1",
         "axios": "^0.19.2",
+        "embla-carousel": "^4.0.1",
         "moment-timezone": "^0.5.31",
         "paypal-checkout": "^4.0.315",
         "pure-react-carousel": "^1.27.1",

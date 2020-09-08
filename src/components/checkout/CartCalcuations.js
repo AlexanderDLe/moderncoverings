@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import CheckIcon from '@material-ui/icons/Check';
 import MoneyOffIcon from '@material-ui/icons/MoneyOff';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import Upsell from './Upsell';
+// import Upsell from './Upsell';
 
 const useStyles = makeStyles((theme) => ({
     caption: {
@@ -206,7 +206,7 @@ export default ({
                 <p className={classes.cartTotal}>Total</p>
                 <p className={classes.cartTotal}>${total}</p>
             </div>
-            <Upsell checkoutMode={checkoutMode} orders={orders} />
+            {/* <Upsell checkoutMode={checkoutMode} orders={orders} /> */}
         </React.Fragment>
     );
 };

@@ -7,17 +7,18 @@ import Typography from '@material-ui/core/Typography';
 import { Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         position: 'relative',
         maxWidth: 345,
         borderRadius: 0,
-        transform: 'scale(1)',
-        transition: 'transform 1s',
-        '&:hover': {
-            transform: 'scale(1.05)',
-            transition: 'transform .5s',
-        },
+        // border: '1px solid black',
+        // transform: 'scale(1)',
+        // transition: 'transform 1s',
+        // '&:hover': {
+        //     transform: 'scale(1.05)',
+        //     transition: 'transform .5s',
+        // },
     },
     bestseller: {
         position: 'absolute',
@@ -27,7 +28,7 @@ const useStyles = makeStyles({
         textAlign: 'center',
     },
     media: {
-        height: 140,
+        height: 150,
     },
     link: {
         textDecoration: 'none',
@@ -39,16 +40,21 @@ const useStyles = makeStyles({
     },
     cardTextContent: {
         // padding: 8,
+        // color: 'white',
+        // backgroundColor: theme.palette.primary.main,
         paddingTop: '8px !important',
         paddingBottom: '16px !important',
     },
     cardTitle: {
-        textAlign: 'center',
+        fontFamily: 'Raleway !impowrtant',
+        // fontWeight: 600,
+        // fontSize: '1.1rem',
+        // textAlign: 'center',
     },
     placeholderText: {
         color: 'white',
     },
-});
+}));
 
 function DesignCard({ design, setYCoordinate }) {
     const classes = useStyles();
@@ -64,7 +70,7 @@ function DesignCard({ design, setYCoordinate }) {
                 className={classes.designName}
                 to={`/item/${design.param}`}
             >
-                <Card className={classes.root} elevation={1}>
+                <Card className={classes.root} elevation={0}>
                     <CardMedia
                         className={classes.media}
                         image={require(`../../img/SmallMaskPhotos/${design.img}`)}
@@ -77,6 +83,23 @@ function DesignCard({ design, setYCoordinate }) {
                             component="h2"
                         >
                             {design.color}
+                        </Typography>
+                        <Typography
+                            className={classes.cardTitle}
+                            variant="body1"
+                            component="h2"
+                        >
+                            {design.type === 'Mask' ? (
+                                <span
+                                    style={{
+                                        color: 'rgba(0,0,0,.45)',
+                                    }}
+                                >
+                                    ${design.price}
+                                </span>
+                            ) : (
+                                ''
+                            )}
                         </Typography>
                     </CardContent>
                 </Card>

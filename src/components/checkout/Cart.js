@@ -41,16 +41,17 @@ const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
         maxWidth: 450,
-        borderBottom: '2px solid #3f51b5',
+        borderBottom: `2px solid ${theme.palette.primary.main}`,
         paddingBottom: 8,
         margin: 16,
+        borderRadius: 0,
     },
     link: {
         color: '#3f51b5',
         textDecoration: 'none',
     },
     cartTitle: {
-        fontFamily: 'Open Sans',
+        fontFamily: 'Raleway',
     },
     paypalError: {
         textAlign: 'center',
@@ -344,7 +345,7 @@ const Cart = ({
     if (checkedOut) return <Redirect to="/success" />;
 
     return (
-        <Card style={cartRootStyles} className={classes.root} elevation={3}>
+        <Card style={cartRootStyles} className={classes.root} elevation={1}>
             <CardContent>
                 <Typography
                     className={classes.cartTitle}

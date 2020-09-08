@@ -4,8 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
 
 import { selection } from '../../masks/MaskDesigns';
-import SelectionHero from '../SelectionHero';
-import SelectionFilter from '../SelectionFilter';
 import AllSelectionContainer from './AllSelectionContainer';
 
 const useStyles = makeStyles((theme) => ({
@@ -85,7 +83,7 @@ export default ({
     const navMediaQuery = useMediaQuery('(min-width:900px)');
 
     const classes = useStyles();
-    const [filter, setFilter] = useState('All');
+    const [filter] = useState('All');
     const [customOpen, setCustomOpen] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -147,9 +145,6 @@ export default ({
     return (
         <React.Fragment>
             <main className={classes.main}>
-                <SelectionHero />
-                <SelectionFilter filter={filter} setFilter={setFilter} />
-
                 <AllSelectionContainer
                     selectionPadding={selectionPadding}
                     searchTerm={searchTerm}

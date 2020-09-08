@@ -33,10 +33,12 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
         width: '100%',
         maxWidth: 450,
-        borderBottom: '2px solid #3f51b5',
+        borderBottom: `2px solid ${theme.palette.primary.main}`,
         paddingBottom: 8,
         margin: 16,
         marginTop: 40,
+        marginBottom: 40,
+        borderRadius: '0',
     },
     bestseller: {
         position: 'absolute',
@@ -105,7 +107,7 @@ const useStyles = makeStyles((theme) => ({
     title: {
         paddingBottom: 0,
         marginBottom: 0,
-        fontFamily: 'Open Sans',
+        fontFamily: 'Raleway',
     },
     goToCartLink: {
         width: '100%',
@@ -275,7 +277,7 @@ export default ({ match, addOrder }) => {
         <Card
             style={{ marginTop: navMediaQuery600 ? 40 : 16 }}
             className={classes.root}
-            elevation={3}
+            elevation={1}
         >
             {loading ? (
                 <div

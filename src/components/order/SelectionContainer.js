@@ -5,16 +5,17 @@ import { Grid } from '@material-ui/core';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 
-import Checkbox from '@material-ui/core/Checkbox';
+// import Checkbox from '@material-ui/core/Checkbox';
 import DesignCard from './DesignCard';
-import CustomCard from './CustomCard';
+// import CustomCard from './CustomCard';
 import { selection } from '../masks/MaskDesigns';
-import Search from './Search';
+// import Search from './Search';
 import RenderCategory from './RenderCategory';
 
 const useStyles = makeStyles((theme) => ({
     main: {
         width: '100%',
+        paddingBottom: 32,
     },
     smallContainer: {
         paddingLeft: 0,
@@ -22,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
     root: {
         minHeight: 'calc(100vh - 630px)',
+        backgroundColor: 'rgb(250,250,255)',
     },
     category: {
         margin: '24px 0',
@@ -32,10 +34,11 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: 16,
     },
     categoryTitle: {
-        fontSize: '1.8rem',
+        fontSize: '3rem',
         cursor: 'pointer',
         fontWeight: '400',
-        fontFamily: 'Open Sans',
+        fontFamily: 'Raleway',
+        margin: '0 auto',
     },
     checkbox: {
         color: 'rgba(0, 0, 0, 0.87)',
@@ -86,7 +89,7 @@ function SelectionContainer({
             const renderCustomItems = () => {
                 return (
                     <React.Fragment>
-                        <CustomCard />
+                        {/* <CustomCard /> */}
                         <DesignCard
                             design={selection.blackelastic}
                             key={1000}
@@ -103,17 +106,18 @@ function SelectionContainer({
             return (
                 <React.Fragment>
                     <div className={classes.category}>
-                        <Checkbox
+                        {/* <Checkbox
                             onClick={() => setCustomOpen(!customOpen)}
                             checked={customOpen}
                             color="default"
                             className={classes.checkbox}
                             size="small"
-                        />
+                        /> */}
                         <Typography
                             onClick={() => setCustomOpen(!customOpen)}
                             variant="h4"
                             component="h2"
+                            align="center"
                             className={classes.categoryTitle}
                         >
                             Custom
@@ -129,16 +133,16 @@ function SelectionContainer({
         return (
             <React.Fragment>
                 <RenderCategory
-                    categoryName={'Bandana'}
-                    categoryItems={bandana}
+                    categoryName={'Floral'}
+                    categoryItems={floral}
                     filterState={filter}
                     showMoreObj={showMoreObj}
                     setShowMoreObj={setShowMoreObj}
                     setYCoordinate={setYCoordinate}
                 />
                 <RenderCategory
-                    categoryName={'Floral'}
-                    categoryItems={floral}
+                    categoryName={'Bandana'}
+                    categoryItems={bandana}
                     filterState={filter}
                     showMoreObj={showMoreObj}
                     setShowMoreObj={setShowMoreObj}
@@ -184,14 +188,14 @@ function SelectionContainer({
                     setShowMoreObj={setShowMoreObj}
                     setYCoordinate={setYCoordinate}
                 />
-                <RenderCategory
+                {/* <RenderCategory
                     categoryName={'Shield'}
                     categoryItems={shield}
                     filterState={filter}
                     showMoreObj={showMoreObj}
                     setShowMoreObj={setShowMoreObj}
                     setYCoordinate={setYCoordinate}
-                />
+                /> */}
                 {filter === 'All' || filter === 'Custom' ? renderCustom() : ''}
             </React.Fragment>
         );
@@ -199,10 +203,10 @@ function SelectionContainer({
 
     return (
         <Container className={classes.root} style={selectionPadding}>
-            <Search
+            {/* <Search
                 searchTerm={searchTerm}
                 handleSearchTermChange={handleSearchTermChange}
-            />
+            /> */}
             {renderDesigns()}
         </Container>
     );

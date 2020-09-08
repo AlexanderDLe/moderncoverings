@@ -11,24 +11,25 @@ const useStyles = makeStyles({
         zIndex: '100',
         width: '100%',
         height: '100%',
-        backgroundColor: 'white',
+        backgroundColor: 'rgb(250,250,255)',
         display: 'flex',
         alignItems: 'center',
     },
     logo: {
-        paddingBottom: 12,
+        fontFamily: 'Raleway',
+        fontWeight: 700,
+        fontSize: '5rem',
     },
     textBox: {
         width: '100%',
         marginTop: 'auto',
         fontFamily: 'Open Sans',
-        backgroundColor: 'white',
         padding: '12px 4px 0px 4px',
         textAlign: 'center',
     },
     header: {
         marginBottom: 0,
-        fontFamily: 'Open Sans',
+        fontFamily: 'Raleway',
     },
     button: {
         color: 'white',
@@ -51,11 +52,11 @@ function SelectionHero({ queryStyles }) {
     const navMediaQuery340 = useMediaQuery('(min-width:340px)');
     const classes = useStyles();
 
-    const FacemaskIcon = useMemo(() => {
-        return navMediaQuery535
-            ? require(`../../img/LandingPhotos/FacemaskIcon1.jpg`)
-            : require(`../../img/LandingPhotos/FacemaskIcon2.jpg`);
-    }, [navMediaQuery535]);
+    // const FacemaskIcon = useMemo(() => {
+    //     return navMediaQuery535
+    //         ? require(`../../img/LandingPhotos/FacemaskIcon1.jpg`)
+    //         : require(`../../img/LandingPhotos/FacemaskIcon2.jpg`);
+    // }, [navMediaQuery535]);
 
     const textStyles = useMemo(() => {
         return navMediaQuery900
@@ -104,11 +105,16 @@ function SelectionHero({ queryStyles }) {
                 style={queryStyles.sectionPadding}
             >
                 <div className={classes.textBox}>
-                    <img
+                    <Typography
+                        component="h1"
+                        variant="h1"
+                        align="center"
+                        color="textPrimary"
+                        gutterBottom
                         className={classes.logo}
-                        src={FacemaskIcon}
-                        alt="Facemask Icon"
-                    />
+                    >
+                        MC
+                    </Typography>
                     <Typography
                         component="h2"
                         variant="h4"
@@ -118,7 +124,7 @@ function SelectionHero({ queryStyles }) {
                         className={classes.header}
                         style={textStyles.header}
                     >
-                        Look Good. Be Protected.
+                        Modern Coverings
                     </Typography>
                     <Typography
                         variant="caption"
@@ -128,8 +134,7 @@ function SelectionHero({ queryStyles }) {
                         style={textStyles.caption}
                         className={classes.caption}
                     >
-                        100+ Premium designs to keep yourself protected with
-                        style.
+                        A modern look for modern times.
                     </Typography>
 
                     <Link to="/selection">
@@ -140,18 +145,18 @@ function SelectionHero({ queryStyles }) {
                             color="primary"
                             size="medium"
                         >
-                            View Selection
+                            SHOP NOW
                         </Button>
                     </Link>
-                    <Typography
+                    {/* <Typography
                         variant="caption"
                         align="center"
                         color="textSecondary"
                         paragraph
                         className={classes.usa}
                     >
-                        Made in California, USA
-                    </Typography>
+                        Made in USA
+                    </Typography> */}
                 </div>
             </div>
         </div>

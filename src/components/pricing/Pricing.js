@@ -107,7 +107,7 @@ function Pricing() {
                     style={{ textAlign: 'left' }}
                 >
                     Interested in buying in bulk? Please email
-                    <strong> contact@cafacemasks.com</strong> to discuss
+                    <strong> moderncoverings6@gmail.com</strong> to discuss
                     options.
                 </Typography>
             </CardContent>

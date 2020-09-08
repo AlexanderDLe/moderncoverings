@@ -190,8 +190,8 @@ function MaskOrderForm({
                         paddingLeft: 3,
                     }}
                 >
-                    Each mask comes with elastic ear bands, an adjustable metal
-                    nose wire, and 4 layers.
+                    Each mask comes with adjustable elastic ear bands, an
+                    adjustable metal nose wire, and 4 layers of sewn fabric.
                     <br />
                     <br />
                     Disclaimer: Some mask designs may vary depending on cut.

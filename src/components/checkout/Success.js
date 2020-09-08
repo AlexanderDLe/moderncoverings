@@ -13,6 +13,7 @@ const useStyles = makeStyles({
         width: '100%',
         maxWidth: 420,
         borderBottom: '2px solid #3f51b5',
+        borderRadius: 0,
     },
     link: {
         color: '#3f51b5',
@@ -26,7 +27,7 @@ const useStyles = makeStyles({
         padding: 8,
     },
     successHeader: {
-        fontFamily: 'Open Sans',
+        fontFamily: 'Raleway',
     },
 });
 
@@ -37,7 +38,7 @@ const Success = () => {
     const classes = useStyles();
 
     return (
-        <Card className={classes.root} elevation={3}>
+        <Card className={classes.root} elevation={1}>
             <CardContent>
                 <Typography
                     className={classes.successHeader}
@@ -49,7 +50,8 @@ const Success = () => {
             </CardContent>
 
             <CardContent style={{ paddingTop: 0, paddingBottom: 20 }}>
-                Your order was successful. You will receive an Order Confirmation to the email you provided.
+                Your order was successful. You will receive an Order
+                Confirmation to the email you provided.
             </CardContent>
             <CardActions className={classes.itemActions}>
                 <Button

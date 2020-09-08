@@ -6,12 +6,13 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     footer: {
         // backgroundColor: theme.palette.background.paper,
-        backgroundColor: '#fbfbfb',
+        backgroundColor: 'rgb(42,42,42)',
         padding: theme.spacing(6),
+        color: 'rgba(255, 255, 255, 0.85) !important',
     },
     footerLink: {
-        color: 'rgba(0, 0, 0, 0.54)',
         textDecoration: 'none',
+        color: 'rgba(255, 255, 255, 0.85) !important',
     },
 }));
 
@@ -19,9 +20,9 @@ function Copyright() {
     const classes = useStyles();
 
     return (
-        <Typography variant="body2" color="textSecondary" align="center">
+        <Typography variant="body2" align="center">
             {'Copyright © '}
-            CAFacemasks.com {new Date().getFullYear()} |{' '}
+            ModernCoverings.com {new Date().getFullYear()} |{' '}
             <Link to="/policies" className={classes.footerLink}>
                 Policies
             </Link>{' '}
@@ -47,9 +48,9 @@ export default function Album() {
 
     return (
         <footer className={classes.footer}>
-            <Typography variant="body2" color="textSecondary" align="center">
+            <Typography variant="body2" align="center">
                 If you have any questions or concerns, please email
-                contact@cafacemasks.com.
+                moderncoverings6@gmail.com
             </Typography>
             <br />
             <Copyright />

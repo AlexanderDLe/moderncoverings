@@ -3,7 +3,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import FacemaskIcon from '../img/FacemaskIcon2.png';
 import { useMediaQuery, IconButton } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import Menu from '@material-ui/core/Menu';
@@ -23,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
     },
     appbar: {
-        backgroundColor: '#fff',
+        backgroundColor: 'rgb(250,250,255)',
     },
     title: {
         flexGrow: 1,
@@ -32,10 +31,17 @@ const useStyles = makeStyles((theme) => ({
         padding: 3,
         paddingTop: 8,
     },
+    navLogo: {
+        color: `${navTextColor} !important`,
+        textDecoration: 'none',
+        fontFamily: 'Raleway',
+        fontWeight: 700,
+        fontSize: '1.5rem',
+    },
     link: {
         color: `${navTextColor} !important`,
         textDecoration: 'none',
-        fontFamily: 'Open Sans',
+        fontFamily: 'Raleway',
     },
     shoppingCartIcon: {
         fontSize: '1.2rem',
@@ -68,7 +74,6 @@ function HideOnScroll(props) {
 const Navbar = ({ amount }) => {
     const classes = useStyles();
     const navMediaQuery = useMediaQuery('(min-width:600px)');
-    const navMediaQuery330 = useMediaQuery('(min-width:330px)');
 
     // Dynamic Nav Styles
     const dynamicStyles = useMemo(() => {
@@ -78,12 +83,7 @@ const Navbar = ({ amount }) => {
                 paddingBottom: 12,
                 paddingRight: 4,
             },
-            navTitleStyle: {
-                fontSize: `${navMediaQuery ? '1.25rem' : '1rem'}`,
-                fontFamily: 'Open Sans',
-                fontWeight: 600,
-                // textTransform: 'uppercase',
-            },
+
             navItem: {
                 marginRight: '20px',
             },
@@ -103,7 +103,7 @@ const Navbar = ({ amount }) => {
     const fullNav = (
         <React.Fragment>
             {fullNavItem('selection', 'Selection')}
-            {fullNavItem('pricing', 'Pricing')}
+            {/* {fullNavItem('pricing', 'Pricing')} */}
             {fullNavItem('faq', 'FAQ')}
         </React.Fragment>
     );
@@ -140,7 +140,7 @@ const Navbar = ({ amount }) => {
                 onClose={handleClose}
             >
                 {menuNavItem('selection', 'Selection')}
-                {menuNavItem('pricing', 'Pricing')}
+                {/* {menuNavItem('pricing', 'Pricing')} */}
                 {menuNavItem('faq', 'FAQ')}
                 {menuNavItem('cart', 'Cart')}
             </Menu>
@@ -154,18 +154,8 @@ const Navbar = ({ amount }) => {
                     <Container>
                         <Toolbar>
                             <Typography variant="h6" className={classes.title}>
-                                <Link
-                                    style={dynamicStyles.navTitleStyle}
-                                    className={classes.link}
-                                    to="/"
-                                >
-                                    <img
-                                        style={dynamicStyles.navIconStyle}
-                                        className={classes.navIcon}
-                                        src={FacemaskIcon}
-                                        alt="Facemask Icon"
-                                    />
-                                    {navMediaQuery330 ? 'CA Facemasks' : ''}
+                                <Link className={classes.navLogo} to="/">
+                                    MC
                                 </Link>
                             </Typography>
 

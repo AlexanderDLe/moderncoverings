@@ -54,11 +54,7 @@ export default ({ authenticated, setAuthenticated }) => {
     return (
         <Card className={classes.root} elevation={3}>
             <CardContent className={classes.todoHeader}>
-                <img
-                    src={Logo}
-                    className={classes.logo}
-                    alt="CAfacemasks Logo"
-                />
+                <img src={Logo} className={classes.logo} alt="Raleway Logo" />
                 <Typography
                     className={classes.header}
                     variant="h4"

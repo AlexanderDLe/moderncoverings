@@ -8,22 +8,28 @@ const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
         maxWidth: 750,
-        borderBottom: '2px solid #3f51b5',
+        borderBottom: `2px solid ${theme.palette.primary.main}`,
         padding: 16,
         margin: 24,
         marginTop: 40,
+        borderRadius: 0,
+    },
+    Raleway: {
+        fontFamily: 'Raleway',
     },
     question: {
         paddingLeft: 10,
-        fontSize: '1.15rem',
+        fontSize: '1.25rem',
         paddingTop: 12,
+        fontFamily: 'Raleway',
+        fontWeight: 600,
         position: 'relative',
         '&::before': {
             content: '""',
             display: 'block',
             height: 'calc(100% - 12px)',
             width: '2px',
-            backgroundColor: '#3f51b5',
+            backgroundColor: theme.palette.primary.main,
             position: 'absolute',
             left: '-0px',
         },
@@ -47,12 +53,10 @@ function FAQ() {
     }, []);
 
     return (
-        <Card className={classes.root} elevation={3}>
-            <h2>Frequently Asked Questions</h2>
+        <Card className={classes.root} elevation={1}>
+            <h2 className={classes.Raleway}>Frequently Asked Questions</h2>
             <hr />
-            <h5 className={classes.question}>
-                What are these masks made of? How many layers?
-            </h5>
+            <h5 className={classes.question}>How are these masks made?</h5>
             <p>
                 There are 4 layers of different materials that work together to
                 filter particles in the air. These materials include
@@ -87,11 +91,13 @@ function FAQ() {
             <p>
                 Yes, each mask comes with two elastic bands - one for looping
                 around each ear. Each of the bands are 10 inches in length.
-                <br />
-                <br />
-                To adjust, you can rotate the bands until the knot is revealed
-                outside of the side pockets - you may then retie these bands for
-                the most comfortable fit.
+            </p>
+            <h5 className={classes.question}>
+                Are the elastic bands adjustable?
+            </h5>
+            <p>
+                Yes, each elastic band comes with a plastic adjuster that you
+                can use to adjust for a comfortable fit!
             </p>
 
             <h5 className={classes.question}>Is there a nosepiece?</h5>
@@ -134,7 +140,7 @@ function FAQ() {
             </h5>
             <p>
                 If you wish to get in touch, you can send an email to
-                contact@cafacemasks.com.
+                moderncoverings6@gmail.com.
             </p>
             <div className={classes.buttonDiv}>
                 <Link to="/selection" className={classes.viewSelectionButton}>

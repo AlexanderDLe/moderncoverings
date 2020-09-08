@@ -3,11 +3,13 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
+import { useMediaQuery } from '@material-ui/core';
 
-import BlueBG from '../../img/BlueBG.jpg';
-import LayersWhite from '../../img/LayersWhite.png';
-import ReusableWhite from '../../img/ReusableWhite.png';
-import ComfortWhite from '../../img/ComfortWhite.png';
+import BlueBG from '../../img/BlackWhiteBG.jpg';
+import LayersPNG from '../../img/LayersColored.png';
+import AdjustablePNG from '../../img/AdjustableColored.png';
+import ComfortPNG from '../../img/ComfortColored.png';
+import ReusablePNG from '../../img/ReusableColored.png';
 
 const useStyles = makeStyles((theme) => ({
     cardGrid: {
@@ -15,47 +17,43 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: theme.spacing(8),
     },
     gridItem: {
-        marginTop: 4,
-        marginBottom: 8,
+        display: 'flex',
+        justifyContent: 'center',
     },
     card: {
+        maxWidth: 700,
         height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        margin: 8,
-        position: 'relative',
         backgroundColor: 'white',
-        borderRadius: '8px',
-        padding: 8,
-        paddingTop: 80,
-        borderBottom: `2px solid ${theme.palette.primary.main}`,
+        margin: 8,
+        padding: 16,
+    },
+    cardIMG: {
+        height: 100,
+        width: 'auto',
+        marginTop: 'auto',
+        marginBottom: 'auto',
     },
     cardMedia: {
-        position: 'absolute',
-        left: '50%',
-        transform: 'translate(-50%, -108px)',
-        backgroundColor: theme.palette.primary.main,
-        height: '95px',
-        width: '95px',
-        borderRadius: '50%',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        zIndex: 10,
+        height: 'auto',
+        width: '110px',
     },
     cardContent: {
-        flexGrow: 1,
+        // paddingLeft: 24,
+        marginTop: 'auto',
+        marginBottom: 'auto',
     },
     cardTitle: {
-        fontFamily: 'Open Sans',
-        textAlign: 'center',
+        fontFamily: 'Raleway',
+        // textAlign: 'center',
     },
     cardText: {
-        textAlign: 'center',
+        // textAlign: 'center',
     },
 }));
 
 function Cards() {
     const classes = useStyles();
+    const navMediaQuery = useMediaQuery('(min-width:600px)');
 
     const bgStyle = useMemo(() => {
         return {
@@ -65,29 +63,45 @@ function Cards() {
         };
     }, []);
 
+    // const cardStyle = navMediaQuery ? {} : {};
+    const cardFlex = navMediaQuery
+        ? {
+              display: 'flex',
+              flexDirection: 'row',
+          }
+        : {
+              flexDirection: 'column',
+              textAlign: 'center',
+          };
+
     const cardText = useMemo(() => {
         return {
             multilayered: (
                 <Typography className={classes.cardText} color="textSecondary">
-                    Composed of <strong>4 layers</strong> of tightly-woven
-                    cotton and polyester/rayon-blend filters. We prioritize
-                    safety and health.
+                    Sewn with <strong>4 layers</strong> of tightly-woven cotton
+                    and a blend of polyester/rayon filters. We always prioritize
+                    quality.
                 </Typography>
             ),
-            reusable: (
+            adjustable: (
                 <Typography className={classes.cardText} color="textSecondary">
-                    Each contain{' '}
+                    Each mask includes{' '}
                     <strong>
-                        retiable elastic ear bands and a metal nose wire
+                        plastic ear loop adjusters and a metal nose wire
                     </strong>{' '}
                     so you can adjust for a comfortable fit.
                 </Typography>
             ),
             comfortable: (
                 <Typography className={classes.cardText} color="textSecondary">
-                    Our <strong>carefully curated fabrics </strong>
-                    are soft, easy to wear for extended periods, and allow for
-                    ease of breathing.
+                    Our <strong>high quality fabrics </strong>
+                    are soft-to-touch and easy to wear for long durations.
+                </Typography>
+            ),
+            reusable: (
+                <Typography className={classes.cardText} color="textSecondary">
+                    All masks are <strong>reusable via proper washing</strong>.
+                    We recommend washing with soap then hanging to air-dry.
                 </Typography>
             ),
         };
@@ -95,12 +109,17 @@ function Cards() {
 
     const renderCard = (cardIMG, cardTitle, cardText) => {
         return (
-            <Grid className={classes.gridItem} item xs={12} sm={12} md={4}>
-                <div className={classes.card}>
-                    <div
+            <Grid className={classes.gridItem} item xs={12} sm={12} md={12}>
+                <div className={classes.card} style={cardFlex}>
+                    {/* <div
                         className={classes.cardMedia}
                         style={{ backgroundImage: `url(${cardIMG})` }}
-                    ></div>
+                    ></div> */}
+                    <img
+                        alt="Feature Icon"
+                        src={cardIMG}
+                        className={classes.cardIMG}
+                    />
                     <div className={classes.cardContent}>
                         <Typography
                             className={classes.cardTitle}
@@ -123,16 +142,21 @@ function Cards() {
             <Container className={classes.cardGrid} maxWidth="md">
                 <Grid container spacing={4}>
                     {renderCard(
-                        LayersWhite,
+                        LayersPNG,
                         'Multi-layered',
                         cardText.multilayered
                     )}
-                    {renderCard(ReusableWhite, 'Adjustable', cardText.reusable)}
                     {renderCard(
-                        ComfortWhite,
+                        AdjustablePNG,
+                        'Adjustable',
+                        cardText.adjustable
+                    )}
+                    {renderCard(
+                        ComfortPNG,
                         'Comfortable',
                         cardText.comfortable
                     )}
+                    {renderCard(ReusablePNG, 'Reusable', cardText.reusable)}
                 </Grid>
             </Container>
         </div>

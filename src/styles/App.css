@@ -7,6 +7,7 @@
 }
 
 .body-class {
+    background-color: rgb(250, 250, 255);
     min-height: calc(100vh - 116px);
     display: flex;
     flex-direction: column;

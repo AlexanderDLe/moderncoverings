@@ -1,7 +1,7 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Checkbox from '@material-ui/core/Checkbox';
+// import Checkbox from '@material-ui/core/Checkbox';
 import { Grid } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 // import DesignCard from './DesignCard';
@@ -18,10 +18,11 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: 16,
     },
     categoryTitle: {
-        fontSize: '1.6rem',
+        fontSize: '3rem',
         cursor: 'pointer',
         fontWeight: '400',
-        fontFamily: 'Open Sans',
+        fontFamily: 'Raleway',
+        margin: '0 auto',
     },
     checkbox: {
         color: 'rgba(0, 0, 0, 0.87)',
@@ -33,6 +34,12 @@ const useStyles = makeStyles((theme) => ({
     },
     showMoreButton: {
         borderRadius: 3,
+        fontFamily: 'Raleway',
+        fontWeight: 700,
+    },
+    break: {
+        opacity: 0,
+        paddingBottom: 64,
     },
 }));
 
@@ -48,8 +55,6 @@ export default ({
 
     // console.log(categoryName, categoryItems);
     const [categoryOpen, setCategoryOpen] = useState(true);
-
-    // console.log(showMoreObj);
 
     const handleShowMoreButtonClick = () => {
         const newShowMoreObj = { ...showMoreObj };
@@ -98,17 +103,18 @@ export default ({
         return (
             <React.Fragment>
                 <div className={classes.category}>
-                    <Checkbox
+                    {/* <Checkbox
                         onClick={() => setCategoryOpen(!categoryOpen)}
                         checked={categoryOpen}
                         color="default"
                         className={classes.checkbox}
                         size="small"
-                    />
+                    /> */}
                     <Typography
                         onClick={() => setCategoryOpen(!categoryOpen)}
                         variant="h4"
                         component="h2"
+                        align="center"
                         className={classes.categoryTitle}
                     >
                         {categoryName}
@@ -122,6 +128,7 @@ export default ({
                 categoryItems.length > 8
                     ? showMoreButton
                     : ''}
+                <hr className={classes.break} />
             </React.Fragment>
         );
     } else {
