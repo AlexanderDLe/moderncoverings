@@ -140,7 +140,7 @@ function FAQ() {
             </h5>
             <p>
                 If you wish to get in touch, you can send an email to
-                moderncoverings6@gmail.com.
+                contact@moderncoverings.com.
             </p>
             <div className={classes.buttonDiv}>
                 <Link to="/selection" className={classes.viewSelectionButton}>

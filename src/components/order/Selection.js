@@ -9,7 +9,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { selection } from '../masks/MaskDesigns';
 // import SelectionHero from './SelectionHero';
 import MCSelectionHero from './MCSelectionHero';
-// import SelectionFilter from './SelectionFilter';
+import SelectionFilter from './SelectionFilter';
 import SelectionContainer from './SelectionContainer';
 
 const useStyles = makeStyles((theme) => ({
@@ -180,7 +180,7 @@ export default ({
         <React.Fragment>
             <main className={classes.main}>
                 {isIE || isFirefox ? '' : <MCSelectionHero />}
-                {/* <SelectionFilter filter={filter} setFilter={setFilter} /> */}
+                <SelectionFilter filter={filter} />
                 {loading ? (
                     <div className={classes.LoadingDiv}>
                         <CircularProgress />

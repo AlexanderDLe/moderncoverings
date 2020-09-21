@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
     appbar: {
         backgroundColor: 'rgb(250,250,255)',
+        boxShadow: '0px 0px 5px rgba(0,0,0,.25)',
     },
     title: {
         flexGrow: 1,

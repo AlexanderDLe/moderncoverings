@@ -50,7 +50,7 @@ export default function Album() {
         <footer className={classes.footer}>
             <Typography variant="body2" align="center">
                 If you have any questions or concerns, please email
-                moderncoverings6@gmail.com
+                contact@moderncoverings.com
             </Typography>
             <br />
             <Copyright />

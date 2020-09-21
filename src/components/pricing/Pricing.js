@@ -107,7 +107,7 @@ function Pricing() {
                     style={{ textAlign: 'left' }}
                 >
                     Interested in buying in bulk? Please email
-                    <strong> moderncoverings6@gmail.com</strong> to discuss
+                    <strong> contact@moderncoverings.com</strong> to discuss
                     options.
                 </Typography>
             </CardContent>

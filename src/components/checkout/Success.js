@@ -12,11 +12,11 @@ const useStyles = makeStyles({
     root: {
         width: '100%',
         maxWidth: 420,
-        borderBottom: '2px solid #3f51b5',
+        borderBottom: '2px solid rgb(42,42,42)',
         borderRadius: 0,
     },
     link: {
-        color: '#3f51b5',
+        color: 'rgb(42,42,42)',
         textDecoration: 'none',
     },
     actions: {

@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: 'Raleway !impowrtant',
         // fontWeight: 600,
         // fontSize: '1.1rem',
-        // textAlign: 'center',
+        textAlign: 'center',
     },
     placeholderText: {
         color: 'white',
@@ -70,7 +70,7 @@ function DesignCard({ design, setYCoordinate }) {
                 className={classes.designName}
                 to={`/item/${design.param}`}
             >
-                <Card className={classes.root} elevation={0}>
+                <Card className={classes.root} elevation={1}>
                     <CardMedia
                         className={classes.media}
                         image={require(`../../img/SmallMaskPhotos/${design.img}`)}
@@ -84,7 +84,7 @@ function DesignCard({ design, setYCoordinate }) {
                         >
                             {design.color}
                         </Typography>
-                        <Typography
+                        {/* <Typography
                             className={classes.cardTitle}
                             variant="body1"
                             component="h2"
@@ -100,7 +100,7 @@ function DesignCard({ design, setYCoordinate }) {
                             ) : (
                                 ''
                             )}
-                        </Typography>
+                        </Typography> */}
                     </CardContent>
                 </Card>
             </Link>

@@ -27,17 +27,17 @@ function SelectionHero() {
     const landingImage = useMemo(() => {
         return navMediaQuery535
             ? {
-                  img1: require(`../../img/LandingPhotos/LandingPhoto4.jpg`),
+                  img1: require(`../../img/LandingPhotos/LandingPhoto6.jpg`),
               }
             : {
-                  img1: require(`../../img/LandingPhotos/LandingPhoto4.jpg`),
+                  img1: require(`../../img/LandingPhotos/LandingPhoto6.jpg`),
               };
     }, [navMediaQuery535]);
 
     const landingBG = useMemo(() => {
         return {
             minHeight: navMediaQuery ? '50vh' : 300,
-            background: `#fff url(${landingImage.img1}) center / auto 100% no-repeat`,
+            background: `#cfcdda url(${landingImage.img1}) center / auto 100% no-repeat`,
         };
     }, [navMediaQuery, landingImage]);
 

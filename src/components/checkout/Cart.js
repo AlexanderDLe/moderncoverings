@@ -196,6 +196,7 @@ const Cart = ({
             subtotal,
             discount,
             tax,
+            source: 'ModernCoverings',
         };
 
         console.log('Details: ', details);
@@ -215,17 +216,15 @@ const Cart = ({
         };
         console.log(newCard);
 
-        if (mode === 'production') {
-            try {
-                await axios.post(trelloAPI, newCard);
-            } catch (error) {
-                console.log(error);
-            }
-            try {
-                await axios.post(API, event, header);
-            } catch (error) {
-                console.log(error);
-            }
+        try {
+            await axios.post(trelloAPI, newCard);
+        } catch (error) {
+            console.log(error);
+        }
+        try {
+            await axios.post(API, event, header);
+        } catch (error) {
+            console.log(error);
         }
 
         // FB Pixel Purchase
@@ -255,7 +254,7 @@ const Cart = ({
         // Google Analytics
         ReactGA.plugin.execute('ec', 'setAction', 'purchase', {
             id: orderID,
-            affiliation: 'CA Facemasks',
+            affiliation: 'Modern Coverings',
             revenue: amount,
             shipping: 0,
             tax: 0,
@@ -355,7 +354,6 @@ const Cart = ({
                     {checkoutMode === CART ? 'Cart' : 'Checkout'}
                 </Typography>
             </CardContent>
-
             <CardContent>
                 <CartItems
                     checkoutMode={checkoutMode}
@@ -386,7 +384,7 @@ const Cart = ({
             {paypalError ? (
                 <div className={classes.paypalError}>
                     Sorry, there was an error. There may have been an issue with
-                    your payment information or the PayPal servers.
+                    your payment information or the payment servers.
                 </div>
             ) : (
                 ''

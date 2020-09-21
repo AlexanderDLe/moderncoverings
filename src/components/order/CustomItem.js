@@ -54,7 +54,7 @@ function CustomItem() {
                 <p>
                     Would you like to have facemasks with your own designs?
                     Bring or send your favorite fabric and we'll create them for
-                    you. Send an email to moderncoverings6@gmail.com or visit
+                    you. Send an email to contact@moderncoverings.com or visit
                     our shop at:
                 </p>
                 <p>

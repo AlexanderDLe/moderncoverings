@@ -54,16 +54,16 @@ function Policies() {
             <h5 className={classes.question}>Customer Service Policy</h5>
             <p>
                 If you have questions or comments about this policy, you may
-                email us at moderncoverings6@gmail.com.
+                email us at contact@moderncoverings.com.
             </p>
             <h5 className={classes.question}>Privacy Policy</h5>
             <p>
-                Thank you for choosing to be part of our community at CA
-                Facemasks. We are committed to guarding your personal
+                Thank you for choosing to be part of our community at Modern
+                Coverings. We are committed to guarding your personal
                 information and your right to privacy. If you have any questions
                 or concerns about our notice, or our practices with regards to
                 your personal information, please contact us at
-                moderncoverings6@gmail.com.
+                contact@moderncoverings.com.
                 <br />
                 <br />
                 In this privacy notice, we seek to explain to you in the
@@ -108,7 +108,7 @@ function Policies() {
             </h5>
             <p>
                 If you have questions or comments about this policy, you may
-                email us at moderncoverings6@gmail.com
+                email us at contact@moderncoverings.com
             </p>
         </Card>
     );
