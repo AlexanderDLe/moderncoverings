@@ -124,7 +124,8 @@ export default ({
     let animal = [];
     let hawaiian = [];
     let floral = [];
-    // let shield = [];
+    let holiday = [];
+    let shield = [];
 
     // Categorization
     const sortCategories = (selectionToSort) => {
@@ -153,9 +154,12 @@ export default ({
                 case 'bandana':
                     bandana.push(item);
                     break;
-                // case 'shield':
-                //     shield.push(item);
-                //     break;
+                case 'holiday':
+                    holiday.push(item);
+                    break;
+                case 'shield':
+                    shield.push(item);
+                    break;
                 default:
                     break;
             }
@@ -202,7 +206,8 @@ export default ({
                         animal={animal}
                         hawaiian={hawaiian}
                         floral={floral}
-                        // shield={shield}
+                        holiday={holiday}
+                        shield={shield}
                         customOpen={customOpen}
                         setCustomOpen={setCustomOpen}
                     />

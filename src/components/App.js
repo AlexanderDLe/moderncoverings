@@ -52,6 +52,7 @@ const defaultShowMoreObject = {
     Hawaiian: true,
     Patriot: true,
     Shield: true,
+    Holiday: true,
 };
 
 const App = () => {

@@ -54,7 +54,8 @@ export default ({
     const classes = useStyles();
 
     // console.log(categoryName, categoryItems);
-    const [categoryOpen, setCategoryOpen] = useState(true);
+    // const [categoryOpen, setCategoryOpen] = useState(true);
+    const [categoryOpen] = useState(true);
 
     const handleShowMoreButtonClick = () => {
         const newShowMoreObj = { ...showMoreObj };
@@ -111,7 +112,7 @@ export default ({
                         size="small"
                     /> */}
                     <Typography
-                        onClick={() => setCategoryOpen(!categoryOpen)}
+                        // onClick={() => setCategoryOpen(!categoryOpen)}
                         variant="h4"
                         component="h2"
                         align="center"

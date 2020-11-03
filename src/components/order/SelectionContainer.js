@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import DesignCard from './DesignCard';
 // import CustomCard from './CustomCard';
 import { selection } from '../masks/MaskDesigns';
-// import Search from './Search';
+import Search from './Search';
 import RenderCategory from './RenderCategory';
 
 const useStyles = makeStyles((theme) => ({
@@ -72,6 +72,7 @@ function SelectionContainer({
     pattern,
     animal,
     hawaiian,
+    holiday,
     floral,
     shield,
     customOpen,
@@ -133,6 +134,14 @@ function SelectionContainer({
         return (
             <React.Fragment>
                 <RenderCategory
+                    categoryName={'Holiday'}
+                    categoryItems={holiday}
+                    filterState={filter}
+                    showMoreObj={showMoreObj}
+                    setShowMoreObj={setShowMoreObj}
+                    setYCoordinate={setYCoordinate}
+                />
+                <RenderCategory
                     categoryName={'Floral'}
                     categoryItems={floral}
                     filterState={filter}
@@ -188,14 +197,14 @@ function SelectionContainer({
                     setShowMoreObj={setShowMoreObj}
                     setYCoordinate={setYCoordinate}
                 />
-                {/* <RenderCategory
+                <RenderCategory
                     categoryName={'Shield'}
                     categoryItems={shield}
                     filterState={filter}
                     showMoreObj={showMoreObj}
                     setShowMoreObj={setShowMoreObj}
                     setYCoordinate={setYCoordinate}
-                /> */}
+                />
                 {filter === 'All' || filter === 'Custom' ? renderCustom() : ''}
             </React.Fragment>
         );
@@ -203,10 +212,10 @@ function SelectionContainer({
 
     return (
         <Container className={classes.root} style={selectionPadding}>
-            {/* <Search
+            <Search
                 searchTerm={searchTerm}
                 handleSearchTermChange={handleSearchTermChange}
-            /> */}
+            />
             {renderDesigns()}
         </Container>
     );

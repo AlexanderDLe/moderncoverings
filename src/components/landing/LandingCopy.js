@@ -134,7 +134,7 @@ function SelectionHero({ queryStyles }) {
                         style={textStyles.caption}
                         className={classes.caption}
                     >
-                        Look good. Be protected.
+                        Over 100+ Premium Designs
                     </Typography>
 
                     <Link to="/selection">

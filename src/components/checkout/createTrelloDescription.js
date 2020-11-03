@@ -25,7 +25,12 @@ Amount: ${order.amount}
 
 `);
 
-    return `##Customer Information
+    return `${recipient_name}
+${line1}${line2 ? `, ${line2}` : ''}
+${city}, ${postal_code}, ${state}, US
+${event.email}
+
+##Customer Information
 Email: ${event.email}
 Customer: ${recipient_name}
 Full Address: ${fullAddress}
