@@ -59,12 +59,10 @@ function FAQ() {
             <h5 className={classes.question}>How are these masks made?</h5>
             <p>
                 There are 4 layers of different materials that work together to
-                filter particles in the air. These materials include
+                help cover your face from particles in the air. These materials include
                 tightly-woven cotton and a non-woven rayon & polyester blend.
                 <br />
                 <br />
-                Studies have shown that a mix of different materials helps
-                filter particles in the air. We always prioritize quality.
             </p>
             <h5 className={classes.question}>Are these masks washable?</h5>
             <p>
@@ -81,7 +79,7 @@ function FAQ() {
             <h5 className={classes.question}>Is there a discount available?</h5>
             <p>
                 Yes, there is a 15% discount for $45+ subtotal orders. Simply
-                use code 15OFF in the cart to apply.
+                use code HOLIDAY15 in the cart to apply.
             </p>
             <h5 className={classes.question}>How long will delivery take?</h5>
             <p>Delivery will typically be within 5-9 business days.</p>

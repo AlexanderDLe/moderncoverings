@@ -1,15 +1,14 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import keys from '../../config/keys';
 import axios from 'axios';
+import Banner from '../misc/Banner';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { selection } from '../masks/MaskDesigns';
-// import SelectionHero from './SelectionHero';
 import MCSelectionHero from './MCSelectionHero';
-import SelectionFilter from './SelectionFilter';
 import SelectionContainer from './SelectionContainer';
 
 const useStyles = makeStyles((theme) => ({
@@ -183,8 +182,9 @@ export default ({
     return (
         <React.Fragment>
             <main className={classes.main}>
+            <Banner />
                 {isIE || isFirefox ? '' : <MCSelectionHero />}
-                <SelectionFilter filter={filter} />
+                {/* <SelectionFilter filter={filter} /> */}
                 {loading ? (
                     <div className={classes.LoadingDiv}>
                         <CircularProgress />

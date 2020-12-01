@@ -69,6 +69,7 @@ function SelectionContainer({
     pattern,
     animal,
     hawaiian,
+    holiday,
     floral,
     customOpen,
     setCustomOpen,
@@ -127,6 +128,14 @@ function SelectionContainer({
 
         return (
             <React.Fragment>
+                <AllRenderCategory
+                    categoryName={'Holiday'}
+                    categoryItems={holiday}
+                    filterState={filter}
+                    showMoreObj={showMoreObj}
+                    setShowMoreObj={setShowMoreObj}
+                    setYCoordinate={setYCoordinate}
+                />
                 <AllRenderCategory
                     categoryName={'Bandana'}
                     categoryItems={bandana}

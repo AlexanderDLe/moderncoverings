@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Landing from './landing/Landing';
 import Selection from './order/Selection';
+import BagSelection from './order/BagSelection';
 import AllDesigns from './order/alldesigns/AllDesigns';
 import Item from './item/Item';
 import AllItem from './order/alldesigns/AllItem';
@@ -57,6 +58,7 @@ function Body(props) {
                 />
                 <Route exact path="/daily" component={Daily} />
                 <Route exact path="/designs" component={Designs} />
+                <Route exact path="/designs" component={Designs} />
                 <Route
                     exact
                     path="/login"
@@ -73,6 +75,19 @@ function Body(props) {
                     path="/selection"
                     render={(props) => (
                         <Selection
+                            {...props}
+                            showMoreObj={showMoreObj}
+                            setShowMoreObj={setShowMoreObj}
+                            yCoordinate={yCoordinate}
+                            setYCoordinate={setYCoordinate}
+                        />
+                    )}
+                />
+                <Route
+                    exact
+                    path="/selection/bag"
+                    render={(props) => (
+                        <BagSelection
                             {...props}
                             showMoreObj={showMoreObj}
                             setShowMoreObj={setShowMoreObj}

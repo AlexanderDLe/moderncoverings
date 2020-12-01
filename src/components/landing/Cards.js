@@ -5,11 +5,11 @@ import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
 
-import BlueBG from '../../img/BlackWhiteBG.jpg';
-import LayersPNG from '../../img/LayersColored.png';
-import AdjustablePNG from '../../img/AdjustableColored.png';
-import ComfortPNG from '../../img/ComfortColored.png';
-import ReusablePNG from '../../img/ReusableColored.png';
+import BlueBG from '../../img/Icons/BlackWhiteBG.jpg';
+import LayersPNG from '../../img/Icons/LayersColored.png';
+import AdjustablePNG from '../../img/Icons/AdjustableColored.png';
+import ComfortPNG from '../../img/Icons/ComfortColored.png';
+import ReusablePNG from '../../img/Icons/ReusableColored.png';
 
 const useStyles = makeStyles((theme) => ({
     cardGrid: {
@@ -79,7 +79,7 @@ function Cards() {
             multilayered: (
                 <Typography className={classes.cardText} color="textSecondary">
                     Sewn with <strong>4 layers</strong> of tightly-woven cotton
-                    and a blend of polyester/rayon filters. We always prioritize
+                    and a blend of polyester/rayon layers. We always prioritize
                     quality.
                 </Typography>
             ),

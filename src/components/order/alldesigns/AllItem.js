@@ -118,7 +118,7 @@ export default ({ match, addOrder }) => {
     const queueRef = useRef([]);
     const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [messageInfo, setMessageInfo] = useState(undefined);
-    const [angledState, setAngledState] = useState('PostMaskPhotos');
+    const [angledState, setAngledState] = useState('PostPhotos');
 
     // Mask Order Configuration
 
@@ -141,8 +141,8 @@ export default ({ match, addOrder }) => {
 
     // Modal
     const handleAngleStateChange = () => {
-        if (angledState === 'PostMaskPhotos') setAngledState('AngledPhotos');
-        if (angledState === 'AngledPhotos') setAngledState('PostMaskPhotos');
+        if (angledState === 'PostPhotos') setAngledState('AngledPhotos');
+        if (angledState === 'AngledPhotos') setAngledState('PostPhotos');
     };
     const handleModalOpen = () => {
         setModalOpen(true);
@@ -198,7 +198,7 @@ export default ({ match, addOrder }) => {
                     className={
                         navMediaQuery ? classes.media : classes.smallMedia
                     }
-                    image={require(`../../../img/PostMaskPhotos/${data.img}`)}
+                    image={require(`../../../img/PostPhotos/${data.img}`)}
                     title={data.color}
                     onClick={handleModalOpen}
                     style={{ cursor: 'pointer' }}

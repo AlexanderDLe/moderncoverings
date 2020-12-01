@@ -33,7 +33,7 @@ const client = {
     production: keys.paypalProductionID,
 };
 const currency = 'USD';
-const discountCode = '15OFF';
+const discountCode = 'HOLIDAY15';
 const discountThreshold = 45;
 const shippingFee = 0;
 

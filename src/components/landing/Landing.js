@@ -4,6 +4,7 @@ import { useMediaQuery } from '@material-ui/core';
 
 import LandingHero from './LandingHero';
 import LandingCopy from './LandingCopy';
+import Banner from '../misc/Banner';
 // import BestSellers from './BestSellers';
 const LandingCDC = lazy(() => import('./LandingCDC'));
 const Cards = lazy(() => import('./Cards'));
@@ -57,6 +58,7 @@ export default () => {
 
     return (
         <main className={classes.root}>
+            <Banner />
             <LandingHero queryStyles={queryStyles} />
             <LandingCopy queryStyles={queryStyles} />
             <Suspense fallback={<div className={classes.fallback} />}>

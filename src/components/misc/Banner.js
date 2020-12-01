@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Flag from '../../img/Flag.png';
 import { useMediaQuery } from '@material-ui/core';
+import ChristmasIcon from '../../img/Icons/ChristmasIcon.png';
 
 const useStyles = makeStyles((theme) => ({
     banner: {
-        backgroundColor: '#6868fd',
+        backgroundColor: '#424242',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -19,6 +19,8 @@ const useStyles = makeStyles((theme) => ({
         color: 'white',
     },
     flag: {
+        height: 60,
+        width: 'auto',
         paddingBottom: 16,
         boxShadow: 'none',
         fontSize: '1rem',
@@ -41,18 +43,17 @@ function Banner() {
     return (
         <div className={classes.banner} style={bannerStyle}>
             {navMediaQuery450 ? (
-                <img alt="Flag" className={classes.flag} src={Flag} />
+                <img alt="Flag" className={classes.flag} src={ChristmasIcon} />
             ) : (
                 ''
             )}
             <div className={classes.textbox}>
-                {/* <h5 style={bannerHeader}>Use Code 15OFF</h5> */}
                 <p>
-                    Use Code <strong>15OFF</strong> And Get 15% Off 45$+ Orders
+                    Use Code <strong>HOLIDAY15</strong> And Get 15% Off 45$+ Orders
                 </p>
             </div>
             {navMediaQuery450 ? (
-                <img alt="Flag" className={classes.flag} src={Flag} />
+                <img alt="Flag" className={classes.flag} src={ChristmasIcon} />
             ) : (
                 ''
             )}

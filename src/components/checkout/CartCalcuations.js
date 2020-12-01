@@ -124,11 +124,11 @@ export default ({
                             color="primary"
                             size="small"
                             onClick={() => {
-                                setDiscountField('15OFF');
+                                setDiscountField('HOLIDAY15');
                                 setUsedDiscountButton(true);
                             }}
                         >
-                            Apply Discount Code 15OFF
+                            Apply Discount Code HOLIDAY15
                         </Button>
                     ) : (
                         ''

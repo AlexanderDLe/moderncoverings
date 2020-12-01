@@ -95,6 +95,7 @@ export default ({
     let animal = [];
     let hawaiian = [];
     let floral = [];
+    let holiday = [];
 
     // Categorization
     const sortCategories = (selectionToSort) => {
@@ -121,6 +122,9 @@ export default ({
                     break;
                 case 'bandana':
                     bandana.push(item);
+                    break;
+                case 'holiday':
+                    holiday.push(item);
                     break;
                 default:
                     break;
@@ -158,6 +162,7 @@ export default ({
                     patriot={patriot}
                     bandana={bandana}
                     pattern={pattern}
+                    holiday={holiday}
                     animal={animal}
                     hawaiian={hawaiian}
                     floral={floral}
