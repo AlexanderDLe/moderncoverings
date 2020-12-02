@@ -5,10 +5,8 @@ import { Grid } from '@material-ui/core';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 
-// import Checkbox from '@material-ui/core/Checkbox';
 import DesignCard from './DesignCard';
-// import CustomCard from './CustomCard';
-import { selection } from '../masks/MaskDesigns';
+import { selection } from '../designs/MaskDesigns';
 import Search from './Search';
 import RenderCategory from './RenderCategory';
 

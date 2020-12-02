@@ -73,7 +73,7 @@ function DesignCard({ design, setYCoordinate }) {
                 <Card className={classes.root} elevation={1}>
                     <CardMedia
                         className={classes.media}
-                        image={require(`../../img/SmallMaskPhotos/${design.img}`)}
+                        image={require(`../../img/MaskPhotos/SmallMaskPhotos/${design.img}`)}
                         title={design.color}
                     />
                     <CardContent className={classes.cardTextContent}>

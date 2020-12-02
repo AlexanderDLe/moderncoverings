@@ -25,7 +25,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import MaskOrderForm from './MaskOrderForm';
 import ElasticOrderForm from './ElasticOrderForm';
 import ShieldOrderForm from './ShieldOrderForm';
-import { selection } from '../masks/MaskDesigns';
+import { selection } from '../designs/MaskDesigns';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 const useStyles = makeStyles((theme) => ({
@@ -263,7 +263,7 @@ export default ({ match, addOrder }) => {
         <div className={classes.modal}>
             <div className={classes.innerModal}>
                 <img
-                    src={require(`../../img/${angledState}/${data.img}`)}
+                    src={require(`../../img/MaskPhotos/${angledState}/${data.img}`)}
                     alt="Mask"
                     onClick={handleModalClose}
                     style={{ width: '100%', padding: 0 }}
@@ -304,7 +304,7 @@ export default ({ match, addOrder }) => {
                         className={
                             navMediaQuery ? classes.media : classes.smallMedia
                         }
-                        image={require(`../../img/PostPhotos/${data.img}`)}
+                        image={require(`../../img/MaskPhotos/PostPhotos/${data.img}`)}
                         title={data.color}
                         onClick={handleModalOpen}
                         style={{ cursor: 'pointer' }}

@@ -18,7 +18,7 @@ import Modal from '@material-ui/core/Modal';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
-import { selection } from '../../masks/MaskDesigns';
+import { selection } from '../../designs/MaskDesigns';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -167,7 +167,7 @@ export default ({ match, addOrder }) => {
         <div className={classes.modal}>
             <div className={classes.innerModal}>
                 <img
-                    src={require(`../../../img/${angledState}/${data.img}`)}
+                    src={require(`../../../img/MaskPhotos/${angledState}/${data.img}`)}
                     alt="Mask"
                     onClick={handleModalClose}
                     style={{ width: '100%', padding: 0 }}
@@ -198,7 +198,7 @@ export default ({ match, addOrder }) => {
                     className={
                         navMediaQuery ? classes.media : classes.smallMedia
                     }
-                    image={require(`../../../img/PostPhotos/${data.img}`)}
+                    image={require(`../../../img/MaskPhotos/PostPhotos/${data.img}`)}
                     title={data.color}
                     onClick={handleModalOpen}
                     style={{ cursor: 'pointer' }}

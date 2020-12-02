@@ -2,9 +2,10 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Landing from './landing/Landing';
 import Selection from './order/Selection';
-import BagSelection from './order/BagSelection';
+import BagSelection from './orderbags/BagSelection';
 import AllDesigns from './order/alldesigns/AllDesigns';
 import Item from './item/Item';
+import BagItem from './orderbags/item/BagItem';
 import AllItem from './order/alldesigns/AllItem';
 import Cart from './checkout/Cart';
 import Success from './checkout/Success';
@@ -85,7 +86,7 @@ function Body(props) {
                 />
                 <Route
                     exact
-                    path="/selection/bag"
+                    path="/selection/bags"
                     render={(props) => (
                         <BagSelection
                             {...props}
@@ -122,6 +123,11 @@ function Body(props) {
                     exact
                     path="/item/:id"
                     render={(props) => <Item {...props} addOrder={addOrder} />}
+                />
+                <Route
+                    exact
+                    path="/item/bag/:id"
+                    render={(props) => <BagItem {...props} addOrder={addOrder} />}
                 />
                 <Route
                     exact

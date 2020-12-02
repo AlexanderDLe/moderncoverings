@@ -3,7 +3,7 @@ import React, { useState, useMemo } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
 
-import { selection } from '../../masks/MaskDesigns';
+import { selection } from '../../designs/MaskDesigns';
 import AllSelectionContainer from './AllSelectionContainer';
 
 const useStyles = makeStyles((theme) => ({

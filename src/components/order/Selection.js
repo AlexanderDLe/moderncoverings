@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import { selection } from '../masks/MaskDesigns';
+import { selection } from '../designs/MaskDesigns';
 import MCSelectionHero from './MCSelectionHero';
 import SelectionContainer from './SelectionContainer';
 

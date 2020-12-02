@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Checkbox from '@material-ui/core/Checkbox';
 import DesignCard from '../DesignCard';
 import CustomCard from '../CustomCard';
-import { selection } from '../../masks/MaskDesigns';
+import { selection } from '../../designs/MaskDesigns';
 import Search from '../Search';
 import AllRenderCategory from './AllRenderCategory';
 

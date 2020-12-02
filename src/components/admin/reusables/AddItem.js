@@ -6,7 +6,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import AddIcon from '@material-ui/icons/Add';
-import { selection } from '../../masks/MaskDesigns';
+import { selection } from '../../designs/MaskDesigns';
 
 const useStyles = makeStyles({
     cell: {
