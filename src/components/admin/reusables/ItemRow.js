@@ -101,7 +101,7 @@ function TodoRow({
         const IMGFilename = row.split(' ').join('');
         let src;
         try {
-            src = require(`../../../img/MaskPhotos/SmallMaskPhotos/${IMGFilename}.jpg`);
+            src = require(`../../../img/ProductPhotos/Small/${IMGFilename}.jpg`);
         } catch (error) {
             src = FallbackImage;
         }

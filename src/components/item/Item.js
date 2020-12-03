@@ -141,7 +141,7 @@ export default ({ match, addOrder }) => {
     const queueRef = useRef([]);
     const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [messageInfo, setMessageInfo] = useState(undefined);
-    const [angledState, setAngledState] = useState('PostPhotos');
+    const [angledState, setAngledState] = useState('Normal');
     const [avail, setAvail] = useState(true);
     const [loading, setLoading] = useState(true);
 
@@ -237,8 +237,8 @@ export default ({ match, addOrder }) => {
 
     // Modal
     const handleAngleStateChange = () => {
-        if (angledState === 'PostPhotos') setAngledState('AngledPhotos');
-        if (angledState === 'AngledPhotos') setAngledState('PostPhotos');
+        if (angledState === 'Normal') setAngledState('Angled');
+        if (angledState === 'Angled') setAngledState('Normal');
     };
     const handleModalOpen = () => {
         setModalOpen(true);
@@ -263,7 +263,7 @@ export default ({ match, addOrder }) => {
         <div className={classes.modal}>
             <div className={classes.innerModal}>
                 <img
-                    src={require(`../../img/MaskPhotos/${angledState}/${data.img}`)}
+                    src={require(`../../img/ProductPhotos/${angledState}/${data.img}`)}
                     alt="Mask"
                     onClick={handleModalClose}
                     style={{ width: '100%', padding: 0 }}
@@ -304,7 +304,7 @@ export default ({ match, addOrder }) => {
                         className={
                             navMediaQuery ? classes.media : classes.smallMedia
                         }
-                        image={require(`../../img/MaskPhotos/PostPhotos/${data.img}`)}
+                        image={require(`../../img/ProductPhotos/Normal/${data.img}`)}
                         title={data.color}
                         onClick={handleModalOpen}
                         style={{ cursor: 'pointer' }}

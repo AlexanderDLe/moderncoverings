@@ -83,7 +83,7 @@ export default ({ checkoutMode, orders, removeOrder }) => {
                     <div style={{ display: 'flex' }}>
                         <Link to={`/item/${order.param}`}>
                             <img
-                                src={require(`../../img/MaskPhotos/SmallMaskPhotos/${order.img}`)}
+                                src={require(`../../img/ProductPhotos/Small/${order.img}`)}
                                 alt="Facemask"
                                 className={classes.designImage}
                                 style={{ marginLeft: -28 }}

@@ -6,7 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { selection } from '../designs/MaskDesigns';
+import { selection as maskSelection } from '../designs/MaskDesigns';
+import { selection as bagSelection } from '../designs/BagSets';
 
 import { Link, Redirect } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
@@ -41,6 +42,7 @@ export default () => {
     const classes = useStyles();
     let [data, setData] = useState({});
     let [loading, setLoading] = useState(true);
+    let [selection, setSelection] = useState({});
 
     console.log(data);
 
@@ -49,6 +51,7 @@ export default () => {
         async function fetchData() {
             try {
                 const response = await axios.get(API);
+                setSelection({...maskSelection, ...bagSelection});
                 setData(response.data);
                 setLoading(false);
             } catch (error) {

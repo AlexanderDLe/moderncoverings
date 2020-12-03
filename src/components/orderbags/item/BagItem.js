@@ -261,7 +261,7 @@ export default ({ match, addOrder }) => {
         <div className={classes.modal}>
             <div className={classes.innerModal}>
                 <img
-                    src={require(`../../../img/BagPhotos/${angledState}/${data.img}`)}
+                    src={require(`../../../img/ProductPhotos/${angledState}/${data.img}`)}
                     alt="Bag"
                     onClick={handleModalClose}
                     style={{ width: '100%', padding: 0 }}
@@ -303,7 +303,7 @@ export default ({ match, addOrder }) => {
                         className={
                             navMediaQuery ? classes.media : classes.smallMedia
                         }
-                        image={require(`../../../img/BagPhotos/${angledState}/${data.img}`)}
+                        image={require(`../../../img/ProductPhotos/${angledState}/${data.img}`)}
                         title={data.color}
                         onClick={handleModalOpen}
                         style={{ cursor: 'pointer' }}

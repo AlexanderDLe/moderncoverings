@@ -132,7 +132,7 @@ export default () => {
         const IMGFilename = modalImage.split(' ').join('');
         let src;
         try {
-            src = require(`../../img/MaskPhotos/PostPhotos/${IMGFilename}.jpg`);
+            src = require(`../../img/ProductPhotos/Normal/${IMGFilename}.jpg`);
         } catch (error) {
             src = FallbackImage;
         }
