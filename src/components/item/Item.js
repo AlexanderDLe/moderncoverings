@@ -300,15 +300,28 @@ export default ({ match, addOrder }) => {
                             {data.color}
                         </Typography>
                     </CardContent>
+                    <CardContent style={{position: 'relative'}}>
                     <CardMedia
                         className={
                             navMediaQuery ? classes.media : classes.smallMedia
                         }
-                        image={require(`../../img/ProductPhotos/Normal/${data.img}`)}
+                        image={require(`../../img/ProductPhotos/${angledState}/${data.img}`)}
                         title={data.color}
                         onClick={handleModalOpen}
                         style={{ cursor: 'pointer' }}
                     />
+                    {data.angled ? <React.Fragment>
+                        <ChevronLeftIcon
+                            onClick={handleAngleStateChange}
+                            className={classes.modalLeftChevron}
+                            style={{ fontSize: `${navMediaQuery ? '' : ''}` }}
+                            />
+                        <ChevronRightIcon
+                            onClick={handleAngleStateChange}
+                            className={classes.modalRightChevron}
+                            />
+                            </React.Fragment> : ''}
+                    </CardContent>
                     {!avail ? (
                         <div style={{ textAlign: 'center' }}>
                             Sorry, this design is no longer available.

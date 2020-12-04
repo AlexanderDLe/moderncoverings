@@ -287,6 +287,16 @@ export const selection = {
         angled: true,
         tags: ['white'],
     },
+    bluebandana: {
+        type: 'Mask',
+        color: 'Blue Bandana',
+        img: 'BlueBandana.jpg',
+        param: 'bluebandana',
+        price: maskPrice,
+        category: 'bandana',
+        angled: true,
+        tags: ['navy'],
+    },
     purplebandana: {
         type: 'Mask',
         color: 'Purple Bandana',
@@ -407,17 +417,7 @@ export const selection = {
         angled: true,
         tags: ['brown', 'hibiscus'],
     },
-    // bluebandana: {
-    //     type: 'Mask',
-    //     color: 'Blue Bandana',
-    //     img: 'BlueBandana.jpg',
-    //     param: 'bluebandana',
-    //     price: maskPrice,
-    //     category: 'bandana',
-    //     angled: true,
-    //     tags: ['navy'],
-    // },
-    ///////////////
+        ///////////////
     // PATTERNED //
     //////////////
     navycamo: {
@@ -489,6 +489,16 @@ export const selection = {
         category: 'pattern',
         angled: true,
         tags: ['black'],
+    },
+    starry: {
+        type: 'Mask',
+        color: 'Starry',
+        img: 'Starry.jpg',
+        param: 'starry',
+        price: maskPrice,
+        category: 'pattern',
+        angled: true,
+        tags: ['blue'],
     },
     dreamcatcher: {
         type: 'Mask',
@@ -1110,6 +1120,16 @@ export const selection = {
         angled: true,
         tags: ['orange'],
     },
+    musical: {
+        type: 'Mask',
+        color: 'Musical',
+        img: 'Musical.jpg',
+        param: 'musical',
+        price: maskPrice,
+        category: 'pattern',
+        angled: true,
+        tags: ['blue'],
+    },
     pianist: {
         type: 'Mask',
         color: 'Pianist',
@@ -1593,6 +1613,16 @@ export const selection = {
         category: 'animal',
         angled: true,
         tags: ['cat', 'brown'],
+    },
+    rainbowclouds: {
+        type: 'Mask',
+        color: 'Rainbow Clouds',
+        img: 'RainbowClouds.jpg',
+        param: 'rainbowclouds',
+        price: maskPrice,
+        category: 'animal',
+        angled: true,
+        tags: [],
     },
     dawg: {
         type: 'Mask',
@@ -2180,6 +2210,16 @@ export const selection = {
         category: 'floral',
         angled: true,
         tags: ['white', 'black'],
+    },
+    ecstatic: {
+        type: 'Mask',
+        color: 'Ecstatic',
+        img: 'Ecstatic.jpg',
+        param: 'ecstatic',
+        price: maskPrice,
+        category: 'floral',
+        angled: true,
+        tags: ['orange'],
     },
     amethyst: {
         type: 'Mask',
@@ -3277,6 +3317,16 @@ export const selection = {
         angled: true,
         tags: [''],
     },
+    christmastree: {
+        type: 'Mask',
+        color: 'ChristmasTree',
+        img: 'ChristmasTree.jpg',
+        param: 'christmastree',
+        price: maskPrice,
+        category: 'holiday',
+        angled: true,
+        tags: [''],
+    },
     jovial: {
         type: 'Mask',
         color: 'Jovial',
@@ -3322,6 +3372,16 @@ export const selection = {
         color: 'Gifts',
         img: 'Gifts.jpg',
         param: 'gifts',
+        price: maskPrice,
+        category: 'holiday',
+        angled: true,
+        tags: [''],
+    },
+    snowseason: {
+        type: 'Mask',
+        color: 'Snow Season',
+        img: 'SnowSeason.jpg',
+        param: 'snowseason',
         price: maskPrice,
         category: 'holiday',
         angled: true,
