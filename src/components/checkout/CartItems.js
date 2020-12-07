@@ -54,6 +54,8 @@ export default ({ checkoutMode, orders, removeOrder }) => {
         };
     }, [navMediaQuery]);
 
+    console.log(orders);
+
     const renderRightColumn = (orderData) => {
         if (checkoutMode === 'CART') {
             return (

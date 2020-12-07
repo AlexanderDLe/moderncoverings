@@ -8,8 +8,11 @@ import { useMediaQuery } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { selection } from '../designs/BagSets';
-import MCSelectionHero from '../order/MCSelectionHero';
+import BagTextImage from './BagTextImage';
+// import MCSelectionHero from '../order/MCSelectionHero';
 import BagSelectionContainer from '../orderbags/BagSelectionContainer';
+// import SelectionFilter from '../order/SelectionFilter';
+// import BagSelectionHero from './BagSelectionHero';
 
 const useStyles = makeStyles((theme) => ({
     main: {
@@ -91,8 +94,8 @@ export default ({
     const [loading, setLoading] = useState(true);
     const [designAvailability, setDesignAvailability] = useState({});
     // Don't show hero if on internet explorer
-    var isIE = /*@cc_on!@*/ false || !!document.documentMode;
-    var isFirefox = typeof InstallTrigger !== 'undefined';
+    // var isIE = /*@cc_on!@*/ false || !!document.documentMode;
+    // var isFirefox = typeof InstallTrigger !== 'undefined';
     useEffect(() => {
         async function process() {
             try {
@@ -183,34 +186,37 @@ export default ({
         <React.Fragment>
             <main className={classes.main}>
             <Banner />
-                {isIE || isFirefox ? '' : <MCSelectionHero />}
-                {/* <SelectionFilter filter={filter} /> */}
+                {/* {isIE || isFirefox ? '' : <BagSelectionHero />} */}
                 {loading ? (
                     <div className={classes.LoadingDiv}>
                         <CircularProgress />
                     </div>
                 ) : (
-                    <BagSelectionContainer
-                        selectionPadding={selectionPadding}
-                        searchTerm={searchTerm}
-                        handleSearchTermChange={handleSearchTermChange}
-                        showMoreObj={showMoreObj}
-                        setShowMoreObj={setShowMoreObj}
-                        yCoordinate={yCoordinate}
-                        setYCoordinate={setYCoordinate}
-                        filter={filter}
-                        solid={solid}
-                        patriot={patriot}
-                        bandana={bandana}
-                        pattern={pattern}
-                        animal={animal}
-                        hawaiian={hawaiian}
-                        floral={floral}
-                        holiday={holiday}
-                        shield={shield}
-                        customOpen={customOpen}
-                        setCustomOpen={setCustomOpen}
-                    />
+                    <React.Fragment>
+                        <BagTextImage />
+                        {/* <SelectionFilter filter={filter} /> */}
+                        <BagSelectionContainer
+                            selectionPadding={selectionPadding}
+                            searchTerm={searchTerm}
+                            handleSearchTermChange={handleSearchTermChange}
+                            showMoreObj={showMoreObj}
+                            setShowMoreObj={setShowMoreObj}
+                            yCoordinate={yCoordinate}
+                            setYCoordinate={setYCoordinate}
+                            filter={filter}
+                            solid={solid}
+                            patriot={patriot}
+                            bandana={bandana}
+                            pattern={pattern}
+                            animal={animal}
+                            hawaiian={hawaiian}
+                            floral={floral}
+                            holiday={holiday}
+                            shield={shield}
+                            customOpen={customOpen}
+                            setCustomOpen={setCustomOpen}
+                            />
+                    </React.Fragment>
                 )}
             </main>
         </React.Fragment>

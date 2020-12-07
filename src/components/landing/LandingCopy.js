@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     container: {
         padding: 8,
         zIndex: '100',
@@ -34,8 +34,14 @@ const useStyles = makeStyles({
     button: {
         color: 'white',
         fontWeight: '500',
-        margin: '24px 0px',
+        margin: '24px 4px',
         padding: '8px 32px 8px 32px',
+    },
+    button2: {
+        fontWeight: '500',
+        margin: '24px 4px',
+        padding: '8px 32px 8px 32px',
+        // border: '3px solid black'
     },
     caption: {
         marginBottom: 0,
@@ -44,7 +50,7 @@ const useStyles = makeStyles({
         fontSize: '.9rem',
         marginBottom: 0,
     },
-});
+}));
 
 function SelectionHero({ queryStyles }) {
     const navMediaQuery900 = useMediaQuery('(min-width:900px)');
@@ -145,7 +151,17 @@ function SelectionHero({ queryStyles }) {
                             color="primary"
                             size="medium"
                         >
-                            SHOP NOW
+                            SHOP MASKS
+                        </Button>
+                    </Link>
+                    <Link to="/selection/bags">
+                        <Button
+                            variant="outlined"
+                            className={classes.button2}
+                            color="primary"
+                            size="medium"
+                        >
+                            SHOP BAGS
                         </Button>
                     </Link>
                     {/* <Typography

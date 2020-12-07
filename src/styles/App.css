@@ -15,7 +15,9 @@
     align-items: center;
     padding-top: 56px;
 }
-
+.lineThrough {
+    text-decoration: line-through;
+}
 .slide {
     display: flex;
     justify-content: center;

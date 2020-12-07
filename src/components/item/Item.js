@@ -24,9 +24,13 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 import MaskOrderForm from './MaskOrderForm';
 import ElasticOrderForm from './ElasticOrderForm';
+import BagOrderForm from './BagOrderForm';
 import ShieldOrderForm from './ShieldOrderForm';
-import { selection } from '../designs/MaskDesigns';
+import { selection as maskSelection } from '../designs/MaskDesigns';
+import { selection as bagSelection } from '../designs/BagSets';
 import CircularProgress from '@material-ui/core/CircularProgress';
+
+const selection = {...maskSelection, ...bagSelection};
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -128,7 +132,7 @@ export default ({ match, addOrder }) => {
     console.log(data);
 
     const defaultSize =
-        data.type === 'Mask'
+        data.type === 'Mask' || data.type === 'Bag'
             ? 'L'
             : data.type === 'Elastic'
             ? '200 Yards'
@@ -144,6 +148,8 @@ export default ({ match, addOrder }) => {
     const [angledState, setAngledState] = useState('Normal');
     const [avail, setAvail] = useState(true);
     const [loading, setLoading] = useState(true);
+    const [addWaistBag, setAddWaistBag] = useState(false);
+    const waistBagPrice = 15;
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -176,11 +182,22 @@ export default ({ match, addOrder }) => {
     const handleAddItem = () => () => {
         let price = 0;
         if (data.type === 'Mask') price = data.price;
-        if (data.type === 'Elastic') price = data.price[size];
-        if (data.type === 'Shield') price = data.price[size];
+        else if (data.type === 'Bag') {
+            price = data.price;
+            if (addWaistBag) price += waistBagPrice;
+        }
+        else if (data.type === 'Elastic') price = data.price[size];
+        else if (data.type === 'Shield') price = data.price[size];
+
+        let productName = data.color;
+        if (data.type === 'Bag') {
+            if (addWaistBag) productName = `3 piece ${data.color}`;
+            else productName = `2 piece ${data.color}`;
+        }
+
         addOrder({
             type: data.type,
-            color: data.color,
+            color: productName,
             size: size,
             amount: amount,
             param: data.param,
@@ -273,6 +290,106 @@ export default ({ match, addOrder }) => {
         </div>
     );
 
+    const renderMaskForm = () => {
+        return (
+            <MaskOrderForm
+                handleChange={handleChange}
+                amount={amount}
+                size={size}
+                navMediaQuery={navMediaQuery}
+                handleAmountChange={handleAmountChange}
+                price={data.price}
+                XLUnavailable={data.XLUnavailable ? true : false}
+                incrementAmount={incrementAmount}
+                decrementAmount={decrementAmount}
+            />
+        )
+    }
+    const renderElasticForm = () => {
+        return (
+            <ElasticOrderForm
+                handleChange={handleChange}
+                amount={amount}
+                size={size}
+                navMediaQuery={navMediaQuery}
+                handleAmountChange={handleAmountChange}
+                incrementAmount={incrementAmount}
+                decrementAmount={decrementAmount}
+            />
+        )
+    }
+    const renderShieldForm = () => {
+        return (
+            <ShieldOrderForm
+                handleChange={handleChange}
+                amount={amount}
+                size={size}
+                navMediaQuery={navMediaQuery}
+                handleAmountChange={handleAmountChange}
+                incrementAmount={incrementAmount}
+                decrementAmount={decrementAmount}
+        />)
+    }
+    const renderBagForm = () => {
+        return (
+            <BagOrderForm
+                handleChange={handleChange}
+                amount={amount}
+                size={size}
+                navMediaQuery={navMediaQuery}
+                handleAmountChange={handleAmountChange}
+                price={data.price}
+                XLUnavailable={data.XLUnavailable ? true : false}
+                incrementAmount={incrementAmount}
+                decrementAmount={decrementAmount}
+                addWaistBag={addWaistBag}
+                setAddWaistBag={setAddWaistBag}
+                waistBagPrice={waistBagPrice}
+            />
+        )
+    }
+    const renderForm = () => {
+        console.log('DATA TYPE', data.type);
+        if (!avail) {
+            return (
+                <div style={{ textAlign: 'center' }}>
+                    Sorry, this design is no longer available.
+                </div>
+            )
+        } else if (data.type === 'Mask') {
+            console.log('Render mask form.');
+            return renderMaskForm();
+        } else if (data.type === 'Elastic') {
+            return renderElasticForm();
+        } else if (data.type === 'Shield') {
+            return renderShieldForm();
+        } else if (data.type === 'Bag') {
+            console.log('Render bag form.');
+            return  renderBagForm();
+        }
+    }
+
+    const renderBackLink = () => {
+        if (data.type === 'Bag')
+        {
+            return (
+                <Link to="/selection/bags" className={classes.link}>
+                    <Button size="small" color="primary">
+                        Bag Set Selection
+                    </Button>
+                </Link>
+            )
+        } else {
+            return (
+                <Link to="/selection" className={classes.link}>
+                    <Button size="small" color="primary">
+                        Mask Selection
+                    </Button>
+                </Link>
+            )
+        }
+    }
+
     return (
         <Card
             style={{ marginTop: navMediaQuery600 ? 40 : 16 }}
@@ -322,49 +439,10 @@ export default ({ match, addOrder }) => {
                             />
                             </React.Fragment> : ''}
                     </CardContent>
-                    {!avail ? (
-                        <div style={{ textAlign: 'center' }}>
-                            Sorry, this design is no longer available.
-                        </div>
-                    ) : data.type === 'Mask' ? (
-                        <MaskOrderForm
-                            handleChange={handleChange}
-                            amount={amount}
-                            size={size}
-                            navMediaQuery={navMediaQuery}
-                            handleAmountChange={handleAmountChange}
-                            price={data.price}
-                            XLUnavailable={data.XLUnavailable ? true : false}
-                            incrementAmount={incrementAmount}
-                            decrementAmount={decrementAmount}
-                        />
-                    ) : data.type === 'Elastic' ? (
-                        <ElasticOrderForm
-                            handleChange={handleChange}
-                            amount={amount}
-                            size={size}
-                            navMediaQuery={navMediaQuery}
-                            handleAmountChange={handleAmountChange}
-                            incrementAmount={incrementAmount}
-                            decrementAmount={decrementAmount}
-                        />
-                    ) : (
-                        <ShieldOrderForm
-                            handleChange={handleChange}
-                            amount={amount}
-                            size={size}
-                            navMediaQuery={navMediaQuery}
-                            handleAmountChange={handleAmountChange}
-                            incrementAmount={incrementAmount}
-                            decrementAmount={decrementAmount}
-                        />
-                    )}
+                    {renderForm()}
                     <CardActions className={classes.itemActions}>
-                        <Link to="/selection" className={classes.link}>
-                            <Button size="small" color="primary">
-                                Mask Selection
-                            </Button>
-                        </Link>
+                        
+                        {renderBackLink()}
                         <Link to="/cart" className={classes.link}>
                             <Button size="small" color="primary">
                                 Go To Cart

@@ -294,11 +294,19 @@ const Cart = ({
         if (checkoutMode === CART) {
             return (
                 <CardActions className={classes.itemActions}>
+                    <div>
                     <Link to="/selection" className={classes.link}>
                         <Button size="small" color="primary">
                             Mask Selection
                         </Button>
                     </Link>
+                    <br></br>
+                    <Link to="/selection/bags" className={classes.link}>
+                        <Button size="small" color="primary">
+                            Bag Set Selection
+                        </Button>
+                    </Link>
+                    </div>
                     <Button
                         onClick={() => setCheckoutMode(CHECKOUT)}
                         size="small"

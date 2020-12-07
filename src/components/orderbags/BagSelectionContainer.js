@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
 import Search from './BagSearch';
 import BagRenderCategory from './BagRenderCategory';
+
 
 const useStyles = makeStyles((theme) => ({
     main: {
@@ -80,25 +80,6 @@ function SelectionContainer({
 
     // Render
     const renderDesigns = () => {
-        const renderCustom = () => {
-            
-            return (
-                <React.Fragment>
-                    <div className={classes.category}>
-                                                <Typography
-                            onClick={() => setCustomOpen(!customOpen)}
-                            variant="h4"
-                            component="h2"
-                            align="center"
-                            className={classes.categoryTitle}
-                        >
-                            Custom
-                        </Typography>
-                    </div>
-                </React.Fragment>
-            );
-        };
-
         return (
             <React.Fragment>
                 <BagRenderCategory
@@ -173,13 +154,13 @@ function SelectionContainer({
                     setShowMoreObj={setShowMoreObj}
                     setYCoordinate={setYCoordinate}
                 />
-                {filter === 'All' || filter === 'Custom' ? renderCustom() : ''}
             </React.Fragment>
         );
     };
 
     return (
         <Container className={classes.root} style={selectionPadding}>
+            {/* <BagTextImage /> */}
             <Search
                 searchTerm={searchTerm}
                 handleSearchTermChange={handleSearchTermChange}

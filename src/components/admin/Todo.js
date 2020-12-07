@@ -379,6 +379,12 @@ export default () => {
                         <AddItem addItem={addItem} />
                         {Object.keys(data).map((row, index) => {
                             let str = row.split(' ').join('').toLowerCase();
+                            // If the item is a 2piece or 3piece set, then
+                            // slice out the prefix to get item name only
+                            if (str[0] === '2' || str[0] === '3')
+                            {
+                                str = str.slice(6);
+                            }
                             if (data[row].Total === 0)
                                 return <TableRow key={index} />;
                             return (

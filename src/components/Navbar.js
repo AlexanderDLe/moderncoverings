@@ -92,22 +92,22 @@ const Navbar = ({ amount }) => {
     }, [navMediaQuery]);
 
     // Standard Navigation
-    const fullNavItem = (path, label) => (
-        <Link
-            to={`/${path}`}
-            className={classes.link}
-            style={dynamicStyles.navItem}
-        >
-            {label}
-        </Link>
-    );
-    const fullNav = (
-        <React.Fragment>
-            {fullNavItem('selection', 'Selection')}
-            {/* {fullNavItem('pricing', 'Pricing')} */}
-            {fullNavItem('faq', 'FAQ')}
-        </React.Fragment>
-    );
+    // const fullNavItem = (path, label) => (
+    //     <Link
+    //         to={`/${path}`}
+    //         className={classes.link}
+    //         style={dynamicStyles.navItem}
+    //     >
+    //         {label}
+    //     </Link>
+    // );
+    // const fullNav = (
+    //     <React.Fragment>
+    //         {fullNavItem('selection', 'Selection')}
+    //         {/* {fullNavItem('pricing', 'Pricing')} */}
+    //         {fullNavItem('faq', 'FAQ')}
+    //     </React.Fragment>
+    // );
 
     // Responsive/Mobile Menu Functionality
     const [anchorEl, setAnchorEl] = useState(null);
@@ -140,8 +140,8 @@ const Navbar = ({ amount }) => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                {menuNavItem('selection', 'Selection')}
-                {/* {menuNavItem('pricing', 'Pricing')} */}
+                {menuNavItem('selection', 'Mask Selection')}
+                {menuNavItem('selection/bags', 'Bag Set Selection')}
                 {menuNavItem('faq', 'FAQ')}
                 {menuNavItem('cart', 'Cart')}
             </Menu>
@@ -160,7 +160,8 @@ const Navbar = ({ amount }) => {
                                 </Link>
                             </Typography>
 
-                            {navMediaQuery ? fullNav : menuNav}
+                            {/* {navMediaQuery ? fullNav : menuNav} */}
+                            {menuNav}
                             <Link
                                 to="/cart"
                                 className={classes.link}

@@ -71,7 +71,6 @@ function TodoRow({
     const [mouseHover, setMouseHover] = useState(false);
     const [removeConfirmation, setRemoveConfirmation] = useState(false);
     const [avail, setAvail] = useState(availability);
-    console.log('Rerender: ', avail);
 
     const hoverStyles = useMemo(() => {
         return {
@@ -108,7 +107,15 @@ function TodoRow({
     };
 
     const renderHelper = () => {
-        const IMGFilename = row.split(' ').join('');
+        let IMGFilename = row.split(' ').join('');
+
+        // If the item is a 2piece or 3piece set, then
+        // slice out the prefix to get item name only
+        if (IMGFilename[0] === '2' || IMGFilename[0] === '3')
+        {
+            IMGFilename = IMGFilename.slice(6);
+        }
+        
         let src;
         try {
             src = require(`../../../img/ProductPhotos/Small/${IMGFilename}.jpg`);

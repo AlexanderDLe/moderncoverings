@@ -5,7 +5,7 @@ export const selection = {
     // SOLIDS //
     ///////////
     // blackset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Black',
     //     img: 'Black.jpg',
     //     param: 'black',
@@ -15,7 +15,7 @@ export const selection = {
     //     tags: [],
     // },
     // darkgreyset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Dark Grey',
     //     img: 'DarkGrey.jpg',
     //     param: 'darkgrey',
@@ -25,7 +25,7 @@ export const selection = {
     //     tags: ['black', 'white'],
     // },
     // greyset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Grey',
     //     img: 'Grey.jpg',
     //     param: 'grey',
@@ -35,7 +35,7 @@ export const selection = {
     //     tags: ['black', 'white'],
     // },
     // ashset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Ash',
     //     img: 'Ash.jpg',
     //     param: 'ash',
@@ -45,7 +45,7 @@ export const selection = {
     //     tags: ['black', 'grey'],
     // },
     // navyblueset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Navy Blue',
     //     img: 'NavyBlue.jpg',
     //     param: 'navyblue',
@@ -54,18 +54,18 @@ export const selection = {
     //     angled: true,
     //     tags: [],
     // },
-    // denimset: {
-    //     type: 'Mask',
-    //     color: 'Denim',
-    //     img: 'Denim.jpg',
-    //     param: 'denim',
-    //     price: setPrice,
-    //     category: 'solid',
-    //     angled: true,
-    //     tags: ['jeans', 'blue'],
-    // },
+    denimset: {
+        type: 'Bag',
+        color: 'Denim Set',
+        img: 'DenimSet.jpg',
+        param: 'denimset',
+        price: setPrice,
+        category: 'pattern',
+        angled: true,
+        tags: ['jeans', 'blue'],
+    },
     // pinkset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Pink',
     //     img: 'Pink.jpg',
     //     param: 'pink',
@@ -75,7 +75,7 @@ export const selection = {
     //     tags: ['red'],
     // },
     // whiteset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'White',
     //     img: 'White.jpg',
     //     param: 'white',
@@ -85,7 +85,7 @@ export const selection = {
     //     tags: [],
     // },
     // jumperset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Jumper',
     //     img: 'Jumper.jpg',
     //     param: 'jumper',
@@ -95,7 +95,7 @@ export const selection = {
     //     tags: ['green'],
     // },
     // brownset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Brown',
     //     img: 'Brown.jpg',
     //     param: 'brown',
@@ -105,7 +105,7 @@ export const selection = {
     //     tags: [],
     // },
     // lavenderset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Lavender',
     //     img: 'Lavender.jpg',
     //     param: 'lavender',
@@ -115,7 +115,7 @@ export const selection = {
     //     tags: ['purple', 'violet'],
     // },
     // greenset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Green',
     //     img: 'Green.jpg',
     //     param: 'green',
@@ -125,7 +125,7 @@ export const selection = {
     //     tags: [],
     // },
     // redset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Red',
     //     img: 'Red.jpg',
     //     param: 'red',
@@ -135,7 +135,7 @@ export const selection = {
     //     tags: ['red', 'pink'],
     // },
     // orangeset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Orange',
     //     img: 'Orange.jpg',
     //     param: 'orange',
@@ -145,7 +145,7 @@ export const selection = {
     //     tags: ['orange'],
     // },
     // yellowset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Yellow',
     //     img: 'Yellow.jpg',
     //     param: 'yellow',
@@ -155,7 +155,7 @@ export const selection = {
     //     tags: [],
     // },
     // peachset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Peach',
     //     img: 'Peach.jpg',
     //     param: 'peach',
@@ -165,7 +165,7 @@ export const selection = {
     //     tags: ['orange'],
     // },
     // beigeset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Beige',
     //     img: 'Beige.jpg',
     //     param: 'beige',
@@ -178,7 +178,7 @@ export const selection = {
     // // BANDANAS //
     // /////////////
     blackbandanaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Black Bandana Set',
         img: 'BlackBandanaSet.jpg',
         param: 'blackbandanaset',
@@ -188,7 +188,7 @@ export const selection = {
         tags: ['black'],
     },
     navybandanaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Navy Bandana Set',
         img: 'NavyBandanaSet.jpg',
         param: 'navybandanaset',
@@ -198,7 +198,7 @@ export const selection = {
         tags: ['blue'],
     },
     // royalbandanaset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Royal Bandana',
     //     img: 'RoyalBandana.jpg',
     //     param: 'royalbandana',
@@ -208,17 +208,17 @@ export const selection = {
     //     tags: ['navy'],
     // },
     whitebandanaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'White Bandana Set',
         img: 'WhiteBandanaSet.jpg',
         param: 'whitebandanaset',
         price: setPrice,
         category: 'bandana',
         angled: true,
-        tags: ['black'],
+        tags: [],
     },
     redbandanaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Red Bandana Set',
         img: 'RedBandanaSet.jpg',
         param: 'redbandanaset',
@@ -228,7 +228,7 @@ export const selection = {
         tags: ['pink'],
     },
     pinkbandanaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Pink Bandana Set',
         img: 'PinkBandanaSet.jpg',
         param: 'pinkbandanaset',
@@ -238,7 +238,7 @@ export const selection = {
         tags: ['red'],
     },
     darkbandanaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Dark Bandana Set',
         img: 'DarkBandanaSet.jpg',
         param: 'darkbandanaset',
@@ -248,7 +248,7 @@ export const selection = {
         tags: ['black'],
     },
     prodigalset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Prodigal Set',
         img: 'ProdigalSet.jpg',
         param: 'prodigalset',
@@ -258,7 +258,7 @@ export const selection = {
         tags: [],
     },
     silvaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Silva Set',
         img: 'SilvaSet.jpg',
         param: 'silvaset',
@@ -268,7 +268,7 @@ export const selection = {
         tags: [],
     },
     prosperityset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Prosperity Set',
         img: 'ProsperitySet.jpg',
         param: 'prosperityset',
@@ -278,7 +278,7 @@ export const selection = {
         tags: [],
     },
     expressionset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Expression Set',
         img: 'ExpressionSet.jpg',
         param: 'expressionset',
@@ -287,18 +287,18 @@ export const selection = {
         angled: true,
         tags: [],
     },
-    // infinityset: {
-    //     type: 'Mask',
-    //     color: 'Infinity',
-    //     img: 'Infinity.jpg',
-    //     param: 'infinity',
-    //     price: setPrice,
-    //     category: 'bandana',
-    //     angled: true,
-    //     tags: ['green', 'orange'],
-    // },
+    infinityset: {
+        type: 'Bag',
+        color: 'Infinity Set',
+        img: 'InfinitySet.jpg',
+        param: 'infinityset',
+        price: setPrice,
+        category: 'bandana',
+        angled: true,
+        tags: ['green', 'orange'],
+    },
     // reflectionset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Reflection',
     //     img: 'Reflection.jpg',
     //     param: 'reflection',
@@ -308,7 +308,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     beyondset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Beyond Set',
         img: 'BeyondSet.jpg',
         param: 'beyondset',
@@ -318,7 +318,7 @@ export const selection = {
         tags: ['black'],
     },
     affinityset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Affinity Set',
         img: 'AffinitySet.jpg',
         param: 'affinityset',
@@ -328,7 +328,7 @@ export const selection = {
         tags: ['white'],
     },
     purplebandanaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Purple Bandana Set',
         img: 'PurpleBandanaSet.jpg',
         param: 'purplebandanaset',
@@ -338,7 +338,7 @@ export const selection = {
         tags: ['purple', 'violet'],
     },
     innerset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Inner Set',
         img: 'InnerSet.jpg',
         param: 'innerset',
@@ -348,7 +348,7 @@ export const selection = {
         tags: [],
     },
     // eternityset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Eternity',
     //     img: 'Eternity.jpg',
     //     param: 'eternity',
@@ -358,7 +358,7 @@ export const selection = {
     //     tags: ['black'],
     // },
     // sutraset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Sutra',
     //     img: 'Sutra.jpg',
     //     param: 'sutra',
@@ -368,7 +368,7 @@ export const selection = {
     //     tags: ['black', 'purple'],
     // },
     // creationset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Creation',
     //     img: 'Creation.jpg',
     //     param: 'creation',
@@ -378,7 +378,7 @@ export const selection = {
     //     tags: ['green'],
     // },
     orangebandanaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Orange Bandana Set',
         img: 'OrangeBandanaSet.jpg',
         param: 'orangebandanaset',
@@ -388,7 +388,7 @@ export const selection = {
         tags: ['orange'],
     },
     yellowbandanaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Yellow Bandana Set',
         img: 'YellowBandanaSet.jpg',
         param: 'yellowbandanaset',
@@ -398,7 +398,7 @@ export const selection = {
         tags: ['yellow'],
     },
     // greenbandanaset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Green Bandana',
     //     img: 'GreenBandana.jpg',
     //     param: 'greenbandana',
@@ -408,7 +408,7 @@ export const selection = {
     //     tags: ['green'],
     // },
     // limebandanaset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Lime Bandana',
     //     img: 'LimeBandana.jpg',
     //     param: 'limebandana',
@@ -418,7 +418,7 @@ export const selection = {
     //     tags: ['green'],
     // },
     // skybandanaset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Sky Bandana',
     //     img: 'SkyBandana.jpg',
     //     param: 'skybandana',
@@ -428,7 +428,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     brownbandanaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Brown Bandana Set',
         img: 'BrownBandanaSet.jpg',
         param: 'brownbandanaset',
@@ -438,7 +438,7 @@ export const selection = {
         tags: ['brown'],
     },
     beigebandanaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Beige Bandana Set',
         img: 'BeigeBandanaSet.jpg',
         param: 'beigebandanaset',
@@ -448,7 +448,7 @@ export const selection = {
         tags: ['brown', 'beige'],
     },
     // hibiscusbandanaset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Hibiscus Bandana',
     //     img: 'HibiscusBandana.jpg',
     //     param: 'hibiscusbandana',
@@ -458,7 +458,7 @@ export const selection = {
     //     tags: ['brown', 'hibiscus'],
     // },
     bluebandanaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Blue Bandana Set',
         img: 'BlueBandanaSet.jpg',
         param: 'bluebandanaset',
@@ -471,7 +471,7 @@ export const selection = {
     // // PATTERNED //
     // //////////////
     hollywoodset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Hollywood Set',
         img: 'HollywoodSet.jpg',
         param: 'hollywoodset',
@@ -481,7 +481,7 @@ export const selection = {
         tags: ['blue'],
     },
     armycamoset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Army Camo Set',
         img: 'ArmyCamoSet.jpg',
         param: 'armycamoset',
@@ -491,7 +491,7 @@ export const selection = {
         tags: ['green'],
     },
     navycamoset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Navy Camo Set',
         img: 'NavyCamoSet.jpg',
         param: 'navycamoset',
@@ -501,7 +501,7 @@ export const selection = {
         tags: ['blue'],
     },
     camouflageset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Camouflage Set',
         img: 'CamouflageSet.jpg',
         param: 'camouflageset',
@@ -510,18 +510,18 @@ export const selection = {
         angled: true,
         tags: ['green'],
     },
-    // graceset: {
-    //     type: 'Mask',
-    //     color: 'Grace',
-    //     img: 'Grace.jpg',
-    //     param: 'grace',
-    //     price: setPrice,
-    //     category: 'pattern',
-    //     angled: true,
-    //     tags: ['black', 'yellow'],
-    // },
+    graceset: {
+        type: 'Bag',
+        color: 'Grace Set',
+        img: 'GraceSet.jpg',
+        param: 'graceset',
+        price: setPrice,
+        category: 'pattern',
+        angled: true,
+        tags: ['black', 'yellow'],
+    },
     // hopeset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Hope',
     //     img: 'Hope.jpg',
     //     param: 'hope',
@@ -531,7 +531,7 @@ export const selection = {
     //     tags: ['blue', 'purple'],
     // },
     redpolkadotset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Red Polkadot Set',
         img: 'RedPolkadotSet.jpg',
         param: 'redpolkadotset',
@@ -541,7 +541,7 @@ export const selection = {
         tags: ['red'],
     },
     greypolkadotset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Grey Polkadot Set',
         img: 'GreyPolkadotSet.jpg',
         param: 'greypolkadotset',
@@ -551,7 +551,7 @@ export const selection = {
         tags: [''],
     },
     blotset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Blot Set',
         img: 'BlotSet.jpg',
         param: 'blotset',
@@ -561,7 +561,7 @@ export const selection = {
         tags: ['black'],
     },
     redblotset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Red Blot Set',
         img: 'RedBlotSet.jpg',
         param: 'redblotset',
@@ -571,7 +571,7 @@ export const selection = {
         tags: ['red'],
     },
     superstarset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Superstar Set',
         img: 'SuperstarSet.jpg',
         param: 'superstarset',
@@ -580,8 +580,28 @@ export const selection = {
         angled: true,
         tags: ['black', 'colorful'],
     },
+    nightskyset: {
+        type: 'Bag',
+        color: 'Night Sky Set',
+        img: 'NightSkySet.jpg',
+        param: 'nightskyset',
+        price: setPrice,
+        category: 'pattern',
+        angled: true,
+        tags: ['black'],
+    },
+    lockeset: {
+        type: 'Bag',
+        color: 'Locke Set',
+        img: 'LockeSet.jpg',
+        param: 'lockeset',
+        price: setPrice,
+        category: 'pattern',
+        angled: true,
+        tags: ['black', 'white'],
+    },
     esteemedset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Esteemed Set',
         img: 'EsteemedSet.jpg',
         param: 'esteemedset',
@@ -591,7 +611,7 @@ export const selection = {
         tags: ['brown'],
     },
     polkset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Polk Set',
         img: 'PolkSet.jpg',
         param: 'polkset',
@@ -601,7 +621,7 @@ export const selection = {
         tags: ['pink'],
     },
     // starsset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Stars',
     //     img: 'Stars.jpg',
     //     param: 'stars',
@@ -611,7 +631,7 @@ export const selection = {
     //     tags: ['black'],
     // },
     dreamcatcherset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Dreamcatcher Set',
         img: 'DreamcatcherSet.jpg',
         param: 'dreamcatcherset',
@@ -621,7 +641,7 @@ export const selection = {
         tags: ['blue', 'red'],
     },
     snowflakeset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Snowflake Set',
         img: 'SnowflakeSet.jpg',
         param: 'snowflakeset',
@@ -631,7 +651,7 @@ export const selection = {
         tags: ['blue'],
     },
     comicset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Comic Set',
         img: 'ComicSet.jpg',
         param: 'comicset',
@@ -641,7 +661,7 @@ export const selection = {
         tags: ['white'],
     },
     vivaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Viva Set',
         img: 'VivaSet.jpg',
         param: 'vivaset',
@@ -651,7 +671,7 @@ export const selection = {
         tags: [],
     },
     christmasspiritset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Christmas Spirit Set',
         img: 'ChristmasSpiritSet.jpg',
         param: 'christmasspiritset',
@@ -661,7 +681,7 @@ export const selection = {
         tags: ['green'],
     },
     ayanset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'AyanSet',
         img: 'AyanSet.jpg',
         param: 'ayanset',
@@ -671,7 +691,7 @@ export const selection = {
         tags: ['brown'],
     },
     alloyset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Alloy Set',
         img: 'AlloySet.jpg',
         param: 'alloyset',
@@ -681,7 +701,7 @@ export const selection = {
         tags: ['grey'],
     },
     // calaveraset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Calavera',
     //     img: 'Calavera.jpg',
     //     param: 'calavera',
@@ -691,7 +711,7 @@ export const selection = {
     //     tags: ['red'],
     // },
     // moonlightset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Moonlight',
     //     img: 'Moonlight.jpg',
     //     param: 'moonlight',
@@ -700,18 +720,18 @@ export const selection = {
     //     angled: true,
     //     tags: ['red'],
     // },
-    // zigzagset: {
-    //     type: 'Mask',
-    //     color: 'Zig Zag',
-    //     img: 'ZigZag.jpg',
-    //     param: 'zigzag',
-    //     price: setPrice,
-    //     category: 'pattern',
-    //     angled: true,
-    //     tags: ['black', 'white'],
-    // },
+    zigzagset: {
+        type: 'Bag',
+        color: 'Zig Zag Set',
+        img: 'ZigZagSet.jpg',
+        param: 'zigzagset',
+        price: setPrice,
+        category: 'pattern',
+        angled: true,
+        tags: ['black', 'white'],
+    },
     // checkersset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Checkers',
     //     img: 'Checkers.jpg',
     //     param: 'checkers',
@@ -721,7 +741,7 @@ export const selection = {
     //     tags: ['black', 'white'],
     // },
     // mortesset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Mortes',
     //     img: 'Mortes.jpg',
     //     param: 'mortes',
@@ -731,7 +751,7 @@ export const selection = {
     //     tags: ['black', 'white'],
     // },
     // commandmentsset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Commandments',
     //     img: 'Commandments.jpg',
     //     param: 'commandments',
@@ -741,7 +761,7 @@ export const selection = {
     //     tags: ['red', 'yellow', 'gold'],
     // },
     // rhombusset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Rhombus',
     //     img: 'Rhombus.jpg',
     //     param: 'rhombus',
@@ -751,7 +771,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     // minnieset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Minnie',
     //     img: 'Minnie.jpg',
     //     param: 'minnie',
@@ -761,7 +781,7 @@ export const selection = {
     //     tags: ['red'],
     // },
     reddottedset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Red Dotted Set',
         img: 'RedDottedSet.jpg',
         param: 'reddottedset',
@@ -771,7 +791,7 @@ export const selection = {
         tags: ['red', 'white'],
     },
     // paisleyset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Paisley',
     //     img: 'Paisley.jpg',
     //     param: 'paisley',
@@ -781,7 +801,7 @@ export const selection = {
     //     tags: ['brown'],
     // },
     // artifactset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Artifact',
     //     img: 'Artifact.jpg',
     //     param: 'artifact',
@@ -791,7 +811,7 @@ export const selection = {
     //     tags: ['black'],
     // },
     // artisanblackset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Artisan Black',
     //     img: 'ArtisanBlack.jpg',
     //     param: 'artisanblack',
@@ -801,7 +821,7 @@ export const selection = {
     //     tags: [],
     // },
     kotaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Kota Set',
         img: 'KotaSet.jpg',
         param: 'kotaset',
@@ -811,7 +831,7 @@ export const selection = {
         tags: ['green'],
     },
     azuriteset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Azurite Set',
         img: 'AzuriteSet.jpg',
         param: 'azuriteset',
@@ -821,7 +841,7 @@ export const selection = {
         tags: ['blue'],
     },
     marbleset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Marble Set',
         img: 'MarbleSet.jpg',
         param: 'marbleset',
@@ -831,7 +851,7 @@ export const selection = {
         tags: ['grey'],
     },
     // eveningset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Evening',
     //     img: 'Evening.jpg',
     //     param: 'evening',
@@ -840,18 +860,18 @@ export const selection = {
     //     angled: true,
     //     tags: ['orange', 'brown'],
     // },
-    // butterflyset: {
-    //     type: 'Mask',
-    //     color: 'Butterfly',
-    //     img: 'Butterfly.jpg',
-    //     param: 'butterfly',
-    //     price: setPrice,
-    //     category: 'pattern',
-    //     angled: true,
-    //     tags: ['black', 'purple'],
-    // },
+    butterflyset: {
+        type: 'Bag',
+        color: 'Butterfly Set',
+        img: 'ButterflySet.jpg',
+        param: 'butterflyset',
+        price: setPrice,
+        category: 'pattern',
+        angled: true,
+        tags: ['black', 'purple'],
+    },
     // heartsset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Hearts',
     //     img: 'Hearts.jpg',
     //     param: 'hearts',
@@ -861,7 +881,7 @@ export const selection = {
     //     tags: ['black', 'red'],
     // },
     dazzleset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Dazzle Set',
         img: 'DazzleSet.jpg',
         param: 'dazzleset',
@@ -871,7 +891,7 @@ export const selection = {
         tags: [],
     },
     // heiroset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Heiro',
     //     img: 'Heiro.jpg',
     //     param: 'heiro',
@@ -881,7 +901,7 @@ export const selection = {
     //     tags: ['brown'],
     // },
     splashset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Splash Set',
         img: 'SplashSet.jpg',
         param: 'splashset',
@@ -891,7 +911,7 @@ export const selection = {
         tags: ['blue'],
     },
     cherriesset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Cherries Set',
         img: 'CherriesSet.jpg',
         param: 'cherriesset',
@@ -901,7 +921,7 @@ export const selection = {
         tags: ['green'],
     },
     uniqueset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Unique Set',
         img: 'UniqueSet.jpg',
         param: 'uniqueset',
@@ -911,7 +931,7 @@ export const selection = {
         tags: ['purple', 'yellow'],
     },
     // canvasset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Canvas',
     //     img: 'Canvas.jpg',
     //     param: 'canvas',
@@ -921,7 +941,7 @@ export const selection = {
     //     tags: ['red'],
     // },
     // starpowerset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Starpower',
     //     img: 'Starpower.jpg',
     //     param: 'starpower',
@@ -931,7 +951,7 @@ export const selection = {
     //     tags: ['purple', 'pink', 'blue'],
     // },
     // swirlset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Swirl',
     //     img: 'Swirl.jpg',
     //     param: 'swirl',
@@ -941,7 +961,7 @@ export const selection = {
     //     tags: ['purple'],
     // },
     // deepset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Deep',
     //     img: 'Deep.jpg',
     //     param: 'deep',
@@ -951,7 +971,7 @@ export const selection = {
     //     tags: ['purple'],
     // },
     // illusionset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Illusion',
     //     img: 'Illusion.jpg',
     //     param: 'illusion',
@@ -960,18 +980,18 @@ export const selection = {
     //     angled: true,
     //     tags: [],
     // },
-    // ascendset: {
-    //     type: 'Mask',
-    //     color: 'Ascend',
-    //     img: 'Ascend.jpg',
-    //     param: 'ascend',
-    //     price: setPrice,
-    //     category: 'pattern',
-    //     angled: true,
-    //     tags: ['white', 'blue'],
-    // },
+    ascendset: {
+        type: 'Bag',
+        color: 'Ascend Set',
+        img: 'AscendSet.jpg',
+        param: 'ascendset',
+        price: setPrice,
+        category: 'pattern',
+        angled: true,
+        tags: ['white', 'blue'],
+    },
     // bubblegumset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Bubblegum',
     //     img: 'Bubblegum.jpg',
     //     param: 'bubblegum',
@@ -981,7 +1001,7 @@ export const selection = {
     //     tags: ['colorful'],
     // },
     starspangledset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Star Spangled Set',
         img: 'StarSpangledSet.jpg',
         param: 'starspangledset',
@@ -991,7 +1011,7 @@ export const selection = {
         tags: ['red', 'blue'],
     },
     // artisticset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Artistic',
     //     img: 'Artistic.jpg',
     //     param: 'artistic',
@@ -1001,7 +1021,7 @@ export const selection = {
     //     tags: ['colorful'],
     // },
     // universeset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Universe',
     //     img: 'Universe.jpg',
     //     param: 'universe',
@@ -1011,7 +1031,7 @@ export const selection = {
     //     tags: ['pink'],
     // },
     // galaxyset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Galaxy',
     //     img: 'Galaxy.jpg',
     //     param: 'galaxy',
@@ -1021,7 +1041,7 @@ export const selection = {
     //     tags: ['colorful', 'black'],
     // },
     // twineset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Twine',
     //     img: 'Twine.jpg',
     //     param: 'twine',
@@ -1031,7 +1051,7 @@ export const selection = {
     //     tags: ['pink', 'red'],
     // },
     // signatureset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Signature',
     //     img: 'Signature.jpg',
     //     param: 'signature',
@@ -1040,18 +1060,28 @@ export const selection = {
     //     angled: true,
     //     tags: ['brown', 'yellow'],
     // },
-    // grandset: {
-    //     type: 'Mask',
-    //     color: 'Grand',
-    //     img: 'Grand.jpg',
-    //     param: 'grand',
-    //     price: setPrice,
-    //     category: 'pattern',
-    //     angled: true,
-    //     tags: ['brown'],
-    // },
+    grandset: {
+        type: 'Bag',
+        color: 'Grand Set',
+        img: 'GrandSet.jpg',
+        param: 'grandset',
+        price: setPrice,
+        category: 'pattern',
+        angled: true,
+        tags: ['brown'],
+    },
+    hearthset: {
+        type: 'Bag',
+        color: 'Hearth Set',
+        img: 'HearthSet.jpg',
+        param: 'hearthset',
+        price: setPrice,
+        category: 'pattern',
+        angled: true,
+        tags: ['blue'],
+    },
     // sparkleset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Sparkle',
     //     img: 'Sparkle.jpg',
     //     param: 'sparkle',
@@ -1061,7 +1091,7 @@ export const selection = {
     //     tags: ['black'],
     // },
     // magneticset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Magnetic',
     //     img: 'Magnetic.jpg',
     //     param: 'magnetic',
@@ -1071,7 +1101,7 @@ export const selection = {
     //     tags: ['blue', 'yellow', 'teal'],
     // },
     // radiantset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Radiant',
     //     img: 'Radiant.jpg',
     //     param: 'radiant',
@@ -1081,7 +1111,7 @@ export const selection = {
     //     tags: ['yellow', 'orange', 'red'],
     // },
     eraset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Era Set',
         img: 'EraSet.jpg',
         param: 'eraset',
@@ -1091,7 +1121,7 @@ export const selection = {
         tags: ['black', 'white'],
     },
     // flamesset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Flames',
     //     img: 'Flames.jpg',
     //     param: 'flames',
@@ -1101,7 +1131,7 @@ export const selection = {
     //     tags: ['yellow', 'orange', 'red'],
     // },
     // nurseset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Nurse',
     //     img: 'Nurse.jpg',
     //     param: 'nurse',
@@ -1111,7 +1141,7 @@ export const selection = {
     //     tags: ['pink', 'red'],
     // },
     appleset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Apple Set',
         img: 'AppleSet.jpg',
         param: 'appleset',
@@ -1121,7 +1151,7 @@ export const selection = {
         tags: ['black', 'red'],
     },
     fancyset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Fancy Set',
         img: 'FancySet.jpg',
         param: 'fancyset',
@@ -1131,7 +1161,7 @@ export const selection = {
         tags: ['black', 'pink'],
     },
     heelsset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Heels Set',
         img: 'HeelsSet.jpg',
         param: 'heelsset',
@@ -1141,7 +1171,7 @@ export const selection = {
         tags: [],
     },
     // ladybugset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Ladybug',
     //     img: 'Ladybug.jpg',
     //     param: 'ladybug',
@@ -1151,7 +1181,7 @@ export const selection = {
     //     tags: ['red'],
     // },
     forestset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Forest Set',
         img: 'ForestSet.jpg',
         param: 'forestset',
@@ -1161,7 +1191,7 @@ export const selection = {
         tags: ['brown'],
     },
     wildlifeset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Wildlife Set',
         img: 'WildlifeSet.jpg',
         param: 'wildlifeset',
@@ -1171,7 +1201,7 @@ export const selection = {
         tags: ['brown'],
     },
     blackdottedset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Black Dotted Set',
         img: 'BlackDottedSet.jpg',
         param: 'blackdottedset',
@@ -1181,7 +1211,7 @@ export const selection = {
         tags: ['black'],
     },
     spotsset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Spots Set',
         img: 'SpotsSet.jpg',
         param: 'spotsset',
@@ -1191,7 +1221,7 @@ export const selection = {
         tags: ['black', 'white', 'dots'],
     },
     gardenerset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'GardenerSet',
         img: 'GardenerSet.jpg',
         param: 'gardenerset',
@@ -1201,7 +1231,7 @@ export const selection = {
         tags: [],
     },
     // polkset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Polk',
     //     img: 'Polk.jpg',
     //     param: 'polk',
@@ -1211,7 +1241,7 @@ export const selection = {
     //     tags: ['brown'],
     // },
     // polkadotsset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Polkadots',
     //     img: 'Polkadots.jpg',
     //     param: 'polkadots',
@@ -1221,7 +1251,7 @@ export const selection = {
     //     tags: ['yellow'],
     // },
     // galaset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Gala',
     //     img: 'Gala.jpg',
     //     param: 'gala',
@@ -1231,7 +1261,7 @@ export const selection = {
     //     tags: ['black', 'green', 'grey'],
     // },
     // soccerset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Soccer',
     //     img: 'Soccer.jpg',
     //     param: 'soccer',
@@ -1241,7 +1271,7 @@ export const selection = {
     //     tags: [],
     // },
     // carveset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Carve',
     //     img: 'Carve.jpg',
     //     param: 'carve',
@@ -1251,7 +1281,7 @@ export const selection = {
     //     tags: ['brown'],
     // },
     // walnutset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Walnut',
     //     img: 'Walnut.jpg',
     //     param: 'walnut',
@@ -1261,7 +1291,7 @@ export const selection = {
     //     tags: ['brown'],
     // },
     // rainbowset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Rainbow',
     //     img: 'Rainbow.jpg',
     //     param: 'rainbow',
@@ -1271,7 +1301,7 @@ export const selection = {
     //     tags: ['colorful'],
     // },
     // stripeset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Stripe',
     //     img: 'Stripe.jpg',
     //     param: 'stripe',
@@ -1281,7 +1311,7 @@ export const selection = {
     //     tags: ['colorful'],
     // },
     // plaidset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Plaid',
     //     img: 'Plaid.jpg',
     //     param: 'plaid',
@@ -1291,7 +1321,7 @@ export const selection = {
     //     tags: ['black', 'white'],
     // },
     // tribalset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Tribal',
     //     img: 'Tribal.jpg',
     //     param: 'tribal',
@@ -1301,7 +1331,7 @@ export const selection = {
     //     tags: ['black', 'white'],
     // },
     // redplaidset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Red Plaid',
     //     img: 'RedPlaid.jpg',
     //     param: 'redplaid',
@@ -1311,7 +1341,7 @@ export const selection = {
     //     tags: ['black', 'red'],
     // },
     // enamorset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Enamor',
     //     img: 'Enamor.jpg',
     //     param: 'enamor',
@@ -1321,7 +1351,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     // menaceset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Menace',
     //     img: 'Menace.jpg',
     //     param: 'menace',
@@ -1331,7 +1361,7 @@ export const selection = {
     //     tags: ['green'],
     // },
     // artisanredset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Artisan Red',
     //     img: 'ArtisanRed.jpg',
     //     param: 'artisanred',
@@ -1340,18 +1370,28 @@ export const selection = {
     //     angled: false,
     //     tags: ['pink'],
     // },
-    // musicset: {
-    //     type: 'Mask',
-    //     color: 'Music',
-    //     img: 'Music.jpg',
-    //     param: 'music',
-    //     price: setPrice,
-    //     category: 'pattern',
-    //     angled: true,
-    //     tags: ['orange'],
-    // },
+    musicset: {
+        type: 'Bag',
+        color: 'Music',
+        img: 'Music.jpg',
+        param: 'music',
+        price: setPrice,
+        category: 'pattern',
+        angled: true,
+        tags: ['orange'],
+    },
+    musicalset: {
+        type: 'Bag',
+        color: 'Musical Set',
+        img: 'MusicalSet.jpg',
+        param: 'musicalset',
+        price: setPrice,
+        category: 'pattern',
+        angled: true,
+        tags: ['black'],
+    },
     // pianistset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Pianist',
     //     img: 'Pianist.jpg',
     //     param: 'pianist',
@@ -1361,7 +1401,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     // trumpetset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Trumpet',
     //     img: 'Trumpet.jpg',
     //     param: 'trumpet',
@@ -1372,7 +1412,7 @@ export const selection = {
     //     tags: ['orange'],
     // },
     // clarinetset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Clarinet',
     //     img: 'Clarinet.jpg',
     //     param: 'clarinet',
@@ -1382,7 +1422,7 @@ export const selection = {
     //     tags: ['black', 'white'],
     // },
     pinkcamoset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Pink Camo Set',
         img: 'PinkCamoSet.jpg',
         param: 'pinkcamoset',
@@ -1391,18 +1431,18 @@ export const selection = {
         angled: true,
         tags: ['pink'],
     },
-    // firefighterset: {
-    //     type: 'Mask',
-    //     color: 'Firefighter',
-    //     img: 'Firefighter.jpg',
-    //     param: 'firefighter',
-    //     price: setPrice,
-    //     category: 'pattern',
-    //     angled: true,
-    //     tags: ['orange'],
-    // },
+    firefighterset: {
+        type: 'Bag',
+        color: 'Firefighter Set',
+        img: 'FirefighterSet.jpg',
+        param: 'firefighterset',
+        price: setPrice,
+        category: 'pattern',
+        angled: true,
+        tags: ['orange'],
+    },
     // allureset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Allure',
     //     img: 'Allure.jpg',
     //     param: 'allure',
@@ -1412,7 +1452,7 @@ export const selection = {
     //     tags: ['purple', 'violet', 'lavender'],
     // },
     // motionset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Motion',
     //     img: 'Motion.jpg',
     //     param: 'motion',
@@ -1422,7 +1462,7 @@ export const selection = {
     //     tags: ['green'],
     // },
     // nativeset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Native',
     //     img: 'Native.jpg',
     //     param: 'native',
@@ -1432,7 +1472,7 @@ export const selection = {
     //     tags: ['orange', 'brown'],
     // },
     // lavandeset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'La Vandé',
     //     img: 'Lavande.jpg',
     //     param: 'lavande',
@@ -1442,7 +1482,7 @@ export const selection = {
     //     tags: ['black', 'pink'],
     // },
     // indusset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Indus',
     //     img: 'Indus.jpg',
     //     param: 'indus',
@@ -1452,7 +1492,7 @@ export const selection = {
     //     tags: ['black', 'orange', 'teal'],
     // },
     // rezaset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Reza',
     //     img: 'Reza.jpg',
     //     param: 'reza',
@@ -1462,7 +1502,7 @@ export const selection = {
     //     tags: ['green'],
     // },
     ancientset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Ancient Set',
         img: 'AncientSet.jpg',
         param: 'ancientset',
@@ -1472,7 +1512,7 @@ export const selection = {
         tags: [],
     },
     // arrowset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Arrow',
     //     img: 'Arrow.jpg',
     //     param: 'arrow',
@@ -1482,7 +1522,7 @@ export const selection = {
     //     tags: [],
     // },
     shadesset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Shades Set',
         img: 'ShadesSet.jpg',
         param: 'shadesset',
@@ -1492,7 +1532,7 @@ export const selection = {
         tags: [],
     },
     spinset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Spin Set',
         img: 'SpinSet.jpg',
         param: 'spinset',
@@ -1502,7 +1542,7 @@ export const selection = {
         tags: [],
     },
     // nightset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Night',
     //     img: 'Night.jpg',
     //     param: 'night',
@@ -1511,18 +1551,18 @@ export const selection = {
     //     angled: true,
     //     tags: ['blue'],
     // },
-    // woodsset: {
-    //     type: 'Mask',
-    //     color: 'Woods',
-    //     img: 'Woods.jpg',
-    //     param: 'woods',
-    //     price: setPrice,
-    //     category: 'pattern',
-    //     angled: true,
-    //     tags: ['red', 'black', 'brown'],
-    // },
+    woodsset: {
+        type: 'Bag',
+        color: 'Woods Set',
+        img: 'WoodsSet.jpg',
+        param: 'woodsset',
+        price: setPrice,
+        category: 'pattern',
+        angled: true,
+        tags: ['red', 'black', 'brown'],
+    },
     // winterset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Winter',
     //     img: 'Winter.jpg',
     //     param: 'winter',
@@ -1532,7 +1572,7 @@ export const selection = {
     //     tags: ['black', 'blue', 'white'],
     // },
     // decorset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Decor',
     //     img: 'Decor.jpg',
     //     param: 'decor',
@@ -1542,7 +1582,7 @@ export const selection = {
     //     tags: ['teal', 'orange', 'brown'],
     // },
     // geoset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Geo',
     //     img: 'Geo.jpg',
     //     param: 'geo',
@@ -1552,7 +1592,7 @@ export const selection = {
     //     tags: ['teal', 'orange', 'brown'],
     // },
     // chevronsset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Chevrons',
     //     img: 'Chevrons.jpg',
     //     param: 'chevrons',
@@ -1565,7 +1605,7 @@ export const selection = {
     // // ANIMAL //
     // ///////////
     // joyset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Joy',
     //     img: 'Joy.jpg',
     //     param: 'joy',
@@ -1575,7 +1615,7 @@ export const selection = {
     //     tags: ['black', 'dog'],
     // },
     pawsset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Paws Set',
         img: 'PawsSet.jpg',
         param: 'pawsset',
@@ -1585,7 +1625,7 @@ export const selection = {
         tags: ['black', 'dog'],
     },
     lovableset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Lovable Set',
         img: 'LovableSet.jpg',
         param: 'lovableset',
@@ -1595,7 +1635,7 @@ export const selection = {
         tags: ['black', 'dog'],
     },
     pupperset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Pupper Set',
         img: 'PupperSet.jpg',
         param: 'pupperset',
@@ -1605,7 +1645,7 @@ export const selection = {
         tags: ['dog', 'black'],
     },
     rainbowpawset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Rainbow Paw Set',
         img: 'RainbowPawSet.jpg',
         param: 'rainbowpawset',
@@ -1615,7 +1655,7 @@ export const selection = {
         tags: ['dog', 'black'],
     },
     cobraskinset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Cobraskin Set',
         img: 'CobraskinSet.jpg',
         param: 'cobraskinset',
@@ -1625,7 +1665,7 @@ export const selection = {
         tags: ['dog', 'black'],
     },
     jaguarset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Jaguar Set',
         img: 'JaguarSet.jpg',
         param: 'jaguarset',
@@ -1635,7 +1675,7 @@ export const selection = {
         tags: [],
     },
     felineset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Feline Set',
         img: 'FelineSet.jpg',
         param: 'felineset',
@@ -1645,7 +1685,7 @@ export const selection = {
         tags: ['orange'],
     },
     milkset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Milk Set',
         img: 'MilkSet.jpg',
         param: 'milkset',
@@ -1655,7 +1695,7 @@ export const selection = {
         tags: [],
     },
     // doggieset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Doggie',
     //     img: 'Doggie.jpg',
     //     param: 'doggie',
@@ -1665,7 +1705,7 @@ export const selection = {
     //     tags: ['dog'],
     // },
     sweetieset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Sweetie Set',
         img: 'SweetieSet.jpg',
         param: 'sweetieset',
@@ -1675,7 +1715,7 @@ export const selection = {
         tags: ['dog'],
     },
     tigerset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Tiger Set',
         img: 'TigerSet.jpg',
         param: 'tigerset',
@@ -1685,7 +1725,7 @@ export const selection = {
         tags: ['orange'],
     },
     cheetahset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Cheetah Set',
         img: 'CheetahSet.jpg',
         param: 'cheetahset',
@@ -1695,7 +1735,7 @@ export const selection = {
         tags: ['animal', 'brown', 'orange'],
     },
     snowleopardset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Snow Leopard Set',
         img: 'SnowLeopardSet.jpg',
         param: 'snowleopardset',
@@ -1705,7 +1745,7 @@ export const selection = {
         tags: ['white', 'black'],
     },
     himaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Hima Set',
         img: 'HimaSet.jpg',
         param: 'himaset',
@@ -1715,7 +1755,7 @@ export const selection = {
         tags: ['white', 'blue'],
     },
     elephantset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Elephant Set',
         img: 'ElephantSet.jpg',
         param: 'elephantset',
@@ -1725,7 +1765,7 @@ export const selection = {
         tags: ['pink'],
     },
     // spiritset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Spirit Set',
     //     img: 'SpiritSet.jpg',
     //     param: 'spiritset',
@@ -1735,7 +1775,7 @@ export const selection = {
     //     tags: ['black', 'blue', 'red'],
     // },
     // zebraset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Zebra',
     //     img: 'Zebra.jpg',
     //     param: 'zebra',
@@ -1745,7 +1785,7 @@ export const selection = {
     //     tags: ['black', 'white'],
     // },
     // dalmationset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Dalmation',
     //     img: 'Dalmation.jpg',
     //     param: 'dalmation',
@@ -1755,7 +1795,7 @@ export const selection = {
     //     tags: ['white', 'black'],
     // },
     // maldationset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Maldation',
     //     img: 'Maldation.jpg',
     //     param: 'maldation',
@@ -1765,7 +1805,7 @@ export const selection = {
     //     tags: ['white', 'black'],
     // },
     // skipperset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Skipper',
     //     img: 'Skipper.jpg',
     //     param: 'skipper',
@@ -1775,7 +1815,7 @@ export const selection = {
     //     tags: ['red'],
     // },
     // rawpset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Rawp',
     //     img: 'Rawp.jpg',
     //     param: 'rawp',
@@ -1785,7 +1825,7 @@ export const selection = {
     //     tags: ['dogs'],
     // },
     // happyset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Happy',
     //     img: 'Happy.jpg',
     //     param: 'happy',
@@ -1795,7 +1835,7 @@ export const selection = {
     //     tags: [],
     // },
     // bunniesset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Bunnies',
     //     img: 'Bunnies.jpg',
     //     param: 'bunnies',
@@ -1805,7 +1845,7 @@ export const selection = {
     //     tags: ['white'],
     // },
     // woofset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Woof',
     //     img: 'Woof.jpg',
     //     param: 'woof',
@@ -1815,7 +1855,7 @@ export const selection = {
     //     tags: ['dog', 'red'],
     // },
     arfset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Arf Set',
         img: 'ArfSet.jpg',
         param: 'arfset',
@@ -1825,7 +1865,7 @@ export const selection = {
         tags: ['dog', 'blue'],
     },
     // underwaterset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Underwater',
     //     img: 'Underwater.jpg',
     //     param: 'underwater',
@@ -1835,7 +1875,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     // mermaidset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Mermaid',
     //     img: 'Mermaid.jpg',
     //     param: 'mermaid',
@@ -1845,7 +1885,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     // whaleset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Whale',
     //     img: 'Whale.jpg',
     //     param: 'whale',
@@ -1855,7 +1895,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     jungleset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Jungle Set',
         img: 'JungleSet.jpg',
         param: 'jungleset',
@@ -1865,7 +1905,7 @@ export const selection = {
         tags: ['green'],
     },
     toadset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Toad Set',
         img: 'ToadSet.jpg',
         param: 'toadset',
@@ -1874,18 +1914,38 @@ export const selection = {
         angled: true,
         tags: ['blue'],
     },
-    // unicornset: {
-    //     type: 'Mask',
-    //     color: 'Unicorn',
-    //     img: 'Unicorn.jpg',
-    //     param: 'unicorn',
-    //     price: setPrice,
-    //     category: 'animal',
-    //     angled: true,
-    //     tags: ['pink'],
-    // },
+    goldenunicornset: {
+        type: 'Bag',
+        color: 'Golden Unicorn Set',
+        img: 'GoldenUnicornSet.jpg',
+        param: 'goldenunicornset',
+        price: setPrice,
+        category: 'animal',
+        angled: true,
+        tags: ['pink'],
+    },
+    unicornset: {
+        type: 'Bag',
+        color: 'Unicorn Set',
+        img: 'UnicornSet.jpg',
+        param: 'unicornset',
+        price: setPrice,
+        category: 'animal',
+        angled: false,
+        tags: ['pink'],
+    },
+    unicornpowerset: {
+        type: 'Bag',
+        color: 'Unicorn Power Set',
+        img: 'UnicornPowerSet.jpg',
+        param: 'unicornpowerset',
+        price: setPrice,
+        category: 'animal',
+        angled: true,
+        tags: ['pink'],
+    },
     // elephantset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Elephant',
     //     img: 'Elephant.jpg',
     //     param: 'elephant',
@@ -1894,18 +1954,18 @@ export const selection = {
     //     angled: true,
     //     tags: ['pink'],
     // },
-    // bearburyset: {
-    //     type: 'Mask',
-    //     color: 'Bearbury',
-    //     img: 'Bearbury.jpg',
-    //     param: 'bearbury',
-    //     price: setPrice,
-    //     category: 'animal',
-    //     angled: true,
-    //     tags: ['green'],
-    // },
+    bearburyset: {
+        type: 'Bag',
+        color: 'Bearbury Set',
+        img: 'BearburySet.jpg',
+        param: 'bearburyset',
+        price: setPrice,
+        category: 'animal',
+        angled: true,
+        tags: ['green'],
+    },
     // adorableset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Adorable',
     //     img: 'Adorable.jpg',
     //     param: 'adorable',
@@ -1915,7 +1975,7 @@ export const selection = {
     //     tags: ['cats'],
     // },
     // kittensset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Kittens',
     //     img: 'Kittens.jpg',
     //     param: 'kittens',
@@ -1925,7 +1985,7 @@ export const selection = {
     //     tags: ['cat', 'brown'],
     // },
     // dawgset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Dawg',
     //     img: 'Dawg.jpg',
     //     param: 'dawg',
@@ -1935,7 +1995,7 @@ export const selection = {
     //     tags: ['dog', 'brown'],
     // },
     // coolioset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Coolio',
     //     img: 'Coolio.jpg',
     //     param: 'coolio',
@@ -1945,7 +2005,7 @@ export const selection = {
     //     tags: ['dog'],
     // },
     // purrset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Purr',
     //     img: 'Purr.jpg',
     //     param: 'purr',
@@ -1955,7 +2015,7 @@ export const selection = {
     //     tags: ['red', 'cats'],
     // },
     // meowset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Meow',
     //     img: 'Meow.jpg',
     //     param: 'meow',
@@ -1965,7 +2025,7 @@ export const selection = {
     //     tags: ['pink', 'cats'],
     // },
     // cuteset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Cute',
     //     img: 'Cute.jpg',
     //     param: 'cute',
@@ -1975,7 +2035,7 @@ export const selection = {
     //     tags: ['blue', 'cat', 'navy'],
     // },
     // xrayset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'X-Ray',
     //     img: 'X-Ray.jpg',
     //     param: 'xray',
@@ -1985,7 +2045,7 @@ export const selection = {
     //     tags: ['blue', 'cat', 'navy'],
     // },
     // milkset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Milk',
     //     img: 'Milk.jpg',
     //     param: 'milk',
@@ -1995,7 +2055,7 @@ export const selection = {
     //     tags: ['white', 'black'],
     // },
     mooset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Moo Set',
         img: 'MooSet.jpg',
         param: 'mooset',
@@ -2005,7 +2065,7 @@ export const selection = {
         tags: ['grey', 'black'],
     },
     // jaguarset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Jaguar',
     //     img: 'Jaguar.jpg',
     //     param: 'jaguar',
@@ -2015,7 +2075,7 @@ export const selection = {
     //     tags: ['brown'],
     // },
     // rooset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Roo',
     //     img: 'Roo.jpg',
     //     param: 'roo',
@@ -2025,7 +2085,7 @@ export const selection = {
     //     tags: ['brown'],
     // },
     // hunterset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Hunter',
     //     img: 'Hunter.jpg',
     //     param: 'hunter',
@@ -2035,7 +2095,7 @@ export const selection = {
     //     tags: ['brown'],
     // },
     // featherset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Feather',
     //     img: 'Feather.jpg',
     //     param: 'feather',
@@ -2045,7 +2105,7 @@ export const selection = {
     //     tags: ['white', 'grey'],
     // },
     // flamingoset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Flamingo',
     //     img: 'Flamingo.jpg',
     //     param: 'flamingo',
@@ -2055,7 +2115,7 @@ export const selection = {
     //     tags: ['blue', 'orange'],
     // },
     // blackandwhiteset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Black & White',
     //     img: 'Black&White.jpg',
     //     param: 'blackandwhite',
@@ -2065,7 +2125,7 @@ export const selection = {
     //     tags: ['black', 'white'],
     // },
     // pandaset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Panda',
     //     img: 'Panda.jpg',
     //     param: 'panda',
@@ -2075,7 +2135,7 @@ export const selection = {
     //     tags: ['grey'],
     // },
     // ranchset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Ranch',
     //     img: 'Ranch.jpg',
     //     param: 'ranch',
@@ -2086,7 +2146,7 @@ export const selection = {
     //     tags: ['grey'],
     // },
     // violetredzebraset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Violet Red Zebra',
     //     img: 'VioletRedZebra.jpg',
     //     param: 'violetredzebra',
@@ -2096,7 +2156,7 @@ export const selection = {
     //     tags: ['purple', 'magenta'],
     // },
     // cobraset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Cobra',
     //     img: 'Cobra.jpg',
     //     param: 'cobra',
@@ -2106,7 +2166,7 @@ export const selection = {
     //     tags: ['animal', 'orange', 'brown'],
     // },
     // snakeskinset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Snakeskin',
     //     img: 'Snakeskin.jpg',
     //     param: 'snakeskin',
@@ -2116,7 +2176,7 @@ export const selection = {
     //     tags: ['animal', 'orange', 'brown'],
     // },
     // playset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Play',
     //     img: 'Play.jpg',
     //     param: 'play',
@@ -2126,7 +2186,7 @@ export const selection = {
     //     tags: ['blue', 'red'],
     // },
     // eagleset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Eagle',
     //     img: 'Eagle.jpg',
     //     param: 'eagle',
@@ -2136,7 +2196,7 @@ export const selection = {
     //     tags: ['blue', 'bird'],
     // },
     // owlsset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Owls',
     //     img: 'Owls.jpg',
     //     param: 'owls',
@@ -2146,7 +2206,7 @@ export const selection = {
     //     tags: ['brown'],
     // },
     // owliesset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Owlies',
     //     img: 'Owlies.jpg',
     //     param: 'owlies',
@@ -2155,18 +2215,28 @@ export const selection = {
     //     angled: true,
     //     tags: ['grey'],
     // },
-    // madagascarset: {
-    //     type: 'Mask',
-    //     color: 'Madagascar',
-    //     img: 'Madagascar.jpg',
-    //     param: 'madagascar',
-    //     price: setPrice,
-    //     category: 'animal',
-    //     angled: true,
-    //     tags: ['brown', 'yellow'],
-    // },
+    owlettesset: {
+        type: 'Bag',
+        color: 'Owlettesset',
+        img: 'OwlettesSet.jpg',
+        param: 'owlettesset',
+        price: setPrice,
+        category: 'animal',
+        angled: true,
+        tags: ['grey'],
+    },
+    madagascarset: {
+        type: 'Bag',
+        color: 'Madagascar Set',
+        img: 'MadagascarSet.jpg',
+        param: 'madagascarset',
+        price: setPrice,
+        category: 'animal',
+        angled: true,
+        tags: ['brown', 'yellow'],
+    },
     scoutset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Scout Set',
         img: 'ScoutSet.jpg',
         param: 'scoutset',
@@ -2176,7 +2246,7 @@ export const selection = {
         tags: ['brown', 'yellow'],
     },
     // parrotsset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Parrots',
     //     img: 'Parrots.jpg',
     //     param: 'parrots',
@@ -2186,7 +2256,7 @@ export const selection = {
     //     tags: ['bird', 'colorful'],
     // },
     // toucanset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Toucan',
     //     img: 'Toucan.jpg',
     //     param: 'toucan',
@@ -2196,7 +2266,7 @@ export const selection = {
     //     tags: ['bird', 'black'],
     // },
     // furrballsset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Furrballs',
     //     img: 'Furrballs.jpg',
     //     param: 'furrballs',
@@ -2205,18 +2275,18 @@ export const selection = {
     //     angled: true,
     //     tags: ['cats'],
     // },
-    // poochset: {
-    //     type: 'Mask',
-    //     color: 'Pooch',
-    //     img: 'Pooch.jpg',
-    //     param: 'pooch',
-    //     price: setPrice,
-    //     category: 'animal',
-    //     angled: true,
-    //     tags: ['dogs'],
-    // },
+    poochset: {
+        type: 'Bag',
+        color: 'Pooch Set',
+        img: 'PoochSet.jpg',
+        param: 'poochset',
+        price: setPrice,
+        category: 'animal',
+        angled: true,
+        tags: ['dogs'],
+    },
     // kennelset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Kennel',
     //     img: 'Kennel.jpg',
     //     param: 'kennel',
@@ -2226,7 +2296,7 @@ export const selection = {
     //     tags: ['dogs', 'brown'],
     // },
     // barkinglotset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Barking Lot',
     //     img: 'BarkingLot.jpg',
     //     param: 'barkinglot',
@@ -2236,7 +2306,7 @@ export const selection = {
     //     tags: ['dogs', 'brown'],
     // },
     // llamaset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Llama',
     //     img: 'Llama.jpg',
     //     param: 'llama',
@@ -2246,7 +2316,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     // arcticset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Arctic',
     //     img: 'Arctic.jpg',
     //     param: 'arctic',
@@ -2256,7 +2326,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     // seahorseset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Seahorse',
     //     img: 'Seahorse.jpg',
     //     param: 'seahorse',
@@ -2266,7 +2336,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     // penguinsset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Penguins',
     //     img: 'Penguins.jpg',
     //     param: 'penguins',
@@ -2276,7 +2346,7 @@ export const selection = {
     //     tags: ['white', 'grey', 'blue'],
     // },
     // dreamyset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Dreamy',
     //     img: 'Dreamy.jpg',
     //     param: 'dreamy',
@@ -2285,21 +2355,21 @@ export const selection = {
     //     angled: true,
     //     tags: ['blue'],
     // },
-    // dinoset: {
-    //     type: 'Mask',
-    //     color: 'Dino',
-    //     img: 'Dino.jpg',
-    //     param: 'dino',
-    //     price: setPrice,
-    //     category: 'animal',
-    //     angled: true,
-    //     tags: [],
-    // },
+    dinoset: {
+        type: 'Bag',
+        color: 'Dino Set',
+        img: 'DinoSet.jpg',
+        param: 'dinoset',
+        price: setPrice,
+        category: 'animal',
+        angled: true,
+        tags: [],
+    },
     // //////////////
     // // HAWAIIAN //
     // //////////////
     hulaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Hula Set',
         img: 'HulaSet.jpg',
         param: 'hulaset',
@@ -2309,7 +2379,7 @@ export const selection = {
         tags: ['pink', 'red', 'green'],
     },
     // pondset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Pond',
     //     img: 'Pond.jpg',
     //     param: 'pond',
@@ -2319,7 +2389,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     suaveset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Suave Set',
         img: 'SuaveSet.jpg',
         param: 'suaveset',
@@ -2329,7 +2399,7 @@ export const selection = {
         tags: ['grey'],
     },
     luauset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Luau Set',
         img: 'LuauSet.jpg',
         param: 'luauset',
@@ -2339,7 +2409,7 @@ export const selection = {
         tags: ['blue'],
     },
     palmsset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Palms Set',
         img: 'PalmsSet.jpg',
         param: 'palmsset',
@@ -2349,7 +2419,7 @@ export const selection = {
         tags: ['black'],
     },
     // koiset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Koi',
     //     img: 'Koi.jpg',
     //     param: 'koi',
@@ -2359,7 +2429,7 @@ export const selection = {
     //     tags: ['red', 'pink'],
     // },
     sunsetset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Sunset Set',
         img: 'SunsetSet.jpg',
         param: 'sunsetset',
@@ -2369,7 +2439,7 @@ export const selection = {
         tags: ['yellow'],
     },
     buttercupset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Buttercup Set',
         img: 'ButtercupSet.jpg',
         param: 'buttercupset',
@@ -2379,7 +2449,7 @@ export const selection = {
         tags: ['yellow'],
     },
     // skyset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Sky',
     //     img: 'Sky.jpg',
     //     param: 'sky',
@@ -2389,7 +2459,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     // alohaset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Aloha',
     //     img: 'Aloha.jpg',
     //     param: 'aloha',
@@ -2399,7 +2469,7 @@ export const selection = {
     //     tags: ['red', 'orange', 'yellow'],
     // },
     glowset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Glow Set',
         img: 'GlowSet.jpg',
         param: 'glowset',
@@ -2409,7 +2479,7 @@ export const selection = {
         tags: ['red', 'pink'],
     },
     canopyset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Canopy Set',
         img: 'CanopySet.jpg',
         param: 'canopyset',
@@ -2419,7 +2489,7 @@ export const selection = {
         tags: ['pink', 'green'],
     },
     // duskset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Dusk',
     //     img: 'Dusk.jpg',
     //     param: 'dusk',
@@ -2429,7 +2499,7 @@ export const selection = {
     //     tags: ['pink'],
     // },
     // surfset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Surf',
     //     img: 'Surf.jpg',
     //     param: 'surf',
@@ -2439,7 +2509,7 @@ export const selection = {
     //     tags: ['grey', 'yellow'],
     // },
     honoluluset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Honolulu Set',
         img: 'HonoluluSet.jpg',
         param: 'honoluluset',
@@ -2452,7 +2522,7 @@ export const selection = {
     // // FLORAL //
     // ////////////,
     // elegantset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Elegant',
     //     img: 'Elegant.jpg',
     //     param: 'elegant',
@@ -2462,17 +2532,17 @@ export const selection = {
     //     tags: ['black', 'gold', 'yellow'],
     // },
     eleganceset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Elegance Set',
         img: 'EleganceSet.jpg',
         param: 'eleganceset',
         price: setPrice,
         category: 'floral',
-        angled: false,
+        angled: true,
         tags: ['grey', 'gold', 'yellow'],
     },
     orientset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Orient Set',
         img: 'OrientSet.jpg',
         param: 'orientset',
@@ -2482,17 +2552,17 @@ export const selection = {
         tags: ['red', 'gold', 'yellow'],
     },
     gracefulset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Graceful Set',
         img: 'GracefulSet.jpg',
         param: 'gracefulset',
         price: setPrice,
         category: 'floral',
         angled: true,
-        tags: ['red', 'gold', 'yellow'],
+        tags: ['blue'],
     },
     divineset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Divine Set',
         img: 'DivineSet.jpg',
         param: 'divineset',
@@ -2502,7 +2572,7 @@ export const selection = {
         tags: ['black', 'gold', 'yellow'],
     },
     fragrantset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Fragrant Set',
         img: 'FragrantSet.jpg',
         param: 'fragrantset',
@@ -2512,7 +2582,7 @@ export const selection = {
         tags: ['black', 'red'],
     },
     brilliantset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Brilliant Set',
         img: 'BrilliantSet.jpg',
         param: 'brilliantset',
@@ -2522,7 +2592,7 @@ export const selection = {
         tags: ['black', 'blue'],
     },
     // charmset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Charm',
     //     img: 'Charm.jpg',
     //     param: 'charm',
@@ -2532,7 +2602,7 @@ export const selection = {
     //     tags: ['pink'],
     // },
     vibrantset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Vibrant Set',
         img: 'VibrantSet.jpg',
         param: 'vibrantset',
@@ -2542,7 +2612,7 @@ export const selection = {
         tags: ['purple', 'blue'],
     },
     // sereneset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Serene',
     //     img: 'Serene.jpg',
     //     param: 'serene',
@@ -2552,7 +2622,7 @@ export const selection = {
     //     tags: ['black'],
     // },
     // bouquetset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Bouquet',
     //     img: 'Bouquet.jpg',
     //     param: 'bouquet',
@@ -2562,7 +2632,7 @@ export const selection = {
     //     tags: ['black', 'purple'],
     // },
     // lunaset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Luna',
     //     img: 'Luna.jpg',
     //     param: 'luna',
@@ -2572,7 +2642,7 @@ export const selection = {
     //     tags: ['white', 'blue'],
     // },
     crystallisset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Crystallis Set',
         img: 'CrystallisSet.jpg',
         param: 'crystallisset',
@@ -2581,8 +2651,18 @@ export const selection = {
         angled: true,
         tags: ['white', 'black'],
     },
+    ecstaticset: {
+        type: 'Bag',
+        color: 'Ecstatic Set',
+        img: 'EcstaticSet.jpg',
+        param: 'ecstaticset',
+        price: setPrice,
+        category: 'floral',
+        angled: true,
+        tags: ['orange'],
+    },
     // amethystset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Amethyst',
     //     img: 'Amethyst.jpg',
     //     param: 'amethyst',
@@ -2592,7 +2672,7 @@ export const selection = {
     //     tags: ['purple', 'violet'],
     // },
     // glistenset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Glisten',
     //     img: 'Glisten.jpg',
     //     param: 'glisten',
@@ -2602,7 +2682,7 @@ export const selection = {
     //     tags: ['purple', 'violet'],
     // },
     growthset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Growth Set',
         img: 'GrowthSet.jpg',
         param: 'growthset',
@@ -2612,7 +2692,7 @@ export const selection = {
         tags: ['green'],
     },
     // maroonaset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Maroona',
     //     img: 'Maroona.jpg',
     //     param: 'maroona',
@@ -2622,7 +2702,7 @@ export const selection = {
     //     tags: ['maroon', 'red'],
     // },
     curaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Cura Set',
         img: 'CuraSet.jpg',
         param: 'curaset',
@@ -2632,7 +2712,7 @@ export const selection = {
         tags: ['maroon', 'red'],
     },
     // wondrousset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Wondrous',
     //     img: 'Wondrous.jpg',
     //     param: 'wondrous',
@@ -2642,7 +2722,7 @@ export const selection = {
     //     tags: ['black', 'gold', 'yellow'],
     // },
     aretiaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Aretia Set',
         img: 'AretiaSet.jpg',
         param: 'aretiaset',
@@ -2652,7 +2732,7 @@ export const selection = {
         tags: ['blue', 'gold'],
     },
     beautyset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Beauty Set',
         img: 'BeautySet.jpg',
         param: 'beautyset',
@@ -2662,7 +2742,7 @@ export const selection = {
         tags: ['black', 'yellow'],
     },
     exquisiteset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Exquisite Set',
         img: 'ExquisiteSet.jpg',
         param: 'exquisiteset',
@@ -2672,7 +2752,7 @@ export const selection = {
         tags: ['red'],
     },
     // splendidset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Splendid',
     //     img: 'Splendid.jpg',
     //     param: 'splendid',
@@ -2682,7 +2762,7 @@ export const selection = {
     //     tags: ['green'],
     // },
     luckset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Luck Set',
         img: 'LuckSet.jpg',
         param: 'luckset',
@@ -2692,7 +2772,7 @@ export const selection = {
         tags: ['green'],
     },
     flowerbedset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Flowerbed Set',
         img: 'FlowerbedSet.jpg',
         param: 'flowerbedset',
@@ -2702,7 +2782,7 @@ export const selection = {
         tags: [],
     },
     passionset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Passion Set',
         img: 'PassionSet.jpg',
         param: 'passionset',
@@ -2712,7 +2792,7 @@ export const selection = {
         tags: ['purple', 'violet'],
     },
     fluorescentset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Fluorescent Set',
         img: 'FluorescentSet.jpg',
         param: 'fluorescentset',
@@ -2722,7 +2802,7 @@ export const selection = {
         tags: ['black'],
     },
     dahliaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Dahlia Set',
         img: 'DahliaSet.jpg',
         param: 'dahliaset',
@@ -2732,7 +2812,7 @@ export const selection = {
         tags: ['brown'],
     },
     // luxuriousset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Luxurious',
     //     img: 'Luxurious.jpg',
     //     param: 'luxurious',
@@ -2742,7 +2822,7 @@ export const selection = {
     //     tags: ['purple', 'violet'],
     // },
     // miracleset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Miracle',
     //     img: 'Miracle.jpg',
     //     param: 'miracle',
@@ -2752,7 +2832,7 @@ export const selection = {
     //     tags: ['purple', 'pink'],
     // },
     marvelset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Marvel Set',
         img: 'MarvelSet.jpg',
         param: 'marvelset',
@@ -2762,7 +2842,7 @@ export const selection = {
         tags: ['blue'],
     },
     // sunlightset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Sunlight',
     //     img: 'Sunlight.jpg',
     //     param: 'sunlight',
@@ -2772,7 +2852,7 @@ export const selection = {
     //     tags: ['orange'],
     // },
     // delightset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Delight',
     //     img: 'Delight.jpg',
     //     param: 'delight',
@@ -2782,7 +2862,7 @@ export const selection = {
     //     tags: ['white'],
     // },
     // ornateset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Ornate',
     //     img: 'Ornate.jpg',
     //     param: 'ornate',
@@ -2792,7 +2872,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     swellset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Swell Set',
         img: 'SwellSet.jpg',
         param: 'swellset',
@@ -2802,7 +2882,7 @@ export const selection = {
         tags: ['red'],
     },
     // enchantingset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Enchanting',
     //     img: 'Enchanting.jpg',
     //     param: 'enchanting',
@@ -2812,7 +2892,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     flourishset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Flourish Set',
         img: 'FlourishSet.jpg',
         param: 'flourishset',
@@ -2822,7 +2902,7 @@ export const selection = {
         tags: ['white', 'blue'],
     },
     edenset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Eden Set',
         img: 'EdenSet.jpg',
         param: 'edenset',
@@ -2832,7 +2912,7 @@ export const selection = {
         tags: ['white', 'blue'],
     },
     earthset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'EarthSet',
         img: 'EarthSet.jpg',
         param: 'earthset',
@@ -2842,7 +2922,7 @@ export const selection = {
         tags: ['brown'],
     },
     // majesticset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Majestic',
     //     img: 'Majestic.jpg',
     //     param: 'majestic',
@@ -2852,7 +2932,7 @@ export const selection = {
     //     tags: ['red', 'yellow'],
     // },
     // lovelyset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Lovely',
     //     img: 'Lovely.jpg',
     //     param: 'lovely',
@@ -2861,18 +2941,18 @@ export const selection = {
     //     angled: true,
     //     tags: ['black', 'red'],
     // },
-    // pureset: {
-    //     type: 'Mask',
-    //     color: 'Pure',
-    //     img: 'Pure.jpg',
-    //     param: 'pure',
-    //     price: setPrice,
-    //     category: 'floral',
-    //     angled: true,
-    //     tags: ['black', 'white'],
-    // },
+    pureset: {
+        type: 'Bag',
+        color: 'Pure Set',
+        img: 'PureSet.jpg',
+        param: 'pureset',
+        price: setPrice,
+        category: 'floral',
+        angled: true,
+        tags: ['black', 'white'],
+    },
     // clarityset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Clarity',
     //     img: 'Clarity.jpg',
     //     param: 'clarity',
@@ -2882,7 +2962,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     // silvermoonset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Silvermoon',
     //     img: 'Silvermoon.jpg',
     //     param: 'silvermoon',
@@ -2892,7 +2972,7 @@ export const selection = {
     //     tags: ['black', 'silver'],
     // },
     exuberantset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Exuberant Set',
         img: 'ExuberantSet.jpg',
         param: 'exuberantset',
@@ -2902,7 +2982,7 @@ export const selection = {
         tags: ['black', 'white'],
     },
     heavenlyset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Heavenly Set',
         img: 'HeavenlySet.jpg',
         param: 'heavenlyset',
@@ -2912,7 +2992,7 @@ export const selection = {
         tags: ['blue', 'white'],
     },
     // affectionset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Affection',
     //     img: 'Affection.jpg',
     //     param: 'affection',
@@ -2922,7 +3002,7 @@ export const selection = {
     //     tags: ['blue', 'white'],
     // },
     // sapphireset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Sapphire',
     //     img: 'Sapphire.jpg',
     //     param: 'sapphire',
@@ -2932,7 +3012,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     // rubyset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Ruby',
     //     img: 'Ruby.jpg',
     //     param: 'ruby',
@@ -2942,7 +3022,7 @@ export const selection = {
     //     tags: ['red'],
     // },
     // preciousset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Precious',
     //     img: 'Precious.jpg',
     //     param: 'precious',
@@ -2952,7 +3032,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     // antiqueset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Antique',
     //     img: 'Antique.jpg',
     //     param: 'antique',
@@ -2962,7 +3042,7 @@ export const selection = {
     //     tags: ['green'],
     // },
     naturalset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Natural Set',
         img: 'NaturalSet.jpg',
         param: 'naturalset',
@@ -2972,7 +3052,7 @@ export const selection = {
         tags: ['yellow'],
     },
     // honeyset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Honey',
     //     img: 'Honey.jpg',
     //     param: 'honey',
@@ -2982,7 +3062,7 @@ export const selection = {
     //     tags: ['black', 'yellow'],
     // },
     tranquilset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Tranquil Set',
         img: 'TranquilSet.jpg',
         param: 'tranquilset',
@@ -2992,7 +3072,7 @@ export const selection = {
         tags: ['blue'],
     },
     bloomset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Bloom Set',
         img: 'BloomSet.jpg',
         param: 'bloomset',
@@ -3002,7 +3082,7 @@ export const selection = {
         tags: [],
     },
     bubblyset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Bubbly Set',
         img: 'BubblySet.jpg',
         param: 'bubblyset',
@@ -3012,7 +3092,7 @@ export const selection = {
         tags: ['pink'],
     },
     // pleasantriesset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Pleasantries',
     //     img: 'Pleasantries.jpg',
     //     param: 'pleasantries',
@@ -3022,7 +3102,7 @@ export const selection = {
     //     tags: ['purple', 'beige', 'brown'],
     // },
     // brightset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Bright',
     //     img: 'Bright.jpg',
     //     param: 'bright',
@@ -3032,7 +3112,7 @@ export const selection = {
     //     tags: [''],
     // },
     blossomset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Blossom Set',
         img: 'BlossomSet.jpg',
         param: 'blossomset',
@@ -3042,7 +3122,7 @@ export const selection = {
         tags: ['pink'],
     },
     bloomingset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Blooming Set',
         img: 'BloomingSet.jpg',
         param: 'bloomingset',
@@ -3052,7 +3132,7 @@ export const selection = {
         tags: ['pink'],
     },
     // harvestset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Harvest',
     //     img: 'Harvest.jpg',
     //     param: 'harvest',
@@ -3062,7 +3142,7 @@ export const selection = {
     //     tags: ['brown', 'orange'],
     // },
     // adoreset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Adore',
     //     img: 'Adore.jpg',
     //     param: 'adore',
@@ -3072,7 +3152,7 @@ export const selection = {
     //     tags: ['blue', 'pink'],
     // },
     // blissset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Bliss',
     //     img: 'Bliss.jpg',
     //     param: 'bliss',
@@ -3082,7 +3162,7 @@ export const selection = {
     //     tags: ['blue', 'purple'],
     // },
     // thriveset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Thrive',
     //     img: 'Thrive.jpg',
     //     param: 'thrive',
@@ -3092,7 +3172,7 @@ export const selection = {
     //     tags: ['blue', 'pink'],
     // },
     // flatterset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Flatter',
     //     img: 'Flatter.jpg',
     //     param: 'flatter',
@@ -3102,7 +3182,7 @@ export const selection = {
     //     tags: ['blue', 'yellow'],
     // },
     // vividset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Vivid',
     //     img: 'Vivid.jpg',
     //     param: 'vivid',
@@ -3112,7 +3192,7 @@ export const selection = {
     //     tags: ['purple'],
     // },
     // zenset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Zen',
     //     img: 'Zen.jpg',
     //     param: 'zen',
@@ -3122,7 +3202,7 @@ export const selection = {
     //     tags: [],
     // },
     // captivateset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Captivate',
     //     img: 'Captivate.jpg',
     //     param: 'captivate',
@@ -3132,7 +3212,7 @@ export const selection = {
     //     tags: ['black', 'yellow'],
     // },
     // cherishset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Cherish',
     //     img: 'Cherish.jpg',
     //     param: 'cherish',
@@ -3142,7 +3222,7 @@ export const selection = {
     //     tags: ['brown', 'orange'],
     // },
     rosesset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Roses Set',
         img: 'RosesSet.jpg',
         param: 'rosesset',
@@ -3152,7 +3232,7 @@ export const selection = {
         tags: ['red'],
     },
     // prettyset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Pretty',
     //     img: 'Pretty.jpg',
     //     param: 'pretty',
@@ -3162,7 +3242,7 @@ export const selection = {
     //     tags: ['green', 'blue'],
     // },
     // floretset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Floret',
     //     img: 'Floret.jpg',
     //     param: 'floret',
@@ -3171,18 +3251,18 @@ export const selection = {
     //     angled: true,
     //     tags: ['green', 'pink', 'purple'],
     // },
-    // harmonyset: {
-    //     type: 'Mask',
-    //     color: 'Harmony',
-    //     img: 'Harmony.jpg',
-    //     param: 'harmony',
-    //     price: setPrice,
-    //     category: 'floral',
-    //     angled: true,
-    //     tags: ['brown', 'yellow'],
-    // },
+    harmonyset: {
+        type: 'Bag',
+        color: 'Harmony Set',
+        img: 'HarmonySet.jpg',
+        param: 'harmonyset',
+        price: setPrice,
+        category: 'floral',
+        angled: true,
+        tags: ['brown', 'yellow'],
+    },
     gardenset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Garden Set',
         img: 'GardenSet.jpg',
         param: 'gardenset',
@@ -3192,7 +3272,7 @@ export const selection = {
         tags: [],
     },
     // bountifulset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Bountiful',
     //     img: 'Bountiful.jpg',
     //     param: 'bountiful',
@@ -3202,7 +3282,7 @@ export const selection = {
     //     tags: ['yellow'],
     // },
     // opalset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Opal',
     //     img: 'Opal.jpg',
     //     param: 'opal',
@@ -3212,7 +3292,7 @@ export const selection = {
     //     tags: ['pink'],
     // },
     springset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Spring Set',
         img: 'SpringSet.jpg',
         param: 'springset',
@@ -3222,7 +3302,7 @@ export const selection = {
         tags: ['pink', 'blue', 'green'],
     },
     // buoyantset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Buoyant',
     //     img: 'Buoyant.jpg',
     //     param: 'buoyant',
@@ -3232,7 +3312,7 @@ export const selection = {
     //     tags: ['pink'],
     // },
     // cultivateset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Cultivate',
     //     img: 'Cultivate.jpg',
     //     param: 'cultivate',
@@ -3242,7 +3322,7 @@ export const selection = {
     //     tags: ['black', 'orange', 'red'],
     // },
     // treasureset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Treasure',
     //     img: 'Treasure.jpg',
     //     param: 'treasure',
@@ -3252,7 +3332,7 @@ export const selection = {
     //     tags: ['black', 'red'],
     // },
     // perfumeset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Perfume',
     //     img: 'Perfume.jpg',
     //     param: 'perfume',
@@ -3262,7 +3342,7 @@ export const selection = {
     //     tags: ['purple', 'violet', 'lavender'],
     // },
     // parfumset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Parfum',
     //     img: 'Parfum.jpg',
     //     param: 'parfum',
@@ -3272,7 +3352,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     // coralset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Coral',
     //     img: 'Coral.jpg',
     //     param: 'coral',
@@ -3282,7 +3362,7 @@ export const selection = {
     //     tags: ['blue', 'purple'],
     // },
     // magnificentset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Magnificent',
     //     img: 'Magnificent.jpg',
     //     param: 'magnificent',
@@ -3292,7 +3372,7 @@ export const selection = {
     //     tags: ['black', 'red'],
     // },
     // meadowset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Meadow',
     //     img: 'Meadow.jpg',
     //     param: 'meadow',
@@ -3302,7 +3382,7 @@ export const selection = {
     //     tags: ['yellow', 'orange', 'blue'],
     // },
     sunshineset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Sunshine Set',
         img: 'SunshineSet.jpg',
         param: 'sunshineset',
@@ -3312,7 +3392,7 @@ export const selection = {
         tags: ['white', 'blue', 'yellow', 'red'],
     },
     // beamingset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Beaming',
     //     img: 'Beaming.jpg',
     //     param: 'beaming',
@@ -3322,7 +3402,7 @@ export const selection = {
     //     tags: ['blue', 'orange'],
     // },
     // floralwhiteset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Floral White',
     //     img: 'FloralWhite.jpg',
     //     param: 'floralwhite',
@@ -3332,7 +3412,7 @@ export const selection = {
     //     tags: [],
     // },
     // purpleplaidset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Purple Plaid',
     //     img: 'PurplePlaid.jpg',
     //     param: 'purpleplaid',
@@ -3342,7 +3422,7 @@ export const selection = {
     //     tags: ['lavender', 'violet'],
     // },
     // orangeplaidset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Orange Plaid',
     //     img: 'OrangePlaid.jpg',
     //     param: 'orangeplaid',
@@ -3352,7 +3432,7 @@ export const selection = {
     //     tags: [],
     // },
     // hempset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Hemp',
     //     img: 'Hemp.jpg',
     //     param: 'hemp',
@@ -3362,7 +3442,7 @@ export const selection = {
     //     tags: ['green'],
     // },
     // stunningset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Stunning',
     //     img: 'Stunning.jpg',
     //     param: 'stunning',
@@ -3372,7 +3452,7 @@ export const selection = {
     //     tags: ['blue', 'white'],
     // },
     // fairytaleset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Fairytale',
     //     img: 'Fairytale.jpg',
     //     param: 'fairytale',
@@ -3385,7 +3465,7 @@ export const selection = {
     // // MEMORIAL //
     // //////////////
     nationalset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'National Set',
         img: 'NationalSet.jpg',
         param: 'nationalset',
@@ -3395,7 +3475,7 @@ export const selection = {
         tags: ['red', 'white', 'blue'],
     },
     courageset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Courage Set',
         img: 'CourageSet.jpg',
         param: 'courageset',
@@ -3405,7 +3485,7 @@ export const selection = {
         tags: ['red', 'white', 'blue'],
     },
     dutyset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Duty Set',
         img: 'DutySet.jpg',
         param: 'dutyset',
@@ -3415,7 +3495,7 @@ export const selection = {
         tags: ['brown'],
     },
     honorset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Honor Set',
         img: 'HonorSet.jpg',
         param: 'honorset',
@@ -3425,7 +3505,7 @@ export const selection = {
         tags: ['blue'],
     },
     iloveusaset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'I Love USA Set',
         img: 'ILoveUSASet.jpg',
         param: 'iloveusaset',
@@ -3435,7 +3515,7 @@ export const selection = {
         tags: [],
     },
     // usaset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'USA',
     //     img: 'USA.jpg',
     //     param: 'usa',
@@ -3445,7 +3525,7 @@ export const selection = {
     //     tags: ['red', 'white', 'blue'],
     // },
     // americanset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'American',
     //     img: 'American.jpg',
     //     param: 'american',
@@ -3455,7 +3535,7 @@ export const selection = {
     //     tags: ['red', 'white', 'blue'],
     // },
     // patriotset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Patriot',
     //     img: 'Patriot.jpg',
     //     param: 'patriot',
@@ -3465,7 +3545,7 @@ export const selection = {
     //     tags: ['red', 'white', 'blue'],
     // },
     // classicset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Classic',
     //     img: 'Classic.jpg',
     //     param: 'classic',
@@ -3475,7 +3555,7 @@ export const selection = {
     //     tags: ['red', 'white', 'blue'],
     // },
     // nationalset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'National',
     //     img: 'National.jpg',
     //     param: 'national',
@@ -3485,7 +3565,7 @@ export const selection = {
     //     tags: ['red', 'white', 'blue'],
     // },
     // libertyset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Liberty',
     //     img: 'Liberty.jpg',
     //     param: 'liberty',
@@ -3495,7 +3575,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     // gloryset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Glory',
     //     img: 'Glory.jpg',
     //     param: 'glory',
@@ -3505,7 +3585,7 @@ export const selection = {
     //     tags: ['black'],
     // },
     // serviceset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Service',
     //     img: 'Service.jpg',
     //     param: 'service',
@@ -3515,7 +3595,7 @@ export const selection = {
     //     tags: ['green'],
     // },
     // airforceset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'United',
     //     img: 'AirForce.jpg',
     //     param: 'airforce',
@@ -3525,7 +3605,7 @@ export const selection = {
     //     tags: ['brown', 'army'],
     // },
     // marinesset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Marines',
     //     img: 'Marines.jpg',
     //     param: 'marines',
@@ -3535,7 +3615,7 @@ export const selection = {
     //     tags: ['brown', 'army'],
     // },
     // usnavyset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'US Navy',
     //     img: 'USNavy.jpg',
     //     param: 'usnavy',
@@ -3545,7 +3625,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     // armyset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Army',
     //     img: 'Army.jpg',
     //     param: 'army',
@@ -3555,7 +3635,7 @@ export const selection = {
     //     tags: ['blue'],
     // },
     excellenceset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Excellence Set',
         img: 'ExcellenceSet.jpg',
         param: 'excellenceset',
@@ -3565,7 +3645,7 @@ export const selection = {
         tags: ['blue'],
     },
     // veteranset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Veteran',
     //     img: 'Veteran.jpg',
     //     param: 'veteran',
@@ -3574,18 +3654,18 @@ export const selection = {
     //     angled: true,
     //     tags: ['brown'],
     // },
-    // forcesset: {
-    //     type: 'Mask',
-    //     color: 'Forces',
-    //     img: 'Forces.jpg',
-    //     param: 'forces',
-    //     price: setPrice,
-    //     category: 'patriot',
-    //     angled: true,
-    //     tags: ['green'],
-    // },
+    forcesset: {
+        type: 'Bag',
+        color: 'Forces Set',
+        img: 'ForcesSet.jpg',
+        param: 'forcesset',
+        price: setPrice,
+        category: 'patriot',
+        angled: true,
+        tags: ['green'],
+    },
     // saluteset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Salute',
     //     img: 'Salute.jpg',
     //     param: 'salute',
@@ -3595,7 +3675,7 @@ export const selection = {
     //     tags: ['green'],
     // },
     // tagsset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Tags',
     //     img: 'Tags.jpg',
     //     param: 'tags',
@@ -3608,7 +3688,7 @@ export const selection = {
     // // HOLIDAY //
     // ////////////
     slantset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Slant Set',
         img: 'SlantSet.jpg',
         param: 'slantset',
@@ -3618,7 +3698,7 @@ export const selection = {
         tags: [''],
     },
     buggiesset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Buggies Set',
         img: 'BuggiesSet.jpg',
         param: 'buggiesset',
@@ -3627,18 +3707,18 @@ export const selection = {
         angled: true,
         tags: [''],
     },
-    // booset: {
-    //     type: 'Mask',
-    //     color: 'Boo',
-    //     img: 'Boo.jpg',
-    //     param: 'boo',
-    //     price: setPrice,
-    //     category: 'pattern',
-    //     angled: true,
-    //     tags: [''],
-    // },
+    cozyset: {
+        type: 'Bag',
+        color: 'Cozy Set',
+        img: 'CozySet.jpg',
+        param: 'cozyset',
+        price: setPrice,
+        category: 'pattern',
+        angled: true,
+        tags: ['brown'],
+    },
     // crawlerset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Crawler',
     //     img: 'Crawler.jpg',
     //     param: 'crawler',
@@ -3648,7 +3728,7 @@ export const selection = {
     //     tags: [''],
     // },
     // mistletoeset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Mistletoe',
     //     img: 'Mistletoe.jpg',
     //     param: 'mistletoe',
@@ -3658,7 +3738,7 @@ export const selection = {
     //     tags: [''],
     // },
     // poinsettiaset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Poinsettia',
     //     img: 'Poinsettia.jpg',
     //     param: 'poinsettia',
@@ -3668,7 +3748,7 @@ export const selection = {
     //     tags: [''],
     // },
     cheersset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Cheers Set',
         img: 'CheersSet.jpg',
         param: 'cheersset',
@@ -3678,7 +3758,7 @@ export const selection = {
         tags: [''],
     },
     // santaset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Santa',
     //     img: 'Santa.jpg',
     //     param: 'santa',
@@ -3688,7 +3768,7 @@ export const selection = {
     //     tags: [''],
     // },
     merryset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Merry Set',
         img: 'MerrySet.jpg',
         param: 'merryset',
@@ -3698,7 +3778,7 @@ export const selection = {
         tags: [''],
     },
     // snowmanset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Snowman',
     //     img: 'Snowman.jpg',
     //     param: 'snowman',
@@ -3708,7 +3788,7 @@ export const selection = {
     //     tags: [''],
     // },
     // shinglesset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Shingles',
     //     img: 'Shingles.jpg',
     //     param: 'shingles',
@@ -3718,7 +3798,7 @@ export const selection = {
     //     tags: [''],
     // },
     // frostyset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Frosty',
     //     img: 'Frosty.jpg',
     //     param: 'frosty',
@@ -3728,7 +3808,7 @@ export const selection = {
     //     tags: [''],
     // },
     // reindeerset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Reindeer',
     //     img: 'Reindeer.jpg',
     //     param: 'reindeer',
@@ -3738,7 +3818,7 @@ export const selection = {
     //     tags: [''],
     // },
     // jinglebellsset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Jingle Bells',
     //     img: 'JingleBells.jpg',
     //     param: 'jinglebells',
@@ -3748,7 +3828,7 @@ export const selection = {
     //     tags: [''],
     // },
     // merryplaidset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Merry Plaid',
     //     img: 'MerryPlaid.jpg',
     //     param: 'merryplaid',
@@ -3758,7 +3838,7 @@ export const selection = {
     //     tags: [''],
     // },
     // swanset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Swan',
     //     img: 'Swan.jpg',
     //     param: 'swan',
@@ -3768,7 +3848,7 @@ export const selection = {
     //     tags: [''],
     // },
     // snowyset: {
-    //     type: 'Mask',
+    //     type: 'Bag',
     //     color: 'Snowy',
     //     img: 'Snowy.jpg',
     //     param: 'snowy',
@@ -3778,7 +3858,7 @@ export const selection = {
     //     tags: [''],
     // },
     fortuneset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Fortune Set',
         img: 'FortuneSet.jpg',
         param: 'fortuneset',
@@ -3787,18 +3867,18 @@ export const selection = {
         angled: true,
         tags: [''],
     },
-    // angelicset: {
-    //     type: 'Mask',
-    //     color: 'Angelic',
-    //     img: 'Angelic.jpg',
-    //     param: 'angelic',
-    //     price: setPrice,
-    //     category: 'holiday',
-    //     angled: true,
-    //     tags: [''],
-    // },
+    angelicset: {
+        type: 'Bag',
+        color: 'Angelic Set',
+        img: 'AngelicSet.jpg',
+        param: 'angelicset',
+        price: setPrice,
+        category: 'holiday',
+        angled: true,
+        tags: ['blue'],
+    },
     jovialset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Jovial Set',
         img: 'JovialSet.jpg',
         param: 'jovialset',
@@ -3808,7 +3888,7 @@ export const selection = {
         tags: [''],
     },
     pineappleset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Pineapple Set',
         img: 'PineappleSet.jpg',
         param: 'pineappleset',
@@ -3818,7 +3898,7 @@ export const selection = {
         tags: ['pink'],
     },
     greeneryset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Greenery Set',
         img: 'GreenerySet.jpg',
         param: 'greeneryset',
@@ -3828,7 +3908,7 @@ export const selection = {
         tags: ['green'],
     },
         giftsset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Gifts Set',
         img: 'GiftsSet.jpg',
         param: 'giftsset',
@@ -3837,18 +3917,18 @@ export const selection = {
         angled: true,
         tags: [''],
     },
-    // flamingodanceset: {
-    //     type: 'Mask',
-    //     color: 'Flamingo Dance',
-    //     img: 'FlamingoDance.jpg',
-    //     param: 'flamingodance',
-    //     price: setPrice,
-    //     category: 'animal',
-    //     angled: true,
-    //     tags: [''],
-    // },
+    flamingodanceset: {
+        type: 'Bag',
+        color: 'Flamingo Dance Set',
+        img: 'FlamingoDanceSet.jpg',
+        param: 'flamingodanceset',
+        price: setPrice,
+        category: 'animal',
+        angled: true,
+        tags: [''],
+    },
     exoticset: {
-        type: 'Mask',
+        type: 'Bag',
         color: 'Exotic Set',
         img: 'ExoticSet.jpg',
         param: 'exoticset',
@@ -3857,44 +3937,4 @@ export const selection = {
         angled: true,
         tags: [''],
     },
-    // choirset: {
-    //     type: 'Mask',
-    //     color: 'Choir',
-    //     img: 'Choir.jpg',
-    //     param: 'choir',
-    //     price: setPrice,
-    //     category: 'holiday',
-    //     angled: true,
-    //     tags: [''],
-    // },
-    // christmasset: {
-    //     type: 'Mask',
-    //     color: 'Christmas',
-    //     img: 'Christmas.jpg',
-    //     param: 'christmas',
-    //     price: setPrice,
-    //     category: 'holiday',
-    //     angled: true,
-    //     tags: [''],
-    // },
-    // ornamentset: {
-    //     type: 'Mask',
-    //     color: 'Ornament',
-    //     img: 'Ornament.jpg',
-    //     param: 'ornament',
-    //     price: setPrice,
-    //     category: 'holiday',
-    //     angled: true,
-    //     tags: [''],
-    // },
-    // rosemaryset: {
-    //     type: 'Mask',
-    //     color: 'Rosemary',
-    //     img: 'Rosemary.jpg',
-    //     param: 'rosemary',
-    //     price: setPrice,
-    //     category: 'holiday',
-    //     angled: true,
-    //     tags: [''],
-    // },
 };

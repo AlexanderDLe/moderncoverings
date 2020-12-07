@@ -63,7 +63,7 @@ function DesignCard({ design, setYCoordinate }) {
             <Link
                 onClick={handleLinkClick}
                 className={classes.designName}
-                to={`/item/bag/${design.param}`}
+                to={`/item/${design.param}`}
             >
                 <Card className={classes.root} elevation={1}>
                     <CardMedia

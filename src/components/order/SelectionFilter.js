@@ -6,7 +6,7 @@ import Container from '@material-ui/core/Container';
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
-        backgroundColor: 'rgb(42,42,42)',
+        backgroundColor: theme.palette.primary.main,
     },
     container: {
         maxWidth: 700,
