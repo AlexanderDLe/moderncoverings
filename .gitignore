@@ -33,8 +33,3 @@ yarn-error.log*
 
 #archive
 /archive
-
-#Incremental
-/src/img/BagSetModelPhotos
-/src/img/ProductPhotos
-/src/img/Icons
