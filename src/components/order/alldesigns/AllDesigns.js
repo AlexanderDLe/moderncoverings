@@ -74,12 +74,7 @@ const searchThroughSelection = (selection, searchTerm) => {
     return selectionResults;
 };
 
-export default ({
-    showMoreObj,
-    setShowMoreObj,
-    yCoordinate,
-    setYCoordinate,
-}) => {
+export default () => {
     const navMediaQuery = useMediaQuery('(min-width:900px)');
 
     const classes = useStyles();
@@ -153,10 +148,6 @@ export default ({
                     selectionPadding={selectionPadding}
                     searchTerm={searchTerm}
                     handleSearchTermChange={handleSearchTermChange}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    yCoordinate={yCoordinate}
-                    setYCoordinate={setYCoordinate}
                     filter={filter}
                     solid={solid}
                     patriot={patriot}

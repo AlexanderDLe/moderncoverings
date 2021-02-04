@@ -49,7 +49,7 @@ function Banner() {
             )}
             <div className={classes.textbox}>
                 <p>
-                    Use Code <strong>HOLIDAY15</strong> And Get 15% Off 45$+ Orders
+                    Use Code <strong>15OFF</strong> And Get 15% Off 45$+ Orders
                 </p>
             </div>
             {navMediaQuery450 ? (

@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { resetOrders } from '../../slices/cartSlice';
+
 import keys from '../../config/keys';
 import { Link, Redirect } from 'react-router-dom';
 import { PayPalButton } from 'react-paypal-button-v2';
 import { useMediaQuery } from '@material-ui/core';
 import moment from 'moment-timezone';
-import ReactGA from 'react-ga';
-import ReactPinterestTag from 'react-pinterest-tag';
-import TagManager from 'react-gtm-module';
+import ReactPixel from 'react-facebook-pixel';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -33,7 +34,7 @@ const client = {
     production: keys.paypalProductionID,
 };
 const currency = 'USD';
-const discountCode = 'HOLIDAY15';
+const discountCode = '15OFF';
 const discountThreshold = 45;
 const shippingFee = 0;
 
@@ -118,22 +119,25 @@ const extractOrderData = (ordersToExtract) => {
     return extractedOrders;
 };
 
+const PurchasedBag = (orders) => {
+    console.log('orders', orders);
+    for (let order of orders) {
+        if (order.type === 'Bag') return true;
+    }
+    return false;
+};
+
 const CART = 'CART';
 const CHECKOUT = 'CHECKOUT';
 
-const Cart = ({
-    orders,
-    removeOrder,
-    resetOrders,
-    amount,
-    mode,
-    logReactPixelPurchase,
-    usedDiscountButton,
-    setUsedDiscountButton,
-}) => {
+const Cart = ({logReactPixelPurchase}) => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const dispatch = useDispatch();
+    const orders = useSelector(state => state.cart.orders);
+    const amount = useSelector(state => state.cart.amount);
 
     const classes = useStyles();
     const [checkoutMode, setCheckoutMode] = useState(CART);
@@ -145,7 +149,8 @@ const Cart = ({
 
     // Checkout Configuration
     const itemAmount = amount;
-    const env = mode;
+    const mode = useSelector(state => state.app.mode);
+    
     const subtotal = useMemo(() => {
         return calculateSubtotal(orders);
     }, [orders]);
@@ -233,45 +238,16 @@ const Cart = ({
             value: amount,
         });
 
-        // Pinterest Event
-        ReactPinterestTag.track('checkout', {
-            order_id: orderID,
-            value: parseInt(amount),
-            currency: 'USD',
-        });
+        let purchasedBag = PurchasedBag(orders);
 
-        // Google Tag Manager Data Layer
-        const tagManagerArgs = {
-            gtmId: 'GTM-MRHPV6X',
-            dataLayer: {
-                event: 'CAF_Purchase',
-                caf_orderID: orderID,
-                caf_value: amount,
-            },
-        };
-        TagManager.dataLayer(tagManagerArgs);
+        if (purchasedBag) {
+            console.log('PurchaseBag', purchasedBag);
+            ReactPixel.trackCustom('PurchaseBag', {
+                value: 10,
+            });
+        }
 
-        // Google Analytics
-        ReactGA.plugin.execute('ec', 'setAction', 'purchase', {
-            id: orderID,
-            affiliation: 'Modern Coverings',
-            revenue: amount,
-            shipping: 0,
-            tax: 0,
-            currency: 'USD',
-        });
-        /* ReactGA.plugin.execute('ec', 'setAction', 'purchase', {
-            id: orderID,
-            name: 'Purchase',
-            sku: 'A1',
-            category: 'Face Coverings',
-            price: amount.toString(),
-            quantity: itemAmount.toString,
-        }); */
-        ReactGA.plugin.execute('ec', 'send');
-        ReactGA.plugin.execute('ec', 'clear');
-
-        resetOrders();
+        dispatch(resetOrders());
         setCheckedOut(true);
     };
     const onCancel = (data) => {
@@ -295,17 +271,17 @@ const Cart = ({
             return (
                 <CardActions className={classes.itemActions}>
                     <div>
-                    <Link to="/selection" className={classes.link}>
-                        <Button size="small" color="primary">
-                            Mask Selection
-                        </Button>
-                    </Link>
-                    <br></br>
-                    <Link to="/selection/bags" className={classes.link}>
-                        <Button size="small" color="primary">
-                            Bag Set Selection
-                        </Button>
-                    </Link>
+                        <Link to="/selection" className={classes.link}>
+                            <Button size="small" color="primary">
+                                Mask Selection
+                            </Button>
+                        </Link>
+                        <br></br>
+                        <Link to="/selection/bags" className={classes.link}>
+                            <Button size="small" color="primary">
+                                Bag Set Selection
+                            </Button>
+                        </Link>
                     </div>
                     <Button
                         onClick={() => setCheckoutMode(CHECKOUT)}
@@ -342,7 +318,7 @@ const Cart = ({
                     onSuccess={onSuccess}
                     onError={onError}
                     catchError={onError}
-                    options={{ clientId: client[env] }}
+                    options={{ clientId: client[mode] }}
                     onCancel={onCancel}
                 />
             </div>
@@ -366,7 +342,6 @@ const Cart = ({
                 <CartItems
                     checkoutMode={checkoutMode}
                     orders={orders}
-                    removeOrder={removeOrder}
                 />
                 <CartCalculations
                     orders={orders}
@@ -381,8 +356,6 @@ const Cart = ({
                     discountField={discountField}
                     setDiscountField={setDiscountField}
                     discountThreshold={discountThreshold}
-                    usedDiscountButton={usedDiscountButton}
-                    setUsedDiscountButton={setUsedDiscountButton}
                 />
             </CardContent>
             <CartModal modalOpen={modalOpen} setModalOpen={setModalOpen} />

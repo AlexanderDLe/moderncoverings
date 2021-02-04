@@ -151,7 +151,7 @@ function SelectionHero({ queryStyles }) {
                             color="primary"
                             size="medium"
                         >
-                            SHOP MASKS
+                            SHOP NOW
                         </Button>
                     </Link>
                     <Link to="/selection/bags">

@@ -1,4 +1,7 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { setYCoordinateMask } from '../../slices/appSlice';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -12,13 +15,6 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
         maxWidth: 345,
         borderRadius: 0,
-        // border: '1px solid black',
-        // transform: 'scale(1)',
-        // transition: 'transform 1s',
-        // '&:hover': {
-        //     transform: 'scale(1.05)',
-        //     transition: 'transform .5s',
-        // },
     },
     bestseller: {
         position: 'absolute',
@@ -56,11 +52,12 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function DesignCard({ design, setYCoordinate }) {
+function DesignCard({ design }) {
     const classes = useStyles();
+    const dispatch = useDispatch();
 
     const handleLinkClick = () => {
-        if (setYCoordinate) setYCoordinate(window.pageYOffset);
+        dispatch(setYCoordinateMask(window.pageYOffset));
     };
 
     return (
@@ -84,23 +81,6 @@ function DesignCard({ design, setYCoordinate }) {
                         >
                             {design.color}
                         </Typography>
-                        {/* <Typography
-                            className={classes.cardTitle}
-                            variant="body1"
-                            component="h2"
-                        >
-                            {design.type === 'Mask' ? (
-                                <span
-                                    style={{
-                                        color: 'rgba(0,0,0,.45)',
-                                    }}
-                                >
-                                    ${design.price}
-                                </span>
-                            ) : (
-                                ''
-                            )}
-                        </Typography> */}
                     </CardContent>
                 </Card>
             </Link>

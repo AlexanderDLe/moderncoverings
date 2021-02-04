@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+
 import keys from '../../config/keys';
 import axios from 'axios';
 
@@ -62,6 +64,8 @@ const header = {
 };
 
 export default () => {
+    const authenticated = useSelector(state => state.app.authenticated);
+
     let [data, setData] = useState({});
     let [loading, setLoading] = useState(true);
 
@@ -79,8 +83,8 @@ export default () => {
                 setLoading(false);
             }
         }
-        if (localStorage.getItem('Authenticated')) fetchData();
-    }, []);
+        if (authenticated) fetchData();
+    }, [authenticated]);
     const classes = useStyles();
 
     const handleUpdateCompleted = async (ID) => {
@@ -145,7 +149,7 @@ export default () => {
         );
     };
 
-    if (!localStorage.getItem('Authenticated')) return <Redirect to="/login" />;
+    if (!authenticated) return <Redirect to="/login" />;
 
     return (
         <Card className={classes.root} elevation={3}>

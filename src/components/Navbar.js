@@ -1,4 +1,6 @@
 import React, { useState, useMemo } from 'react';
+import { useSelector } from 'react-redux';
+
 import AppBar from '@material-ui/core/AppBar';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
@@ -72,8 +74,9 @@ function HideOnScroll(props) {
     );
 }
 
-const Navbar = ({ amount }) => {
+const Navbar = () => {
     const classes = useStyles();
+    const amount = useSelector(state => state.cart.amount);
     const navMediaQuery = useMediaQuery('(min-width:600px)');
 
     // Dynamic Nav Styles
@@ -90,24 +93,6 @@ const Navbar = ({ amount }) => {
             },
         };
     }, [navMediaQuery]);
-
-    // Standard Navigation
-    // const fullNavItem = (path, label) => (
-    //     <Link
-    //         to={`/${path}`}
-    //         className={classes.link}
-    //         style={dynamicStyles.navItem}
-    //     >
-    //         {label}
-    //     </Link>
-    // );
-    // const fullNav = (
-    //     <React.Fragment>
-    //         {fullNavItem('selection', 'Selection')}
-    //         {/* {fullNavItem('pricing', 'Pricing')} */}
-    //         {fullNavItem('faq', 'FAQ')}
-    //     </React.Fragment>
-    // );
 
     // Responsive/Mobile Menu Functionality
     const [anchorEl, setAnchorEl] = useState(null);

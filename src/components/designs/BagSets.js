@@ -3907,7 +3907,7 @@ export const selection = {
         angled: true,
         tags: ['green'],
     },
-        giftsset: {
+    giftsset: {
         type: 'Bag',
         color: 'Gifts Set',
         img: 'GiftsSet.jpg',

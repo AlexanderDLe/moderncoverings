@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
 import { makeStyles } from '@material-ui/core/styles';
 
 import Container from '@material-ui/core/Container';
@@ -55,10 +57,6 @@ function SelectionContainer({
     selectionPadding,
     searchTerm,
     handleSearchTermChange,
-    showMoreObj,
-    setShowMoreObj,
-    yCoordinate,
-    setYCoordinate,
     filter,
     solid,
     patriot,
@@ -73,10 +71,11 @@ function SelectionContainer({
     setCustomOpen,
 }) {
     const classes = useStyles();
+    const yCoordinateBag = useSelector(state => state.app.yCoordinateBag);
 
     useEffect(() => {
-        window.scrollTo(0, yCoordinate);
-    }, [yCoordinate]);
+        window.scrollTo(0, yCoordinateBag);
+    }, [yCoordinateBag]);
 
     // Render
     const renderDesigns = () => {
@@ -86,73 +85,46 @@ function SelectionContainer({
                     categoryName={'Holiday'}
                     categoryItems={holiday}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <BagRenderCategory
                     categoryName={'Floral'}
                     categoryItems={floral}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <BagRenderCategory
                     categoryName={'Bandana'}
                     categoryItems={bandana}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <BagRenderCategory
                     categoryName={'Animal'}
                     categoryItems={animal}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <BagRenderCategory
                     categoryName={'Pattern'}
                     categoryItems={pattern}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <BagRenderCategory
                     categoryName={'Solid'}
                     categoryItems={solid}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <BagRenderCategory
                     categoryName={'Hawaiian'}
                     categoryItems={hawaiian}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <BagRenderCategory
                     categoryName={'Patriot'}
                     categoryItems={patriot}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <BagRenderCategory
                     categoryName={'Shield'}
                     categoryItems={shield}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
             </React.Fragment>
         );

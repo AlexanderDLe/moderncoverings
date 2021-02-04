@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import keys from '../../config/keys';
 import axios from 'axios';
-import Banner from '../misc/Banner';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
@@ -81,12 +80,7 @@ const searchThroughSelection = (selection, searchTerm) => {
 
 const API = keys.designsAPI;
 
-export default ({
-    showMoreObj,
-    setShowMoreObj,
-    yCoordinate,
-    setYCoordinate,
-}) => {
+export default () => {
     // const [selection, setSelection] = useState(MaskDesigns);
     const [loading, setLoading] = useState(true);
     const [designAvailability, setDesignAvailability] = useState({});
@@ -106,7 +100,7 @@ export default ({
             }
         }
         process();
-    }, [yCoordinate]);
+    }, []);
     const navMediaQuery = useMediaQuery('(min-width:900px)');
 
     const classes = useStyles();
@@ -182,7 +176,7 @@ export default ({
     return (
         <React.Fragment>
             <main className={classes.main}>
-            <Banner />
+            {/* <Banner /> */}
                 {isIE || isFirefox ? '' : <MCSelectionHero />}
                 {/* <SelectionFilter filter={filter} /> */}
                 {loading ? (
@@ -194,10 +188,6 @@ export default ({
                         selectionPadding={selectionPadding}
                         searchTerm={searchTerm}
                         handleSearchTermChange={handleSearchTermChange}
-                        showMoreObj={showMoreObj}
-                        setShowMoreObj={setShowMoreObj}
-                        yCoordinate={yCoordinate}
-                        setYCoordinate={setYCoordinate}
                         filter={filter}
                         solid={solid}
                         patriot={patriot}

@@ -1,4 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
+import { useSelector } from 'react-redux';
+
 import keys from '../../config/keys';
 import axios from 'axios';
 
@@ -142,6 +144,8 @@ const fillDateRange = (fromDate, toDate) => {
 };
 
 export default () => {
+    const authenticated = useSelector(state => state.app.authenticated);
+
     const [dailyTotal, setDailyTotal] = useState(0);
     const [totals, setTotals] = useState({});
     const [data, setData] = useState([]);
@@ -151,7 +155,6 @@ export default () => {
     const dateRange = useMemo(() => {
         return fillDateRange(fromDate, toDate);
     }, [fromDate, toDate]);
-    console.log(dateRange);
 
     const classes = useStyles();
 
@@ -166,22 +169,19 @@ export default () => {
                         dates: dateRange,
                     },
                 });
-                console.log(response);
                 setDailyTotal(response.data.total ? response.data.total : 0);
                 setData(response.data.payload ? response.data.payload : []);
-                console.log(response.data.payload);
                 setTotals(calculateTotals(response.data.payload));
                 setLoading(false);
             } catch (error) {
-                console.log(error);
                 setDailyTotal(0);
                 setData([]);
                 setTotals({});
                 setLoading(false);
             }
         }
-        if (localStorage.getItem('Authenticated')) fetchData();
-    }, [dateRange]);
+        if (authenticated) fetchData();
+    }, [dateRange, authenticated]);
 
     // Date Range Changes
     const onFromDateChange = (e) => {
@@ -255,7 +255,7 @@ export default () => {
         );
     };
 
-    if (!localStorage.getItem('Authenticated')) return <Redirect to="/login" />;
+    if (!authenticated) return <Redirect to="/login" />;
 
     return (
         <Card className={classes.root} elevation={3}>

@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../../slices/appSlice';
+
 import { Redirect } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import keys from '../../config/keys';
@@ -47,14 +50,16 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default ({ authenticated, setAuthenticated }) => {
+export default () => {
     const classes = useStyles();
+    const authenticated = useSelector(state => state.app.authenticated);
+    const dispatch = useDispatch();
+
     const [pin, setPin] = useState('');
 
     const handleLoginSubmit = () => {
         if (pin === PIN) {
-            localStorage.setItem('Authenticated', 'true');
-            setAuthenticated(true);
+            dispatch(login());
         }
         setPin('');
     };
@@ -63,7 +68,7 @@ export default ({ authenticated, setAuthenticated }) => {
         if (e.key === 'Enter') handleLoginSubmit();
     };
 
-    if (localStorage.getItem('Authenticated')) return <Redirect to="/admin" />;
+    if (authenticated) return <Redirect to="/admin" />;
 
     return (
         <Card className={classes.root} elevation={3}>

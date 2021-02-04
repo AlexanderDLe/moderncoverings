@@ -1,16 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
-import Wood from '../../img/Icons/BG1.jpg';
-import GiftBG from '../../img/Icons/GiftBG.jpg';
-import BannerPhoto from '../../img/ProductPhotos/BagSetPhotos/BannerPhoto.jpg';
-import BannerPhoto2 from '../../img/ProductPhotos/BagSetPhotos/BannerPhoto2.jpg';
-// import Container from '@material-ui/core/Container';
+// import BG1 from '../../img/Icons/BG1.jpg';
+import BanPhot from '../../img/ProductPhotos/BagSetPhotos/BanPhot.jpg';
+import BanPhot2 from '../../img/ProductPhotos/BagSetPhotos/BanPhot2.jpg';
 
 
 const useStyles = makeStyles((theme) => ({
     rootbg: {
-        background: `url(${Wood})`,
+        // background: `url(${BG1})`,
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
@@ -23,41 +21,11 @@ const useStyles = makeStyles((theme) => ({
     boxItem: {
         padding: 12
     },
-    bagText: {
-        textAlign: 'center',
-        minHeight: 450,
-        padding: 12
-    },
-    textContainer: {
-        backgroundColor: 'white',
-        margin: 'auto auto',
-        minHeight: 450,
-        background: `url(${GiftBG})`,
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column'
-    },
-    title: {
-        fontSize: '2.5rem',
-        cursor: 'pointer',
-        fontWeight: '600',
-        fontFamily: 'Raleway',
-        margin: '0 auto',
-    },
-    strike: {
-        textDecorationLine: "line-through !important",
-        color: 'red'
-    },
-    price: {
-        margin: 8
-    },
     banner: {
-        width: '100%',
-        maxWidth: 1200,
+        margin: "32px 8px",
+        width: '85%',
+        maxWidth: 750,
+        boxShadow: "0px 3px 12px -7px rgba(0,0,0,.75)"
         // margin: '0 auto'
     }
 }));
@@ -70,7 +38,7 @@ export default function BagTextImage() {
     return (
         <div className={classes.rootbg}>
             {/* <Container> */}
-            <img src={navMediaQuery ? BannerPhoto : BannerPhoto2} className={classes.banner} alt="Banner" />
+            <img src={navMediaQuery ? BanPhot : BanPhot2} className={classes.banner} alt="Banner" />
             {/* </Container> */}
         </div>
     )

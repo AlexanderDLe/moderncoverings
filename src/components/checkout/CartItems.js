@@ -1,4 +1,7 @@
 import React, { useMemo } from 'react';
+import { useDispatch } from 'react-redux';
+import { removeOrder } from '../../slices/cartSlice';
+
 import { Link } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import { useMediaQuery } from '@material-ui/core';
@@ -41,7 +44,8 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default ({ checkoutMode, orders, removeOrder }) => {
+export default ({ checkoutMode, orders }) => {
+    const dispatch = useDispatch();
     const classes = useStyles();
     const navMediaQuery = useMediaQuery('(min-width:600px)');
 
@@ -54,8 +58,6 @@ export default ({ checkoutMode, orders, removeOrder }) => {
         };
     }, [navMediaQuery]);
 
-    console.log(orders);
-
     const renderRightColumn = (orderData) => {
         if (checkoutMode === 'CART') {
             return (
@@ -63,7 +65,7 @@ export default ({ checkoutMode, orders, removeOrder }) => {
                     ${orderData.price * orderData.amount} <br />{' '}
                     <span
                         className={classes.removeButton}
-                        onClick={() => removeOrder(orderData)}
+                        onClick={() => dispatch(removeOrder(orderData))}
                     >
                         Remove
                     </span>

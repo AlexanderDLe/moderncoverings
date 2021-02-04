@@ -1,4 +1,7 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../slices/appSlice';
+
 import { makeStyles } from '@material-ui/core/styles';
 import { Link, Redirect } from 'react-router-dom';
 
@@ -41,15 +44,16 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default ({ authenticated, setAuthenticated }) => {
+export default () => {
     const classes = useStyles();
+    const authenticated = useSelector(state => state.app.authenticated);
+    const dispatch = useDispatch();
 
     const handleLogoutSubmit = () => {
-        localStorage.removeItem('Authenticated');
-        setAuthenticated(false);
+        dispatch(logout());
     };
 
-    if (!localStorage.getItem('Authenticated')) return <Redirect to="/login" />;
+    if (!authenticated) return <Redirect to="/login" />;
 
     return (
         <Card className={classes.root} elevation={3}>

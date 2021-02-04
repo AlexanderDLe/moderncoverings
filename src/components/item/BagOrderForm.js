@@ -140,7 +140,7 @@ function MaskOrderForm({
                     color="primary"
                 />
                 <div className={classes.checkboxText}>
-                    (Optional) Add matching fanny-pack for $15
+                    (Optional) Add matching waist bag for $15
                 </div>
             </CardContent>
             <CardContent className={classes.customizeBox}>
@@ -233,10 +233,15 @@ function MaskOrderForm({
                         Each set includes a matching draw-string bag and facemask.
                         <br />
                         <br />
-                        Optionally, you may choose to include a matching fanny-pack for an additional $15.
+                        Optionally, you may choose to include a matching waist bag for an additional $15.
                         <br />
                         <br />
-                        Disclaimer: Some mask designs may vary depending on cut.
+                        Bag Dimensions: 
+                        <br />
+                        14" tall - 9.5" diameter.
+                        <br />
+                        <br />
+                        Disclaimer: Some designs may slightly vary depending on cut.
                     </p>
                 </div>
             </CardContent>

@@ -1,18 +1,15 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import keys from '../../config/keys';
 import axios from 'axios';
-import Banner from '../misc/Banner';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { selection } from '../designs/BagSets';
+import BagSelectionHero from './BagSelectionHero';
 import BagTextImage from './BagTextImage';
-// import MCSelectionHero from '../order/MCSelectionHero';
 import BagSelectionContainer from '../orderbags/BagSelectionContainer';
-// import SelectionFilter from '../order/SelectionFilter';
-// import BagSelectionHero from './BagSelectionHero';
 
 const useStyles = makeStyles((theme) => ({
     main: {
@@ -84,13 +81,7 @@ const searchThroughSelection = (selection, searchTerm) => {
 
 const API = keys.bagDesignsAPI;
 
-export default ({
-    showMoreObj,
-    setShowMoreObj,
-    yCoordinate,
-    setYCoordinate,
-}) => {
-    // const [selection, setSelection] = useState(MaskDesigns);
+export default () => {
     const [loading, setLoading] = useState(true);
     const [designAvailability, setDesignAvailability] = useState({});
     // Don't show hero if on internet explorer
@@ -109,7 +100,7 @@ export default ({
             }
         }
         process();
-    }, [yCoordinate]);
+    }, []);
     const navMediaQuery = useMediaQuery('(min-width:900px)');
 
     const classes = useStyles();
@@ -185,7 +176,6 @@ export default ({
     return (
         <React.Fragment>
             <main className={classes.main}>
-            <Banner />
                 {/* {isIE || isFirefox ? '' : <BagSelectionHero />} */}
                 {loading ? (
                     <div className={classes.LoadingDiv}>
@@ -193,16 +183,12 @@ export default ({
                     </div>
                 ) : (
                     <React.Fragment>
+                        <BagSelectionHero />
                         <BagTextImage />
-                        {/* <SelectionFilter filter={filter} /> */}
                         <BagSelectionContainer
                             selectionPadding={selectionPadding}
                             searchTerm={searchTerm}
                             handleSearchTermChange={handleSearchTermChange}
-                            showMoreObj={showMoreObj}
-                            setShowMoreObj={setShowMoreObj}
-                            yCoordinate={yCoordinate}
-                            setYCoordinate={setYCoordinate}
                             filter={filter}
                             solid={solid}
                             patriot={patriot}

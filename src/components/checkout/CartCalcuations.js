@@ -1,6 +1,8 @@
 import React, { useMemo } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { useSelector, useDispatch } from 'react-redux';
+import { setUsedDiscountButton } from '../../slices/cartSlice';
 
+import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import CheckIcon from '@material-ui/icons/Check';
@@ -65,10 +67,10 @@ export default ({
     discountField,
     discountThreshold,
     setDiscountField,
-    usedDiscountButton,
-    setUsedDiscountButton,
 }) => {
     const classes = useStyles();
+    const dispatch = useDispatch();
+    const usedDiscountButton = useSelector(state => state.cart.usedDiscountButton);
 
     const discountCaptionStyle = useMemo(() => {
         return discountField === discountCode && subtotal < discountThreshold
@@ -124,11 +126,11 @@ export default ({
                             color="primary"
                             size="small"
                             onClick={() => {
-                                setDiscountField('HOLIDAY15');
-                                setUsedDiscountButton(true);
+                                setDiscountField('15OFF');
+                                dispatch(setUsedDiscountButton());
                             }}
                         >
-                            Apply Discount Code HOLIDAY15
+                            Apply Discount Code 15OFF
                         </Button>
                     ) : (
                         ''

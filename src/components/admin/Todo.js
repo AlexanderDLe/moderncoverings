@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+
 import keys from '../../config/keys';
 import axios from 'axios';
 
@@ -110,6 +112,9 @@ const calculateTotals = (data) => {
 };
 
 export default () => {
+    const authenticated = useSelector(state => state.app.authenticated);
+
+
     const [totals, setTotals] = useState({});
     const [data, setData] = useState({});
     const [designAvailability, setDesignAvailability] = useState({});
@@ -169,34 +174,26 @@ export default () => {
                 const designResponse = await axios.get(designAPI);
                 const historyResponse = await axios.get(historyAPI);
                 setDesignAvailability(designResponse.data);
-                console.log(designResponse.data);
-                console.log(response.data);
-                console.log(historyResponse.data);
                 setData(response.data ? response.data : []);
                 setHistoryArr(historyResponse.data.history);
                 setTotals(calculateTotals(response.data));
                 setTimestamp(Timestamper().split('T').join(' ').slice(0, -9));
                 setLoading(false);
             } catch (error) {
-                console.log(error);
                 setData([]);
                 setHistoryArr([]);
                 setTotals({});
                 setLoading(false);
             }
         }
-        if (localStorage.getItem('Authenticated')) fetchData();
-    }, []);
+        if (authenticated) fetchData();
+    }, [authenticated]);
     const classes = useStyles();
 
     const toggleDesign = async (design, bool) => {
         console.log('ey');
         if (designAvailability[design] === undefined) return;
         try {
-            // const newDesignAvailability = { ...designAvailability };
-            // newDesignAvailability.design = !newDesignAvailability.design;
-            // setData(newDesignAvailability);
-            // console.log(newDesignAvailability);
             await axios.post(designAPI, { design, bool }, header);
         } catch (error) {
             console.log(error);
@@ -460,7 +457,7 @@ export default () => {
         );
     };
 
-    if (!localStorage.getItem('Authenticated')) return <Redirect to="/login" />;
+    if (!authenticated) return <Redirect to="/login" />;
 
     return (
         <React.Fragment>

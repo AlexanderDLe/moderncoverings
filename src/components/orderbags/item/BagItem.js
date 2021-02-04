@@ -1,4 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import { addOrder } from '../../../slices/cartSlice';
+
 import { Link } from 'react-router-dom';
 import keys from '../../../config/keys';
 import axios from 'axios';
@@ -117,7 +120,8 @@ const useStyles = makeStyles((theme) => ({
 
 const API = keys.bagDesignsAPI;
 
-export default ({ match, addOrder }) => {
+export default ({ match }) => {
+    const dispatch = useDispatch();
     const navMediaQuery = useMediaQuery('(min-width:420px)');
     const navMediaQuery600 = useMediaQuery('(min-width:600px)');
 
@@ -176,7 +180,8 @@ export default ({ match, addOrder }) => {
         if (data.type === 'Mask') price = data.price;
         if (data.type === 'Elastic') price = data.price[size];
         if (data.type === 'Shield') price = data.price[size];
-        addOrder({
+
+        dispatch(addOrder({
             type: data.type,
             color: data.color,
             size: size,
@@ -184,7 +189,7 @@ export default ({ match, addOrder }) => {
             param: data.param,
             price: price,
             img: data.img,
-        });
+        }));
         queueRef.current.push({
             message: `Added ${amount} item(s) to cart`,
             key: new Date().getTime(),

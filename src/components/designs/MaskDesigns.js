@@ -3239,7 +3239,7 @@ export const selection = {
     },
     frosty: {
         type: 'Mask',
-        color: 'Frosty',
+        color: 'Frosty The Snowman',
         img: 'Frosty.jpg',
         param: 'frosty',
         price: maskPrice,

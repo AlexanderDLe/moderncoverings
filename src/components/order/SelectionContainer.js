@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { useSelector } from 'react-redux';
 
+import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -59,10 +60,6 @@ function SelectionContainer({
     selectionPadding,
     searchTerm,
     handleSearchTermChange,
-    showMoreObj,
-    setShowMoreObj,
-    yCoordinate,
-    setYCoordinate,
     filter,
     solid,
     patriot,
@@ -77,10 +74,11 @@ function SelectionContainer({
     setCustomOpen,
 }) {
     const classes = useStyles();
+    const yCoordinateMask = useSelector(state => state.app.yCoordinateMask);
 
     useEffect(() => {
-        window.scrollTo(0, yCoordinate);
-    }, [yCoordinate]);
+        window.scrollTo(0, yCoordinateMask);
+    }, [yCoordinateMask]);
 
     // Render
     const renderDesigns = () => {
@@ -92,12 +90,10 @@ function SelectionContainer({
                         <DesignCard
                             design={selection.blackelastic}
                             key={1000}
-                            setYCoordinate={setYCoordinate}
                         />
                         <DesignCard
                             design={selection.whiteelastic}
                             key={1001}
-                            setYCoordinate={setYCoordinate}
                         />
                     </React.Fragment>
                 );
@@ -105,13 +101,6 @@ function SelectionContainer({
             return (
                 <React.Fragment>
                     <div className={classes.category}>
-                        {/* <Checkbox
-                            onClick={() => setCustomOpen(!customOpen)}
-                            checked={customOpen}
-                            color="default"
-                            className={classes.checkbox}
-                            size="small"
-                        /> */}
                         <Typography
                             onClick={() => setCustomOpen(!customOpen)}
                             variant="h4"
@@ -132,76 +121,49 @@ function SelectionContainer({
         return (
             <React.Fragment>
                 <RenderCategory
-                    categoryName={'Holiday'}
-                    categoryItems={holiday}
-                    filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
-                />
-                <RenderCategory
                     categoryName={'Floral'}
                     categoryItems={floral}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <RenderCategory
                     categoryName={'Bandana'}
                     categoryItems={bandana}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <RenderCategory
                     categoryName={'Animal'}
                     categoryItems={animal}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <RenderCategory
                     categoryName={'Pattern'}
                     categoryItems={pattern}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <RenderCategory
                     categoryName={'Solid'}
                     categoryItems={solid}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <RenderCategory
                     categoryName={'Hawaiian'}
                     categoryItems={hawaiian}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <RenderCategory
                     categoryName={'Patriot'}
                     categoryItems={patriot}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
+                />
+                <RenderCategory
+                    categoryName={'Holiday'}
+                    categoryItems={holiday}
+                    filterState={filter}
                 />
                 <RenderCategory
                     categoryName={'Shield'}
                     categoryItems={shield}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 {filter === 'All' || filter === 'Custom' ? renderCustom() : ''}
             </React.Fragment>

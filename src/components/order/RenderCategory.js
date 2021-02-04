@@ -1,10 +1,11 @@
 import React, { useState, Suspense, lazy } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setShowMoreMaskObj } from '../../slices/appSlice';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-// import Checkbox from '@material-ui/core/Checkbox';
 import { Grid } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-// import DesignCard from './DesignCard';
 
 const DesignCard = lazy(() => import('./DesignCard'));
 
@@ -47,25 +48,21 @@ export default ({
     categoryName,
     categoryItems,
     filterState,
-    showMoreObj,
-    setShowMoreObj,
-    setYCoordinate,
 }) => {
     const classes = useStyles();
-
-    // console.log(categoryName, categoryItems);
-    // const [categoryOpen, setCategoryOpen] = useState(true);
+    const dispatch = useDispatch();
+    const showMoreMaskObj = useSelector(state => state.app.showMoreMaskObj);
     const [categoryOpen] = useState(true);
 
     const handleShowMoreButtonClick = () => {
-        const newShowMoreObj = { ...showMoreObj };
-        newShowMoreObj[categoryName] = !newShowMoreObj[categoryName];
-        setShowMoreObj(newShowMoreObj);
+        const newShowMoreMaskObj = { ...showMoreMaskObj };
+        newShowMoreMaskObj[categoryName] = !newShowMoreMaskObj[categoryName];
+        dispatch(setShowMoreMaskObj(newShowMoreMaskObj));
     };
 
     const renderCategory = (category) => {
         let itemsToShow;
-        if (showMoreObj[categoryName]) {
+        if (showMoreMaskObj[categoryName]) {
             itemsToShow = category.slice(0, 8);
         } else {
             itemsToShow = category;
@@ -76,7 +73,6 @@ export default ({
                     <DesignCard
                         design={design}
                         key={index}
-                        setYCoordinate={setYCoordinate}
                     />
                 </Suspense>
             );
@@ -87,7 +83,6 @@ export default ({
         <div className={classes.showMoreDiv}>
             <Button
                 className={classes.showMoreButton}
-                // variant="contained"
                 size="medium"
                 onClick={handleShowMoreButtonClick}
                 elevation={0}
@@ -104,15 +99,7 @@ export default ({
         return (
             <React.Fragment>
                 <div className={classes.category}>
-                    {/* <Checkbox
-                        onClick={() => setCategoryOpen(!categoryOpen)}
-                        checked={categoryOpen}
-                        color="default"
-                        className={classes.checkbox}
-                        size="small"
-                    /> */}
                     <Typography
-                        // onClick={() => setCategoryOpen(!categoryOpen)}
                         variant="h4"
                         component="h2"
                         align="center"
@@ -124,7 +111,7 @@ export default ({
                 <Grid container spacing={2}>
                     {categoryOpen ? renderCategory(categoryItems) : ''}
                 </Grid>
-                {showMoreObj[categoryName] &&
+                {showMoreMaskObj[categoryName] &&
                 categoryOpen &&
                 categoryItems.length > 8
                     ? showMoreButton

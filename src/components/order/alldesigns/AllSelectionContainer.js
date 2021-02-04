@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { Grid } from '@material-ui/core';
@@ -58,10 +58,6 @@ function SelectionContainer({
     selectionPadding,
     searchTerm,
     handleSearchTermChange,
-    showMoreObj,
-    setShowMoreObj,
-    yCoordinate,
-    setYCoordinate,
     filter,
     solid,
     patriot,
@@ -76,10 +72,6 @@ function SelectionContainer({
 }) {
     const classes = useStyles();
 
-    useEffect(() => {
-        window.scrollTo(0, yCoordinate);
-    }, [yCoordinate]);
-
     // Render
     const renderDesigns = () => {
         const renderCustom = () => {
@@ -90,12 +82,10 @@ function SelectionContainer({
                         <DesignCard
                             design={selection.blackelastic}
                             key={1000}
-                            setYCoordinate={setYCoordinate}
                         />
                         <DesignCard
                             design={selection.whiteelastic}
                             key={1001}
-                            setYCoordinate={setYCoordinate}
                         />
                     </React.Fragment>
                 );
@@ -132,65 +122,41 @@ function SelectionContainer({
                     categoryName={'Holiday'}
                     categoryItems={holiday}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <AllRenderCategory
                     categoryName={'Bandana'}
                     categoryItems={bandana}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <AllRenderCategory
                     categoryName={'Floral'}
                     categoryItems={floral}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <AllRenderCategory
                     categoryName={'Animal'}
                     categoryItems={animal}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <AllRenderCategory
                     categoryName={'Pattern'}
                     categoryItems={pattern}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <AllRenderCategory
                     categoryName={'Solid'}
                     categoryItems={solid}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <AllRenderCategory
                     categoryName={'Hawaiian'}
                     categoryItems={hawaiian}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 <AllRenderCategory
                     categoryName={'Patriot'}
                     categoryItems={patriot}
                     filterState={filter}
-                    showMoreObj={showMoreObj}
-                    setShowMoreObj={setShowMoreObj}
-                    setYCoordinate={setYCoordinate}
                 />
                 {filter === 'All' || filter === 'Custom' ? renderCustom() : ''}
             </React.Fragment>

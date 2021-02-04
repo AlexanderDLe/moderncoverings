@@ -79,7 +79,7 @@ function FAQ() {
             <h5 className={classes.question}>Is there a discount available?</h5>
             <p>
                 Yes, there is a 15% discount for $45+ subtotal orders. Simply
-                use code HOLIDAY15 in the cart to apply.
+                use code 15OFF in the cart to apply.
             </p>
             <h5 className={classes.question}>How long will delivery take?</h5>
             <p>Delivery will typically be within 5-9 business days.</p>

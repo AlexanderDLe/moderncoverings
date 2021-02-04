@@ -1,4 +1,7 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { setYCoordinateBag } from '../../slices/appSlice';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -51,11 +54,10 @@ const useStyles = makeStyles((theme) => ({
 
 function DesignCard({ design, setYCoordinate }) {
     const classes = useStyles();
-
-    console.log("DESIGN", design);
+    const dispatch = useDispatch();
 
     const handleLinkClick = () => {
-        if (setYCoordinate) setYCoordinate(window.pageYOffset);
+        dispatch(setYCoordinateBag(window.pageYOffset));
     };
 
     return (

@@ -1,4 +1,7 @@
 import React, { useState, Suspense, lazy } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setShowMoreBagObj } from '../../slices/appSlice';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { Grid } from '@material-ui/core';
@@ -45,25 +48,22 @@ export default ({
     categoryName,
     categoryItems,
     filterState,
-    showMoreObj,
-    setShowMoreObj,
     setYCoordinate,
 }) => {
     const classes = useStyles();
-
-    console.log('RENDER CATEGORY DATA', categoryName, categoryItems);
-    // const [categoryOpen, setCategoryOpen] = useState(true);
+    const showMoreBagObj = useSelector(state => state.app.showMoreBagObj);
+    const dispatch = useDispatch();
     const [categoryOpen] = useState(true);
 
     const handleShowMoreButtonClick = () => {
-        const newShowMoreObj = { ...showMoreObj };
-        newShowMoreObj[categoryName] = !newShowMoreObj[categoryName];
-        setShowMoreObj(newShowMoreObj);
+        const newShowMoreBagObj = { ...showMoreBagObj };
+        newShowMoreBagObj[categoryName] = !newShowMoreBagObj[categoryName];
+        dispatch(setShowMoreBagObj(newShowMoreBagObj));
     };
 
     const renderCategory = (category) => {
         let itemsToShow;
-        if (showMoreObj[categoryName]) {
+        if (showMoreBagObj[categoryName]) {
             itemsToShow = category.slice(0, 8);
         } else {
             itemsToShow = category;
@@ -124,7 +124,7 @@ export default ({
                 <Grid container spacing={2}>
                     {categoryOpen ? renderCategory(categoryItems) : ''}
                 </Grid>
-                {showMoreObj[categoryName] &&
+                {showMoreBagObj[categoryName] &&
                 categoryOpen &&
                 categoryItems.length > 8
                     ? showMoreButton
