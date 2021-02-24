@@ -51,14 +51,14 @@ const useStyles = makeStyles({
     },
 });
 
-function TodoRow({
+const ItemRow = ({
     data,
     row,
     updateNum,
     handleModalOpen,
     removeItem,
     rowBGColor,
-}) {
+}) => {
     const classes = useStyles();
     const [mouseHover, setMouseHover] = useState(false);
     const [removeConfirmation, setRemoveConfirmation] = useState(false);
@@ -192,6 +192,6 @@ function TodoRow({
             <td className={classes.test}>{mouseHover ? renderHelper() : ''}</td>
         </TableRow>
     );
-}
+};
 
-export default TodoRow;
+export default ItemRow;

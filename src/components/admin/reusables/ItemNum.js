@@ -22,7 +22,7 @@ const useStyles = makeStyles({
     },
 });
 
-function TodoNum({ color, size, value, updateNum }) {
+const ItemNum = ({ color, size, value, updateNum }) => {
     const classes = useStyles();
 
     const [hovered, setHovered] = useState(false);
@@ -67,6 +67,6 @@ function TodoNum({ color, size, value, updateNum }) {
             />
         </TableCell>
     );
-}
+};
 
-export default TodoNum;
+export default ItemNum;

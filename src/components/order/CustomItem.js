@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function CustomItem() {
+const CustomItem = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -67,13 +67,13 @@ function CustomItem() {
 
             <CardActions className={classes.itemActions}>
                 <Button size="small" color="primary">
-                    <Link to="/selection" className={classes.link}>
+                    <Link to="/selection/masks" className={classes.link}>
                         Back To Selections
                     </Link>
                 </Button>
             </CardActions>
         </Card>
     );
-}
+};
 
 export default CustomItem;

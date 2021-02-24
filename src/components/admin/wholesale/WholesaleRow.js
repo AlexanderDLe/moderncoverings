@@ -28,13 +28,13 @@ const useStyles = makeStyles({
     },
 });
 
-function WholesaleRow({
+const WholesaleRow = ({
     index,
     id,
     data,
     handleUpdateCompleted,
     handleConfirmRemoval,
-}) {
+}) => {
     const classes = useStyles();
 
     const [mouseHover, setMouseHover] = useState(false);
@@ -107,6 +107,6 @@ function WholesaleRow({
             </td>
         </TableRow>
     );
-}
+};
 
 export default WholesaleRow;

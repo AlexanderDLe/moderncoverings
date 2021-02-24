@@ -9,7 +9,7 @@ const useStyles = makeStyles({
         marginRight: 16,
     },
 });
-export default ({ path }) => {
+const BackToAdmin = ({ path }) => {
     const classes = useStyles();
 
     return (
@@ -18,3 +18,5 @@ export default ({ path }) => {
         </Link>
     );
 };
+
+export default BackToAdmin;

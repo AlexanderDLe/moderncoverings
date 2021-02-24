@@ -3,7 +3,7 @@ import { useMediaQuery } from '@material-ui/core';
 import 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
 
-function SelectionHero() {
+const SelectionHero = () => {
     const navMediaQuery = useMediaQuery('(min-width:900px)');
     const [index, setIndex] = useState(0);
 
@@ -44,6 +44,6 @@ function SelectionHero() {
             {renderCarouselItem(3, selectionImage.bandana)}
         </Carousel>
     );
-}
+};
 
 export default SelectionHero;

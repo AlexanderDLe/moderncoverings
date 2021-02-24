@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Search({ handleSearch, handleSearchTermChange, searchTerm }) {
+const Search = ({ handleSearch, handleSearchTermChange, searchTerm }) => {
     const classes = useStyles();
 
     return (
@@ -43,6 +43,6 @@ function Search({ handleSearch, handleSearchTermChange, searchTerm }) {
             </div>
         </form>
     );
-}
+};
 
 export default Search;

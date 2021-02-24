@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default ({
+const CartCalculations = ({
     orders,
     checkoutMode,
     amount,
@@ -70,7 +70,9 @@ export default ({
 }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const usedDiscountButton = useSelector(state => state.cart.usedDiscountButton);
+    const usedDiscountButton = useSelector(
+        (state) => state.cart.usedDiscountButton
+    );
 
     const discountCaptionStyle = useMemo(() => {
         return discountField === discountCode && subtotal < discountThreshold
@@ -212,3 +214,5 @@ export default ({
         </React.Fragment>
     );
 };
+
+export default CartCalculations;

@@ -63,8 +63,8 @@ const header = {
     'Content-Type': 'application/json',
 };
 
-export default () => {
-    const authenticated = useSelector(state => state.app.authenticated);
+const Wholesale = () => {
+    const authenticated = useSelector((state) => state.app.authenticated);
 
     let [data, setData] = useState({});
     let [loading, setLoading] = useState(true);
@@ -188,3 +188,5 @@ export default () => {
         </Card>
     );
 };
+
+export default Wholesale;

@@ -39,9 +39,9 @@ const useStyles = makeStyles((theme) => ({
 const API = keys.salesPerMaskAPI;
 
 const Stats = () => {
-    const authenticated = useSelector(state => state.app.authenticated);
+    const authenticated = useSelector((state) => state.app.authenticated);
     const classes = useStyles();
-    
+
     let [total, setTotal] = useState(0);
     let [stats, setStats] = useState([]);
     let [loading, setLoading] = useState(true);

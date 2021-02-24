@@ -56,7 +56,7 @@ const useStyles = makeStyles({
     },
 });
 
-function TodoRow({
+const TodoRow = ({
     data,
     row,
     updateNum,
@@ -66,7 +66,7 @@ function TodoRow({
     availability,
     toggleDesign,
     disabled,
-}) {
+}) => {
     const classes = useStyles();
     const [mouseHover, setMouseHover] = useState(false);
     const [removeConfirmation, setRemoveConfirmation] = useState(false);
@@ -111,11 +111,10 @@ function TodoRow({
 
         // If the item is a 2piece or 3piece set, then
         // slice out the prefix to get item name only
-        if (IMGFilename[0] === '2' || IMGFilename[0] === '3')
-        {
+        if (IMGFilename[0] === '2' || IMGFilename[0] === '3') {
             IMGFilename = IMGFilename.slice(6);
         }
-        
+
         let src;
         try {
             src = require(`../../../img/ProductPhotos/Small/${IMGFilename}.jpg`);
@@ -225,6 +224,6 @@ function TodoRow({
             <td className={classes.test}>{mouseHover ? renderHelper() : ''}</td>
         </TableRow>
     );
-}
+};
 
 export default TodoRow;

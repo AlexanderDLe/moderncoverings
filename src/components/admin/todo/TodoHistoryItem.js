@@ -9,7 +9,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default ({ data, index }) => {
+const TodoHistoryItem = ({ data, index }) => {
     const classes = useStyles();
 
     return (
@@ -19,3 +19,5 @@ export default ({ data, index }) => {
         </div>
     );
 };
+
+export default TodoHistoryItem;

@@ -92,7 +92,7 @@ function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-export default ({ match }) => {
+const WholesaleOrder = ({ match }) => {
     const [totals, setTotals] = useState({});
     const [data, setData] = useState({});
     const [loading, setLoading] = useState(true);
@@ -297,3 +297,5 @@ export default ({ match }) => {
         </Card>
     );
 };
+
+export default WholesaleOrder;

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
     container: {
         padding: 8,
         zIndex: '100',
@@ -52,7 +52,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-function SelectionHero({ queryStyles }) {
+const LandingCopy = ({ queryStyles }) => {
     const navMediaQuery900 = useMediaQuery('(min-width:900px)');
     const navMediaQuery535 = useMediaQuery('(min-width:535px)');
     const navMediaQuery340 = useMediaQuery('(min-width:340px)');
@@ -143,7 +143,7 @@ function SelectionHero({ queryStyles }) {
                         Over 100+ Premium Designs
                     </Typography>
 
-                    <Link to="/selection">
+                    <Link to="/selection/masks">
                         <Button
                             variant="contained"
                             className={classes.button}
@@ -177,6 +177,6 @@ function SelectionHero({ queryStyles }) {
             </div>
         </div>
     );
-}
+};
 
-export default SelectionHero;
+export default LandingCopy;

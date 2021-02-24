@@ -13,7 +13,7 @@ const useStyles = makeStyles({
         paddingTop: 6,
     },
 });
-export default ({ color, item, toggleDesign, bool }) => {
+const DesignItem = ({ color, item, toggleDesign, bool }) => {
     const classes = useStyles();
 
     const [checked, setChecked] = useState(bool);
@@ -37,3 +37,5 @@ export default ({ color, item, toggleDesign, bool }) => {
         </div>
     );
 };
+
+export default DesignItem;

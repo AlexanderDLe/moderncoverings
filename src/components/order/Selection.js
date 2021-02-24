@@ -6,9 +6,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import { selection } from '../designs/MaskDesigns';
+import { selection as maskSelection } from '../designs/MaskDesigns';
+import { selection as bagSelection } from '../designs/BagSets';
 import MCSelectionHero from './MCSelectionHero';
 import SelectionContainer from './SelectionContainer';
+let selection = [];
 
 const useStyles = makeStyles((theme) => ({
     main: {
@@ -78,29 +80,40 @@ const searchThroughSelection = (selection, searchTerm) => {
     return selectionResults;
 };
 
-const API = keys.designsAPI;
-
-export default () => {
-    // const [selection, setSelection] = useState(MaskDesigns);
+const Selection = ({ match }) => {
     const [loading, setLoading] = useState(true);
     const [designAvailability, setDesignAvailability] = useState({});
+
     // Don't show hero if on internet explorer
     var isIE = /*@cc_on!@*/ false || !!document.documentMode;
     var isFirefox = typeof InstallTrigger !== 'undefined';
+
     useEffect(() => {
         async function process() {
             try {
+                const category = match.params.category;
+                const determineAPI = (category) => {
+                    if (category === 'masks') return keys.designsAPI;
+                    if (category === 'bags') return keys.bagDesignsAPI;
+                };
+                const determineSelection = (category) => {
+                    if (category === 'masks') return maskSelection;
+                    else if (category === 'bags') return bagSelection;
+                };
+
+                const API = determineAPI(category);
+                selection = determineSelection(category);
+
                 let response = await axios.get(API);
                 console.log(response.data);
                 setDesignAvailability(response.data);
                 setLoading(false);
             } catch (error) {
-                console.log(error);
                 setLoading(false);
             }
         }
         process();
-    }, []);
+    }, [match.params.category]);
     const navMediaQuery = useMediaQuery('(min-width:900px)');
 
     const classes = useStyles();
@@ -176,7 +189,7 @@ export default () => {
     return (
         <React.Fragment>
             <main className={classes.main}>
-            {/* <Banner /> */}
+                {/* <Banner /> */}
                 {isIE || isFirefox ? '' : <MCSelectionHero />}
                 {/* <SelectionFilter filter={filter} /> */}
                 {loading ? (
@@ -206,3 +219,5 @@ export default () => {
         </React.Fragment>
     );
 };
+
+export default Selection;

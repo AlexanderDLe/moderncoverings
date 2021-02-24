@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function CartModal({ modalOpen, setModalOpen }) {
+const CartModal = ({ modalOpen, setModalOpen }) => {
     const classes = useStyles();
 
     return (
@@ -58,6 +58,6 @@ function CartModal({ modalOpen, setModalOpen }) {
             </div>
         </Modal>
     );
-}
+};
 
 export default CartModal;

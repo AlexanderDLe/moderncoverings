@@ -76,7 +76,7 @@ function HideOnScroll(props) {
 
 const Navbar = () => {
     const classes = useStyles();
-    const amount = useSelector(state => state.cart.amount);
+    const amount = useSelector((state) => state.cart.amount);
     const navMediaQuery = useMediaQuery('(min-width:600px)');
 
     // Dynamic Nav Styles
@@ -125,7 +125,7 @@ const Navbar = () => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                {menuNavItem('selection', 'Mask Selection')}
+                {menuNavItem('selection/masks', 'Mask Selection')}
                 {menuNavItem('selection/bags', 'Bag Set Selection')}
                 {menuNavItem('faq', 'FAQ')}
                 {menuNavItem('cart', 'Cart')}

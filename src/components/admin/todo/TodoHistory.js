@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default ({ historyArr }) => {
+const TodoHistory = ({ historyArr }) => {
     const classes = useStyles();
 
     function renderRow(props) {
@@ -51,3 +51,4 @@ export default ({ historyArr }) => {
         </Card>
     );
 };
+export default TodoHistory;

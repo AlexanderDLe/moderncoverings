@@ -78,36 +78,6 @@ const calculateTimestamp = () => {
 
 const API = keys.dailiesMasksAPI;
 
-// let testData = [
-//     {
-//         Color: 'Paws',
-//         XL: 1,
-//         L: 1,
-//         M: 0,
-//         S: 0,
-//         XS: 0,
-//         Total: 2,
-//     },
-//     {
-//         Color: 'Black',
-//         XL: 0,
-//         L: 1,
-//         M: 2,
-//         S: 0,
-//         XS: 3,
-//         Total: 6,
-//     },
-//     {
-//         Color: 'White',
-//         XL: 1,
-//         L: 0,
-//         M: 1,
-//         S: 0,
-//         XS: 1,
-//         Total: 3,
-//     },
-// ];
-
 const calculateTotals = (data) => {
     let totals = {
         XL: 0,
@@ -143,8 +113,8 @@ const fillDateRange = (fromDate, toDate) => {
     return dateString;
 };
 
-export default () => {
-    const authenticated = useSelector(state => state.app.authenticated);
+const Daily = () => {
+    const authenticated = useSelector((state) => state.app.authenticated);
 
     const [dailyTotal, setDailyTotal] = useState(0);
     const [totals, setTotals] = useState({});
@@ -318,3 +288,5 @@ export default () => {
         </Card>
     );
 };
+
+export default Daily;

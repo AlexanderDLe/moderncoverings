@@ -1,4 +1,4 @@
-export default (event) => {
+const createTrelloDescription = (event) => {
     const {
         recipient_name,
         line1,
@@ -52,3 +52,5 @@ ${renderOrders}
 
 **Total:** $${event.amount}`;
 };
+
+export default createTrelloDescription;

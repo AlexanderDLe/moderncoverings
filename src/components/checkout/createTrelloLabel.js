@@ -1,6 +1,6 @@
 import moment from 'moment-timezone';
 
-export default () => {
+const createTrelloLabel = () => {
     const timestamp = moment().tz('America/Los_Angeles').format().toString();
     const date = moment(timestamp.slice(0, 10));
     const dow = date.day();
@@ -16,3 +16,5 @@ export default () => {
     };
     return [labels[dow]];
 };
+
+export default createTrelloLabel;

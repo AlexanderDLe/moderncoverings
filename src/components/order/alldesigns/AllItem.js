@@ -107,7 +107,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default ({ match, addOrder }) => {
+const AllItem = ({ match, addOrder }) => {
     const navMediaQuery = useMediaQuery('(min-width:420px)');
     const navMediaQuery600 = useMediaQuery('(min-width:600px)');
 
@@ -247,3 +247,5 @@ export default ({ match, addOrder }) => {
         </Card>
     );
 };
+
+export default AllItem;

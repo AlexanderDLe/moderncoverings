@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
 import 'react-bootstrap';
-// import Carousel from 'react-bootstrap/Carousel';
+import img from '../../img/LandingPhotos/LandingPhoto5.jpg';
 
 const useStyles = makeStyles({
     root: {
@@ -19,33 +19,22 @@ const useStyles = makeStyles({
         alignItems: 'center',
     },
 });
-function SelectionHero() {
+const LandingHero = () => {
     const navMediaQuery = useMediaQuery('(min-width:900px)');
-    const navMediaQuery535 = useMediaQuery('(min-width:535px)');
     const classes = useStyles();
-
-    const landingImage = useMemo(() => {
-        return navMediaQuery535
-            ? {
-                  img1: require(`../../img/LandingPhotos/LandingPhoto5.jpg`),
-              }
-            : {
-                  img1: require(`../../img/LandingPhotos/LandingPhoto5.jpg`),
-              };
-    }, [navMediaQuery535]);
 
     const landingBG = useMemo(() => {
         return {
             minHeight: navMediaQuery ? '50vh' : 300,
-            background: `#f3dfd4 url(${landingImage.img1}) center / auto 100% no-repeat`,
+            background: `#f3dfd4 url(${img}) center / auto 100% no-repeat`,
         };
-    }, [navMediaQuery, landingImage]);
+    }, [navMediaQuery]);
 
     return (
         <div className={classes.root}>
             <div style={landingBG}></div>
         </div>
     );
-}
+};
 
-export default SelectionHero;
+export default LandingHero;

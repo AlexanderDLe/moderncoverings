@@ -40,7 +40,7 @@ const header = {
     'Content-Type': 'application/json',
 };
 
-export default () => {
+const Designs =  () => {
     const authenticated = useSelector(state => state.app.authenticated);
 
     const classes = useStyles();
@@ -132,3 +132,5 @@ export default () => {
         </Card>
     );
 };
+
+export default Designs;

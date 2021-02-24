@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default ({ checkoutMode, orders }) => {
+const CartItems = ({ checkoutMode, orders }) => {
     const dispatch = useDispatch();
     const classes = useStyles();
     const navMediaQuery = useMediaQuery('(min-width:600px)');
@@ -87,7 +87,10 @@ export default ({ checkoutMode, orders }) => {
                     <div style={{ display: 'flex' }}>
                         <Link to={`/item/${order.param}`}>
                             <img
-                                src={require(`../../img/ProductPhotos/Small/${order.img}`)}
+                                src={
+                                    require(`../../img/ProductPhotos/Small/${order.img}`)
+                                        .default
+                                }
                                 alt="Facemask"
                                 className={classes.designImage}
                                 style={{ marginLeft: -28 }}
@@ -116,3 +119,5 @@ export default ({ checkoutMode, orders }) => {
         </React.Fragment>
     );
 };
+
+export default CartItems;

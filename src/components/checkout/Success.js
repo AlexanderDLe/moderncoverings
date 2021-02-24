@@ -59,7 +59,7 @@ const Success = () => {
                     size="small"
                     color="primary"
                 >
-                    <Link to="/selection" className={classes.link}>
+                    <Link to="/selection/masks" className={classes.link}>
                         View Selection
                     </Link>
                 </Button>

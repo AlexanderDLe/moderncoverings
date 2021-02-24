@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
 import 'react-bootstrap';
-// import Carousel from 'react-bootstrap/Carousel';
+import BGImage from '../../img/LandingPhotos/LandingPhoto6.jpg';
 
 const useStyles = makeStyles({
     root: {
@@ -19,33 +19,22 @@ const useStyles = makeStyles({
         alignItems: 'center',
     },
 });
-function SelectionHero() {
+const SelectionHero = () => {
     const navMediaQuery = useMediaQuery('(min-width:900px)');
-    const navMediaQuery535 = useMediaQuery('(min-width:535px)');
     const classes = useStyles();
-
-    const landingImage = useMemo(() => {
-        return navMediaQuery535
-            ? {
-                  img1: require(`../../img/LandingPhotos/LandingPhoto6.jpg`),
-              }
-            : {
-                  img1: require(`../../img/LandingPhotos/LandingPhoto6.jpg`),
-              };
-    }, [navMediaQuery535]);
 
     const landingBG = useMemo(() => {
         return {
             minHeight: navMediaQuery ? '50vh' : 300,
-            background: `#cfcdda url(${landingImage.img1}) center / auto 100% no-repeat`,
+            background: `#cfcdda url(${BGImage}) center / auto 100% no-repeat`,
         };
-    }, [navMediaQuery, landingImage]);
+    }, [navMediaQuery]);
 
     return (
         <div className={classes.root}>
             <div style={landingBG}></div>
         </div>
     );
-}
+};
 
 export default SelectionHero;

@@ -2,11 +2,9 @@ import React, { useEffect, Suspense, lazy, useMemo } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
 
-import LandingHero2 from './LandingHero2';
+import LandingHero from './LandingHero';
 import LandingCopy from './LandingCopy';
-// import Banner from '../misc/Banner';
-// import BestSellers from './BestSellers';
-const LandingCDC = lazy(() => import('./LandingCDC'));
+const LandingCDC = lazy(() => import('./LandingAbout'));
 const Cards = lazy(() => import('./Cards'));
 const Testimonials = lazy(() => import('./Testimonials'));
 
@@ -25,7 +23,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default () => {
+const Landing = () => {
     const classes = useStyles();
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -58,15 +56,15 @@ export default () => {
 
     return (
         <main className={classes.root}>
-            {/* <Banner /> */}
-            <LandingHero2 queryStyles={queryStyles} />
+            <LandingHero queryStyles={queryStyles} />
             <LandingCopy queryStyles={queryStyles} />
             <Suspense fallback={<div className={classes.fallback} />}>
                 <Cards />
-                {/* <BestSellers queryStyles={queryStyles} /> */}
                 <Testimonials queryStyles={queryStyles} />
                 <LandingCDC queryStyles={queryStyles} />
             </Suspense>
         </main>
     );
 };
+
+export default Landing;

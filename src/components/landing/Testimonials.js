@@ -1,21 +1,10 @@
 import React, { useMemo } from 'react';
-import {
-    CarouselProvider,
-    Slider,
-    Slide,
-    // ButtonBack,
-    // ButtonNext,
-} from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import Typography from '@material-ui/core/Typography';
 import { useMediaQuery } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
-// import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-// import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-
-// import StarRateIcon from '@material-ui/icons/StarRate';
 
 const useStyles = makeStyles((theme) => ({
     testimonialSection: {
@@ -40,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Carousel({ queryStyles }) {
+const Testimonials = ({ queryStyles }) => {
     const classes = useStyles();
 
     const navMediaQuery580 = useMediaQuery('(min-width:580px)');
@@ -161,6 +150,6 @@ function Carousel({ queryStyles }) {
             </Container>
         </div>
     );
-}
+};
 
-export default Carousel;
+export default Testimonials;

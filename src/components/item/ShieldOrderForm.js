@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function MaskOrderForm({
+const ShieldOrderForm = ({
     navMediaQuery,
     size,
     amount,
@@ -58,7 +58,7 @@ function MaskOrderForm({
     handleAmountChange,
     incrementAmount,
     decrementAmount,
-}) {
+}) => {
     const classes = useStyles();
 
     // Dynamic Styles
@@ -133,6 +133,6 @@ function MaskOrderForm({
             </div>
         </CardContent>
     );
-}
+};
 
-export default MaskOrderForm;
+export default ShieldOrderForm;

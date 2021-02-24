@@ -38,7 +38,7 @@ const useStyles = makeStyles({
     },
 });
 
-function CustomCard() {
+const CustomCard = () => {
     const classes = useStyles();
 
     return (
@@ -61,6 +61,6 @@ function CustomCard() {
             </Link>
         </Grid>
     );
-}
+};
 
 export default CustomCard;

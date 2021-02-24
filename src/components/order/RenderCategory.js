@@ -44,14 +44,10 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default ({
-    categoryName,
-    categoryItems,
-    filterState,
-}) => {
+const RenderCategory = ({ categoryName, categoryItems, filterState }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const showMoreMaskObj = useSelector(state => state.app.showMoreMaskObj);
+    const showMoreMaskObj = useSelector((state) => state.app.showMoreMaskObj);
     const [categoryOpen] = useState(true);
 
     const handleShowMoreButtonClick = () => {
@@ -70,10 +66,7 @@ export default ({
         return itemsToShow.map((design, index) => {
             return (
                 <Suspense key={index} fallback={<div />}>
-                    <DesignCard
-                        design={design}
-                        key={index}
-                    />
+                    <DesignCard design={design} key={index} />
                 </Suspense>
             );
         });
@@ -123,3 +116,5 @@ export default ({
         return '';
     }
 };
+
+export default RenderCategory;

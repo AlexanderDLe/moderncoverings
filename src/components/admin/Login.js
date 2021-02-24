@@ -50,9 +50,9 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default () => {
+const Login = () => {
     const classes = useStyles();
-    const authenticated = useSelector(state => state.app.authenticated);
+    const authenticated = useSelector((state) => state.app.authenticated);
     const dispatch = useDispatch();
 
     const [pin, setPin] = useState('');
@@ -109,3 +109,5 @@ export default () => {
         </Card>
     );
 };
+
+export default Login;

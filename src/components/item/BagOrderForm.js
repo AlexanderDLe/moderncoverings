@@ -65,14 +65,14 @@ const useStyles = makeStyles((theme) => ({
     checkboxText: {
         display: 'inline',
         fontSize: '16px',
-        color: "#666"
+        color: '#666',
     },
     compareAtPrice: {
-        textDecorationLine: 'line-through !important'
+        textDecorationLine: 'line-through !important',
     },
 }));
 
-function MaskOrderForm({
+const BagOrderForm = ({
     price,
     navMediaQuery,
     size,
@@ -84,16 +84,15 @@ function MaskOrderForm({
     decrementAmount,
     addWaistBag,
     setAddWaistBag,
-    waistBagPrice
-}) {
+    waistBagPrice,
+}) => {
     const classes = useStyles();
-      
+
     const renderPrice = () => {
         if (addWaistBag) return price + waistBagPrice;
         else return price;
-    }
+    };
     const additionalCost = addWaistBag ? waistBagPrice : 0;
-    
 
     // Dynamic Styles
     const radioQuery = navMediaQuery ? classes.normalQuery : classes.smallQuery;
@@ -135,7 +134,7 @@ function MaskOrderForm({
                     className={classes.checkbox}
                     checked={addWaistBag}
                     onClick={() => {
-                        setAddWaistBag(!addWaistBag)
+                        setAddWaistBag(!addWaistBag);
                     }}
                     color="primary"
                 />
@@ -189,7 +188,7 @@ function MaskOrderForm({
                 </FormControl>
                 <div style={{ width: '50%' }}>
                     <FormLabel style={{ paddingLeft: 5 }} component="legend">
-                       Set Amount
+                        Set Amount
                     </FormLabel>
                     <div className={classes.amountBox}>
                         <TextField
@@ -220,7 +219,11 @@ function MaskOrderForm({
                         style={{ paddingLeft: 5, marginBottom: 0 }}
                         component="legend"
                     >
-                        Price: <span style={{ color: 'black' }}>${renderPrice()}</span> <span className={classes.compareAtPrice}>{60 + additionalCost}</span>
+                        Price:{' '}
+                        <span style={{ color: 'black' }}>${renderPrice()}</span>{' '}
+                        <span className={classes.compareAtPrice}>
+                            {60 + additionalCost}
+                        </span>
                     </FormLabel>
                     <br />
                     <p
@@ -230,23 +233,26 @@ function MaskOrderForm({
                             paddingLeft: 3,
                         }}
                     >
-                        Each set includes a matching draw-string bag and facemask.
+                        Each set includes a matching draw-string bag and
+                        facemask.
                         <br />
                         <br />
-                        Optionally, you may choose to include a matching waist bag for an additional $15.
+                        Optionally, you may choose to include a matching waist
+                        bag for an additional $15.
                         <br />
                         <br />
-                        Bag Dimensions: 
+                        Bag Dimensions:
                         <br />
                         14" tall - 9.5" diameter.
                         <br />
                         <br />
-                        Disclaimer: Some designs may slightly vary depending on cut.
+                        Disclaimer: Some designs may slightly vary depending on
+                        cut.
                     </p>
                 </div>
             </CardContent>
         </React.Fragment>
     );
-}
+};
 
-export default MaskOrderForm;
+export default BagOrderForm;

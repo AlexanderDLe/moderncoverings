@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function AppSnackbar({ snackbarOpen, onClose }) {
+const AppSnackbar = ({ snackbarOpen, onClose }) => {
     const classes = useStyles();
     const navMediaQuery = useMediaQuery('(min-width:600px)');
 
@@ -73,6 +73,6 @@ function AppSnackbar({ snackbarOpen, onClose }) {
             </div>
         </Snackbar>
     );
-}
+};
 
 export default AppSnackbar;

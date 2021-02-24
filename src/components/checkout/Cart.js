@@ -130,14 +130,14 @@ const PurchasedBag = (orders) => {
 const CART = 'CART';
 const CHECKOUT = 'CHECKOUT';
 
-const Cart = ({logReactPixelPurchase}) => {
+const Cart = ({ logReactPixelPurchase }) => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
     const dispatch = useDispatch();
-    const orders = useSelector(state => state.cart.orders);
-    const amount = useSelector(state => state.cart.amount);
+    const orders = useSelector((state) => state.cart.orders);
+    const amount = useSelector((state) => state.cart.amount);
 
     const classes = useStyles();
     const [checkoutMode, setCheckoutMode] = useState(CART);
@@ -149,8 +149,8 @@ const Cart = ({logReactPixelPurchase}) => {
 
     // Checkout Configuration
     const itemAmount = amount;
-    const mode = useSelector(state => state.app.mode);
-    
+    const mode = useSelector((state) => state.app.mode);
+
     const subtotal = useMemo(() => {
         return calculateSubtotal(orders);
     }, [orders]);
@@ -271,7 +271,7 @@ const Cart = ({logReactPixelPurchase}) => {
             return (
                 <CardActions className={classes.itemActions}>
                     <div>
-                        <Link to="/selection" className={classes.link}>
+                        <Link to="/selection/masks" className={classes.link}>
                             <Button size="small" color="primary">
                                 Mask Selection
                             </Button>
@@ -339,10 +339,7 @@ const Cart = ({logReactPixelPurchase}) => {
                 </Typography>
             </CardContent>
             <CardContent>
-                <CartItems
-                    checkoutMode={checkoutMode}
-                    orders={orders}
-                />
+                <CartItems checkoutMode={checkoutMode} orders={orders} />
                 <CartCalculations
                     orders={orders}
                     checkoutMode={checkoutMode}

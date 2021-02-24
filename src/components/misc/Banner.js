@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Banner() {
+const Banner = () => {
     const classes = useStyles();
     const navMediaQuery450 = useMediaQuery('(min-width:450px)');
     const navMediaQuery600 = useMediaQuery('(min-width:600px)');
@@ -59,6 +59,6 @@ function Banner() {
             )}
         </div>
     );
-}
+};
 
 export default Banner;

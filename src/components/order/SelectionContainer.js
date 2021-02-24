@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function SelectionContainer({
+const SelectionContainer = ({
     selectionPadding,
     searchTerm,
     handleSearchTermChange,
@@ -72,9 +72,9 @@ function SelectionContainer({
     shield,
     customOpen,
     setCustomOpen,
-}) {
+}) => {
     const classes = useStyles();
-    const yCoordinateMask = useSelector(state => state.app.yCoordinateMask);
+    const yCoordinateMask = useSelector((state) => state.app.yCoordinateMask);
 
     useEffect(() => {
         window.scrollTo(0, yCoordinateMask);
@@ -179,6 +179,6 @@ function SelectionContainer({
             {renderDesigns()}
         </Container>
     );
-}
+};
 
 export default SelectionContainer;

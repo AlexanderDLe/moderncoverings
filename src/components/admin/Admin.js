@@ -44,9 +44,9 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default () => {
+const Admin = () => {
     const classes = useStyles();
-    const authenticated = useSelector(state => state.app.authenticated);
+    const authenticated = useSelector((state) => state.app.authenticated);
     const dispatch = useDispatch();
 
     const handleLogoutSubmit = () => {
@@ -106,3 +106,5 @@ export default () => {
         </Card>
     );
 };
+
+export default Admin;

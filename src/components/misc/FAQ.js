@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function FAQ() {
+const FAQ = () => {
     const classes = useStyles();
 
     useEffect(() => {
@@ -59,8 +59,9 @@ function FAQ() {
             <h5 className={classes.question}>How are these masks made?</h5>
             <p>
                 There are 4 layers of different materials that work together to
-                help cover your face from particles in the air. These materials include
-                tightly-woven cotton and a non-woven rayon & polyester blend.
+                help cover your face from particles in the air. These materials
+                include tightly-woven cotton and a non-woven rayon & polyester
+                blend.
                 <br />
                 <br />
             </p>
@@ -141,7 +142,10 @@ function FAQ() {
                 contact@moderncoverings.com.
             </p>
             <div className={classes.buttonDiv}>
-                <Link to="/selection" className={classes.viewSelectionButton}>
+                <Link
+                    to="/selection/masks"
+                    className={classes.viewSelectionButton}
+                >
                     <Button variant="contained" color="primary" size="medium">
                         View Selection
                     </Button>
@@ -149,6 +153,6 @@ function FAQ() {
             </div>
         </Card>
     );
-}
+};
 
 export default FAQ;

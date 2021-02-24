@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function SelectionFilter({ filter, setFilter }) {
+const SelectionFilter = ({ filter, setFilter }) => {
     const classes = useStyles();
     const navMediaQuery = useMediaQuery('(min-width:900px)');
 
@@ -95,6 +95,6 @@ function SelectionFilter({ filter, setFilter }) {
             </Container>
         </div>
     );
-}
+};
 
 export default SelectionFilter;

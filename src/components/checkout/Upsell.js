@@ -22,7 +22,7 @@ const searchForShields = (orders) => {
     return false;
 };
 
-export default ({ orders, checkoutMode }) => {
+const Upsell = ({ orders, checkoutMode }) => {
     const classes = useStyles();
 
     if (searchForShields(orders) || checkoutMode === 'CHECKOUT') return '';
@@ -47,3 +47,5 @@ export default ({ orders, checkoutMode }) => {
         </div>
     );
 };
+
+export default Upsell;

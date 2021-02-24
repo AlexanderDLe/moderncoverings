@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Pricing() {
+const Pricing = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -141,6 +141,6 @@ function Pricing() {
             </Grid>
         </Container>
     );
-}
+};
 
 export default Pricing;

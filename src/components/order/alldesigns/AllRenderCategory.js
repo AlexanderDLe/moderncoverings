@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default ({
+const AllRenderCategory = ({
     categoryName,
     categoryItems,
     filterState,
@@ -47,7 +47,7 @@ export default ({
 }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const showMoreMaskObj = useSelector(state => state.app.showMoreMaskObj);
+    const showMoreMaskObj = useSelector((state) => state.app.showMoreMaskObj);
     const [categoryOpen, setCategoryOpen] = useState(true);
 
     // console.log(showMoreObj);
@@ -129,3 +129,5 @@ export default ({
         return '';
     }
 };
+
+export default AllRenderCategory;

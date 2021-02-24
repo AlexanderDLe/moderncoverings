@@ -50,7 +50,7 @@ const useStyles = makeStyles({
     },
 });
 
-function DesignCard({ design, setYCoordinate }) {
+const AllDesignCard = ({ design, setYCoordinate }) => {
     const classes = useStyles();
 
     const handleLinkClick = () => {
@@ -83,6 +83,6 @@ function DesignCard({ design, setYCoordinate }) {
             </Link>
         </Grid>
     );
-}
+};
 
-export default DesignCard;
+export default AllDesignCard;

@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Policies() {
+const Policies = () => {
     const classes = useStyles();
 
     useEffect(() => {
@@ -112,6 +112,6 @@ function Policies() {
             </p>
         </Card>
     );
-}
+};
 
 export default Policies;

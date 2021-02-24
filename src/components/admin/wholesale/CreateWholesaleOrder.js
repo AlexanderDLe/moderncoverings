@@ -86,7 +86,7 @@ const calculateTotals = (data) => {
     return totals;
 };
 
-export default () => {
+const CreateWholesaleOrder = () => {
     const [totals, setTotals] = useState({});
     const [data, setData] = useState({});
     const [title, setTitle] = useState('');
@@ -272,3 +272,5 @@ export default () => {
         </Card>
     );
 };
+
+export default CreateWholesaleOrder;

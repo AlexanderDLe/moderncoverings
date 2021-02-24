@@ -5,8 +5,6 @@ import { addOrder } from '../../slices/cartSlice';
 import { Link } from 'react-router-dom';
 import keys from '../../config/keys';
 import axios from 'axios';
-import ReactGA from 'react-ga';
-import ReactPinterestTag from 'react-pinterest-tag';
 
 import { useMediaQuery } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -33,7 +31,7 @@ import { selection as maskSelection } from '../designs/MaskDesigns';
 import { selection as bagSelection } from '../designs/BagSets';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-const selection = {...maskSelection, ...bagSelection};
+const selection = { ...maskSelection, ...bagSelection };
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -126,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
 
 const API = keys.designsAPI;
 
-export default ({ match }) => {
+const Item = ({ match }) => {
     const dispatch = useDispatch();
     const navMediaQuery = useMediaQuery('(min-width:420px)');
     const navMediaQuery600 = useMediaQuery('(min-width:600px)');
@@ -188,8 +186,7 @@ export default ({ match }) => {
         else if (data.type === 'Bag') {
             price = data.price;
             if (addWaistBag) price += waistBagPrice;
-        }
-        else if (data.type === 'Elastic') price = data.price[size];
+        } else if (data.type === 'Elastic') price = data.price[size];
         else if (data.type === 'Shield') price = data.price[size];
 
         let productName = data.color;
@@ -198,30 +195,20 @@ export default ({ match }) => {
             else productName = `2 piece ${data.color}`;
         }
 
-        dispatch(addOrder({
-            type: data.type,
-            color: productName,
-            size: size,
-            amount: amount,
-            param: data.param,
-            price: price,
-            img: data.img,
-        }));
+        dispatch(
+            addOrder({
+                type: data.type,
+                color: productName,
+                size: size,
+                amount: amount,
+                param: data.param,
+                price: price,
+                img: data.img,
+            })
+        );
         queueRef.current.push({
             message: `Added ${amount} item(s) to cart`,
             key: new Date().getTime(),
-        });
-
-        ReactGA.event({
-            category: 'ecommerce',
-            action: 'add_to_cart',
-        });
-
-        // Pinterest Event
-        ReactPinterestTag.track('addtocart', {
-            value: price * amount,
-            order_quantity: amount,
-            currency: 'USD',
         });
 
         if (snackbarOpen) {
@@ -283,7 +270,10 @@ export default ({ match }) => {
         <div className={classes.modal}>
             <div className={classes.innerModal}>
                 <img
-                    src={require(`../../img/ProductPhotos/${angledState}/${data.img}`)}
+                    src={
+                        require(`../../img/ProductPhotos/${angledState}/${data.img}`)
+                            .default
+                    }
                     alt="Mask"
                     onClick={handleModalClose}
                     style={{ width: '100%', padding: 0 }}
@@ -306,8 +296,8 @@ export default ({ match }) => {
                 incrementAmount={incrementAmount}
                 decrementAmount={decrementAmount}
             />
-        )
-    }
+        );
+    };
     const renderElasticForm = () => {
         return (
             <ElasticOrderForm
@@ -319,8 +309,8 @@ export default ({ match }) => {
                 incrementAmount={incrementAmount}
                 decrementAmount={decrementAmount}
             />
-        )
-    }
+        );
+    };
     const renderShieldForm = () => {
         return (
             <ShieldOrderForm
@@ -331,8 +321,9 @@ export default ({ match }) => {
                 handleAmountChange={handleAmountChange}
                 incrementAmount={incrementAmount}
                 decrementAmount={decrementAmount}
-        />)
-    }
+            />
+        );
+    };
     const renderBagForm = () => {
         return (
             <BagOrderForm
@@ -349,8 +340,8 @@ export default ({ match }) => {
                 setAddWaistBag={setAddWaistBag}
                 waistBagPrice={waistBagPrice}
             />
-        )
-    }
+        );
+    };
     const renderForm = () => {
         console.log('DATA TYPE', data.type);
         if (!avail) {
@@ -358,7 +349,7 @@ export default ({ match }) => {
                 <div style={{ textAlign: 'center' }}>
                     Sorry, this design is no longer available.
                 </div>
-            )
+            );
         } else if (data.type === 'Mask') {
             console.log('Render mask form.');
             return renderMaskForm();
@@ -368,30 +359,29 @@ export default ({ match }) => {
             return renderShieldForm();
         } else if (data.type === 'Bag') {
             console.log('Render bag form.');
-            return  renderBagForm();
+            return renderBagForm();
         }
-    }
+    };
 
     const renderBackLink = () => {
-        if (data.type === 'Bag')
-        {
+        if (data.type === 'Bag') {
             return (
                 <Link to="/selection/bags" className={classes.link}>
                     <Button size="small" color="primary">
                         Bag Set Selection
                     </Button>
                 </Link>
-            )
+            );
         } else {
             return (
-                <Link to="/selection" className={classes.link}>
+                <Link to="/selection/masks" className={classes.link}>
                     <Button size="small" color="primary">
                         Mask Selection
                     </Button>
                 </Link>
-            )
+            );
         }
-    }
+    };
 
     return (
         <Card
@@ -420,31 +410,41 @@ export default ({ match }) => {
                             {data.color}
                         </Typography>
                     </CardContent>
-                    <CardContent style={{position: 'relative'}}>
-                    <CardMedia
-                        className={
-                            navMediaQuery ? classes.media : classes.smallMedia
-                        }
-                        image={require(`../../img/ProductPhotos/${angledState}/${data.img}`)}
-                        title={data.color}
-                        onClick={handleModalOpen}
-                        style={{ cursor: 'pointer' }}
-                    />
-                    {data.angled ? <React.Fragment>
-                        <ChevronLeftIcon
-                            onClick={handleAngleStateChange}
-                            className={classes.modalLeftChevron}
-                            style={{ fontSize: `${navMediaQuery ? '' : ''}` }}
-                            />
-                        <ChevronRightIcon
-                            onClick={handleAngleStateChange}
-                            className={classes.modalRightChevron}
-                            />
-                            </React.Fragment> : ''}
+                    <CardContent style={{ position: 'relative' }}>
+                        <CardMedia
+                            className={
+                                navMediaQuery
+                                    ? classes.media
+                                    : classes.smallMedia
+                            }
+                            image={
+                                require(`../../img/ProductPhotos/${angledState}/${data.img}`)
+                                    .default
+                            }
+                            title={data.color}
+                            onClick={handleModalOpen}
+                            style={{ cursor: 'pointer' }}
+                        />
+                        {data.angled ? (
+                            <React.Fragment>
+                                <ChevronLeftIcon
+                                    onClick={handleAngleStateChange}
+                                    className={classes.modalLeftChevron}
+                                    style={{
+                                        fontSize: `${navMediaQuery ? '' : ''}`,
+                                    }}
+                                />
+                                <ChevronRightIcon
+                                    onClick={handleAngleStateChange}
+                                    className={classes.modalRightChevron}
+                                />
+                            </React.Fragment>
+                        ) : (
+                            ''
+                        )}
                     </CardContent>
                     {renderForm()}
                     <CardActions className={classes.itemActions}>
-                        
                         {renderBackLink()}
                         <Link to="/cart" className={classes.link}>
                             <Button size="small" color="primary">
@@ -504,3 +504,5 @@ export default ({ match }) => {
         </Card>
     );
 };
+
+export default Item;

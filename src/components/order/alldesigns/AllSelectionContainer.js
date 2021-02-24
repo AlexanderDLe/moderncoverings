@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function SelectionContainer({
+const SelectionContainer = ({
     selectionPadding,
     searchTerm,
     handleSearchTermChange,
@@ -69,7 +69,7 @@ function SelectionContainer({
     floral,
     customOpen,
     setCustomOpen,
-}) {
+}) => {
     const classes = useStyles();
 
     // Render
@@ -172,6 +172,6 @@ function SelectionContainer({
             {renderDesigns()}
         </Container>
     );
-}
+};
 
 export default SelectionContainer;

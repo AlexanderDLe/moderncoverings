@@ -74,7 +74,7 @@ const searchThroughSelection = (selection, searchTerm) => {
     return selectionResults;
 };
 
-export default () => {
+const AllDesigns = () => {
     const navMediaQuery = useMediaQuery('(min-width:900px)');
 
     const classes = useStyles();
@@ -164,3 +164,4 @@ export default () => {
         </React.Fragment>
     );
 };
+export default AllDesigns;

@@ -27,7 +27,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default ({ addItem }) => {
+const AddItem = ({ addItem }) => {
     const classes = useStyles();
     const [design, setDesign] = useState('');
     const [XL, setXL] = useState(0);
@@ -143,3 +143,5 @@ export default ({ addItem }) => {
         </TableRow>
     );
 };
+
+export default AddItem;

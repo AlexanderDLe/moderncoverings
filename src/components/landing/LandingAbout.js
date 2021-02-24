@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function LandingCTA({ queryStyles }) {
+const LandingAbout = ({ queryStyles }) => {
     const classes = useStyles();
 
     return (
@@ -77,6 +77,6 @@ function LandingCTA({ queryStyles }) {
             </Container>
         </div>
     );
-}
+};
 
-export default LandingCTA;
+export default LandingAbout;

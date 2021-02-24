@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
     },
     media: {
-        height: 150,
+        height: 175,
     },
     link: {
         textDecoration: 'none',
@@ -35,16 +35,10 @@ const useStyles = makeStyles((theme) => ({
         color: '#3f51b5',
     },
     cardTextContent: {
-        // padding: 8,
-        // color: 'white',
-        // backgroundColor: theme.palette.primary.main,
         paddingTop: '8px !important',
         paddingBottom: '16px !important',
     },
     cardTitle: {
-        fontFamily: 'Raleway !impowrtant',
-        // fontWeight: 600,
-        // fontSize: '1.1rem',
         textAlign: 'center',
     },
     placeholderText: {
@@ -52,13 +46,16 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function DesignCard({ design }) {
+const DesignCard = ({ match, design }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
     const handleLinkClick = () => {
         dispatch(setYCoordinateMask(window.pageYOffset));
     };
+
+    const cardImage = require(`../../img/ProductPhotos/Small/${design.img}`)
+        .default;
 
     return (
         <Grid item xs={6} sm={4} md={3}>
@@ -70,7 +67,7 @@ function DesignCard({ design }) {
                 <Card className={classes.root} elevation={1}>
                     <CardMedia
                         className={classes.media}
-                        image={require(`../../img/ProductPhotos/Small/${design.img}`)}
+                        image={cardImage}
                         title={design.color}
                     />
                     <CardContent className={classes.cardTextContent}>
@@ -86,6 +83,6 @@ function DesignCard({ design }) {
             </Link>
         </Grid>
     );
-}
+};
 
 export default DesignCard;

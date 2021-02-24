@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -38,32 +38,24 @@ const useStyles = makeStyles((theme) => ({
         width: '110px',
     },
     cardContent: {
-        // paddingLeft: 24,
         marginTop: 'auto',
         marginBottom: 'auto',
     },
     cardTitle: {
         fontFamily: 'Raleway',
-        // textAlign: 'center',
-    },
-    cardText: {
-        // textAlign: 'center',
     },
 }));
 
-function Cards() {
+const Cards = () => {
     const classes = useStyles();
     const navMediaQuery = useMediaQuery('(min-width:600px)');
 
-    const bgStyle = useMemo(() => {
-        return {
-            background: `#000 url(${BlueBG}) no-repeat center`,
-            backgroundSize: 'cover',
-            backgroundAttachment: 'fixed',
-        };
-    }, []);
+    const bgStyle = {
+        background: `#000 url(${BlueBG}) no-repeat center`,
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed',
+    };
 
-    // const cardStyle = navMediaQuery ? {} : {};
     const cardFlex = navMediaQuery
         ? {
               display: 'flex',
@@ -74,47 +66,40 @@ function Cards() {
               textAlign: 'center',
           };
 
-    const cardText = useMemo(() => {
-        return {
-            multilayered: (
-                <Typography className={classes.cardText} color="textSecondary">
-                    Sewn with <strong>4 layers</strong> of tightly-woven cotton
-                    and a blend of polyester/rayon layers. We always prioritize
-                    quality.
-                </Typography>
-            ),
-            adjustable: (
-                <Typography className={classes.cardText} color="textSecondary">
-                    Each mask includes{' '}
-                    <strong>
-                        plastic ear loop adjusters and a metal nose wire
-                    </strong>{' '}
-                    so you can adjust for a comfortable fit.
-                </Typography>
-            ),
-            comfortable: (
-                <Typography className={classes.cardText} color="textSecondary">
-                    Our <strong>high quality fabrics </strong>
-                    are soft-to-touch and easy to wear for long durations.
-                </Typography>
-            ),
-            reusable: (
-                <Typography className={classes.cardText} color="textSecondary">
-                    All masks are <strong>reusable via proper washing</strong>.
-                    We recommend washing with soap then hanging to air-dry.
-                </Typography>
-            ),
-        };
-    }, [classes.cardText]);
+    const cardText = {
+        multilayered: (
+            <Typography color="textSecondary">
+                Sewn with <strong>4 layers</strong> of tightly-woven cotton and
+                a blend of polyester/rayon layers. We always prioritize quality.
+            </Typography>
+        ),
+        adjustable: (
+            <Typography color="textSecondary">
+                Each mask includes{' '}
+                <strong>
+                    plastic ear loop adjusters and a metal nose wire
+                </strong>{' '}
+                so you can adjust for a comfortable fit.
+            </Typography>
+        ),
+        comfortable: (
+            <Typography color="textSecondary">
+                Our <strong>high quality fabrics </strong>
+                are soft-to-touch and easy to wear for long durations.
+            </Typography>
+        ),
+        reusable: (
+            <Typography color="textSecondary">
+                All masks are <strong>reusable via proper washing</strong>. We
+                recommend washing with soap then hanging to air-dry.
+            </Typography>
+        ),
+    };
 
     const renderCard = (cardIMG, cardTitle, cardText) => {
         return (
             <Grid className={classes.gridItem} item xs={12} sm={12} md={12}>
                 <div className={classes.card} style={cardFlex}>
-                    {/* <div
-                        className={classes.cardMedia}
-                        style={{ backgroundImage: `url(${cardIMG})` }}
-                    ></div> */}
                     <img
                         alt="Feature Icon"
                         src={cardIMG}
@@ -161,6 +146,6 @@ function Cards() {
             </Container>
         </div>
     );
-}
+};
 
 export default Cards;
