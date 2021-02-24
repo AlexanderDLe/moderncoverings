@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useDispatch } from 'react-redux';
-import { addOrder } from '../../slices/cartSlice';
+import { useActions } from '../utils/useActions';
 
 import { Link } from 'react-router-dom';
 import keys from '../../config/keys';
@@ -23,10 +22,10 @@ import Modal from '@material-ui/core/Modal';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
-import MaskOrderForm from './MaskOrderForm';
-import ElasticOrderForm from './ElasticOrderForm';
-import BagOrderForm from './BagOrderForm';
-import ShieldOrderForm from './ShieldOrderForm';
+import MaskOrderForm from './forms/types/MaskOrderForm';
+import ElasticOrderForm from './forms/types/ElasticOrderForm';
+import BagOrderForm from './forms/types/BagOrderForm';
+import ShieldOrderForm from './forms/types/ShieldOrderForm';
 import { selection as maskSelection } from '../designs/MaskDesigns';
 import { selection as bagSelection } from '../designs/BagSets';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -125,13 +124,13 @@ const useStyles = makeStyles((theme) => ({
 const API = keys.designsAPI;
 
 const Item = ({ match }) => {
-    const dispatch = useDispatch();
+    const { addOrder } = useActions();
     const navMediaQuery = useMediaQuery('(min-width:420px)');
     const navMediaQuery600 = useMediaQuery('(min-width:600px)');
 
     const classes = useStyles();
     const data = selection[match.params.id];
-    console.log(data);
+    // console.log(data);
 
     const defaultSize =
         data.type === 'Mask' || data.type === 'Bag'
@@ -160,11 +159,11 @@ const Item = ({ match }) => {
                 const availability = response.data[data.param]
                     ? response.data[data.param]
                     : false;
-                console.log(response.data[data]);
+                // console.log(response.data[data]);
                 setAvail(availability);
                 setLoading(false);
             } catch (error) {
-                console.log(error);
+                // console.log(error);
                 setAvail(false);
                 setLoading(false);
             }
@@ -178,6 +177,7 @@ const Item = ({ match }) => {
     };
     const handleAmountChange = (event) => {
         // Use Math.ceil to round up any decimals
+        console.log(event.target.value);
         setAmount(Math.ceil(event.target.value));
     };
     const handleAddItem = () => () => {
@@ -195,17 +195,15 @@ const Item = ({ match }) => {
             else productName = `2 piece ${data.color}`;
         }
 
-        dispatch(
-            addOrder({
-                type: data.type,
-                color: productName,
-                size: size,
-                amount: amount,
-                param: data.param,
-                price: price,
-                img: data.img,
-            })
-        );
+        addOrder({
+            type: data.type,
+            color: productName,
+            size: size,
+            amount: amount,
+            param: data.param,
+            price: price,
+            img: data.img,
+        });
         queueRef.current.push({
             message: `Added ${amount} item(s) to cart`,
             key: new Date().getTime(),
@@ -289,7 +287,6 @@ const Item = ({ match }) => {
                 handleChange={handleChange}
                 amount={amount}
                 size={size}
-                navMediaQuery={navMediaQuery}
                 handleAmountChange={handleAmountChange}
                 price={data.price}
                 XLUnavailable={data.XLUnavailable ? true : false}
@@ -343,7 +340,7 @@ const Item = ({ match }) => {
         );
     };
     const renderForm = () => {
-        console.log('DATA TYPE', data.type);
+        // console.log('DATA TYPE', data.type);
         if (!avail) {
             return (
                 <div style={{ textAlign: 'center' }}>

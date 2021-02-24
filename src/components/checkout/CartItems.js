@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
-import { removeOrder } from '../../slices/cartSlice';
+import { removeOrder } from '../../state/slices/CartSlice/cartSlice';
 
 import { Link } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';

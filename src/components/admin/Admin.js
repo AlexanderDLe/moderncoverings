@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../../slices/appSlice';
+import { logout } from '../../state/slices/AppSlice/appSlice';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Link, Redirect } from 'react-router-dom';

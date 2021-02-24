@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setUsedDiscountButton } from '../../slices/cartSlice';
+import { setUsedDiscountButton } from '../../state/slices/CartSlice/cartSlice';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';

@@ -1,6 +1,6 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setShowMoreMaskObj } from '../../../slices/appSlice';
+import { setShowMoreMaskObj } from '../../../state/slices/AppSlice/appSlice';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';

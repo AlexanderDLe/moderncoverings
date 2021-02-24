@@ -15,6 +15,9 @@
         "@types/react": "^17.0.2",
         "@types/react-dom": "^17.0.1",
         "@types/react-router-dom": "^5.1.7",
+        "@types/redux": "^3.6.0",
+        "@types/redux-thunk": "^2.1.0",
+        "@types/webpack-env": "^1.16.0",
         "axios": "^0.21.1",
         "embla-carousel": "^4.0.1",
         "moment-timezone": "^0.5.31",
@@ -61,5 +64,8 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "@types/react-redux": "^7.1.16"
     }
 }

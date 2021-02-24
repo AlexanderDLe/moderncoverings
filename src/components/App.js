@@ -7,9 +7,9 @@ import ReactPixel from 'react-facebook-pixel';
 import Body from './Body';
 import keys from '../config/keys';
 
-const Navbar = lazy(() => import('./Navbar'));
-const Footer = lazy(() => import('./Footer'));
-const Snackbar = lazy(() => import('./Snackbar'));
+const Navbar = lazy(() => import('./layout/Navbar/Navbar'));
+const Footer = lazy(() => import('./layout/Footer/Footer'));
+const Snackbar = lazy(() => import('./layout/Snackbar/Snackbar'));
 
 const options = {
     autoConfig: true, // set pixel's autoConfig
@@ -21,6 +21,7 @@ const App = () => {
     const [snackbarOpen, setSnackbarOpen] = useState(
         mode === 'sandbox' ? true : false
     );
+    
     useEffect(() => {
         // FACEBOOK PIXEL
         if (mode === 'sandbox') return;

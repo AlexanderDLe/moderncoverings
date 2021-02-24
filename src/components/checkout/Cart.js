@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { resetOrders } from '../../slices/cartSlice';
+import { resetOrders } from '../../state/slices/CartSlice/cartSlice';
 
 import keys from '../../config/keys';
 import { Link, Redirect } from 'react-router-dom';
