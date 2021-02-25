@@ -1,9 +1,9 @@
 import React, { useEffect, useState, Suspense, lazy } from 'react';
-import { useSelector } from 'react-redux';
+import { useTypedSelector } from './utils/useTypedSelector';
 
 import '../styles/App.css';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import ReactPixel from 'react-facebook-pixel';
+import ReactPixel, { Options } from 'react-facebook-pixel';
 import Body from './Body';
 import keys from '../config/keys';
 
@@ -11,26 +11,21 @@ const Navbar = lazy(() => import('./layout/Navbar/Navbar'));
 const Footer = lazy(() => import('./layout/Footer/Footer'));
 const Snackbar = lazy(() => import('./layout/Snackbar/Snackbar'));
 
-const options = {
+const options: Options = {
     autoConfig: true, // set pixel's autoConfig
     debug: false, // enable logs
 };
 
 const App = () => {
-    const mode = useSelector((state) => state.app.mode);
+    const mode = useTypedSelector((state) => state.app.mode);
     const [snackbarOpen, setSnackbarOpen] = useState(
         mode === 'sandbox' ? true : false
     );
-    
+
     useEffect(() => {
-        // FACEBOOK PIXEL
         if (mode === 'sandbox') return;
-        ReactPixel.init(keys.pixelID, options);
+        ReactPixel.init(keys.pixelID, undefined, options);
     }, [mode]);
-    const logReactPixelPurchase = (data) => {
-        if (mode === 'sandbox') return;
-        ReactPixel.track('Purchase', data);
-    };
 
     return (
         <div>
@@ -38,7 +33,7 @@ const App = () => {
             <Suspense fallback={<div />}>
                 <Navbar />
             </Suspense>
-            <Body logReactPixelPurchase={logReactPixelPurchase} />
+            <Body />
             <Suspense fallback={<div />}>
                 <Snackbar
                     snackbarOpen={snackbarOpen}

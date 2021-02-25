@@ -21,7 +21,7 @@ import ItemRow from '../reusables/ItemRow';
 import TextField from '@material-ui/core/TextField';
 
 import BackToAdmin from '../reusables/BackToAdmin';
-import Timestamper from '../../misc/Timestamper';
+import timestamper from '../../utils/timestamper';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
 const useStyles = makeStyles((theme) => ({
@@ -148,7 +148,7 @@ const CreateWholesaleOrder = () => {
             id: Date.now().toString(),
             title: title,
             data: data,
-            timestamp: Timestamper().split('T').join(' ').slice(0, -6),
+            timestamp: timestamper().split('T').join(' ').slice(0, -6),
         };
         try {
             await axios.post(API, event, header);

@@ -1,8 +1,8 @@
 import React from 'react';
-import { LabelStyles } from './FormStyles';
+import { LabelStyles } from '../FormStyles';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Radio from '@material-ui/core/Radio';
-import useMediaQueries from '../../utils/useMediaQueries';
+import useMediaQueries from '../../../utils/useMediaQueries';
 
 interface Props {
     value: string;
@@ -19,8 +19,10 @@ const RenderFormControlLabel = ({
     XLUnavailable,
 }: Props) => {
     const styles = LabelStyles();
-    const radioQuery = useMediaQueries().min420 ? undefined : styles.smallQuery;
-    const spanQuery = useMediaQueries().min420
+    const radioQuery = useMediaQueries().min420px
+        ? undefined
+        : styles.smallQuery;
+    const spanQuery = useMediaQueries().min420px
         ? styles.spanDimensions
         : styles.smallSpanDimensions;
 

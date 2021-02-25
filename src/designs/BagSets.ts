@@ -1,4 +1,5 @@
 const setPrice = 40;
+export const waistBagPrice = 15;
 
 export const selection = {
     ////////////

@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetOrders } from '../../state/slices/CartSlice/cartSlice';
+import ReactPixel from 'react-facebook-pixel';
 
 import keys from '../../config/keys';
 import { Link, Redirect } from 'react-router-dom';
 import { PayPalButton } from 'react-paypal-button-v2';
 import { useMediaQuery } from '@material-ui/core';
 import moment from 'moment-timezone';
-import ReactPixel from 'react-facebook-pixel';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -130,7 +130,7 @@ const PurchasedBag = (orders) => {
 const CART = 'CART';
 const CHECKOUT = 'CHECKOUT';
 
-const Cart = ({ logReactPixelPurchase }) => {
+const Cart = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -233,7 +233,7 @@ const Cart = ({ logReactPixelPurchase }) => {
         }
 
         // FB Pixel Purchase
-        logReactPixelPurchase({
+        ReactPixel.track('Purchase', {
             currency: 'USD',
             value: amount,
         });

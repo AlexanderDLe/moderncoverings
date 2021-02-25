@@ -21,7 +21,7 @@ const NavbarMenu: React.FC = () => {
 
     return (
         <React.Fragment>
-            <IconButton onClick={handleClick}>
+            <IconButton data-test="login-input" onClick={handleClick}>
                 <MenuIcon className={classes.menuIcon} />
             </IconButton>
             <Menu

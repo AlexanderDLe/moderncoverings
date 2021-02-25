@@ -2,8 +2,8 @@ import { useMediaQuery } from '@material-ui/core';
 
 const useMediaQueries = () => {
     return {
-        min600: useMediaQuery('(min-width:600px)'),
-        min420: useMediaQuery('(min-width:420px)'),
+        min600px: useMediaQuery('(min-width:600px)'),
+        min420px: useMediaQuery('(min-width:420px)'),
     };
 };
 

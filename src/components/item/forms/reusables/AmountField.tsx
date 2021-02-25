@@ -1,5 +1,5 @@
 import React from 'react';
-import { AmountFieldStyles } from './FormStyles';
+import { AmountFieldStyles } from '../FormStyles';
 import FormLabel from '@material-ui/core/FormLabel';
 import TextField from '@material-ui/core/TextField';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';

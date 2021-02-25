@@ -8,7 +8,6 @@ import AllItem from './order/alldesigns/AllItem';
 import Cart from './checkout/Cart';
 import Success from './checkout/Success';
 import CustomItem from './order/CustomItem';
-import Pricing from './pricing/Pricing';
 import Admin from './admin/Admin';
 import Login from './admin/Login';
 import Total from './admin/Total';
@@ -18,12 +17,10 @@ import Wholesale from './admin/Wholesale';
 import CreateWholesaleOrder from './admin/wholesale/CreateWholesaleOrder';
 import WholesaleOrder from './admin/wholesale/WholesaleOrder';
 import Todo from './admin/Todo';
-import Policies from './misc/Policies';
-import FAQ from './misc/FAQ';
+import Policies from './misc/Policies/Policies';
+import FAQ from './misc/FAQ/FAQ';
 
-const Body = (props) => {
-    const { logReactPixelPurchase } = props;
-
+const Body = () => {
     return (
         <main className="body-class">
             <Switch>
@@ -50,8 +47,11 @@ const Body = (props) => {
                 />
                 <Route exact path="/wholesale/:id" component={WholesaleOrder} />
                 <Route exact path="/custom" component={CustomItem} />
-                <Route exact path="/pricing" component={Pricing} />
-                <Route
+                <Route exact path="/cart" component={Cart} />
+                <Route exact path="/success" component={Success} />
+                <Route exact path="/policies" component={Policies} />
+                <Route exact path="/faq" component={FAQ} />
+                {/* <Route
                     exact
                     path="/cart"
                     render={() => (
@@ -60,10 +60,7 @@ const Body = (props) => {
                             logReactPixelPurchase={logReactPixelPurchase}
                         />
                     )}
-                />
-                <Route exact path="/success" component={Success} />
-                <Route exact path="/policies" component={Policies} />
-                <Route exact path="/faq" component={FAQ} />
+                /> */}
             </Switch>
         </main>
     );

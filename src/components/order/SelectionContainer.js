@@ -7,7 +7,7 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 
 import DesignCard from './DesignCard';
-import { selection } from '../designs/MaskDesigns';
+import { selection } from '../../designs/MaskDesigns';
 import Search from './Search';
 import RenderCategory from './RenderCategory';
 

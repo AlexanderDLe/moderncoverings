@@ -23,7 +23,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import BackToAdmin from '../reusables/BackToAdmin';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-import Timestamper from '../../misc/Timestamper';
+import timestamper from '../../utils/timestamper';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -179,7 +179,7 @@ const WholesaleOrder = ({ match }) => {
             action: 'Save',
             data: data,
             Total: totals.all,
-            timestamp: Timestamper().split('T').join(' ').slice(0, -6),
+            timestamp: timestamper().split('T').join(' ').slice(0, -6),
         };
         setTimestamp(event.timestamp);
         try {

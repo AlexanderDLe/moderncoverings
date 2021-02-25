@@ -25,7 +25,7 @@ import TodoRow from './reusables/TodoRow';
 
 import FallbackImage from '../../img/Logo.jpg';
 import BackToAdmin from './reusables/BackToAdmin';
-import Timestamper from '../misc/Timestamper';
+import timestamper from '../utils/timestamper';
 
 import TodoHistory from './todo/TodoHistory';
 
@@ -176,7 +176,7 @@ const Todo = () => {
                 setData(response.data ? response.data : []);
                 setHistoryArr(historyResponse.data.history);
                 setTotals(calculateTotals(response.data));
-                setTimestamp(Timestamper().split('T').join(' ').slice(0, -9));
+                setTimestamp(timestamper().split('T').join(' ').slice(0, -9));
                 setLoading(false);
             } catch (error) {
                 setData([]);
@@ -228,14 +228,14 @@ const Todo = () => {
                         action,
                     },
                 ],
-                timestamp: Timestamper().split('T').join(' ').slice(0, -6),
+                timestamp: timestamper().split('T').join(' ').slice(0, -6),
             };
             setData(newData);
             setTotals(calculateTotals(newData));
             const newHistoryArr = [...historyArr];
             newHistoryArr.unshift({
                 text: updateHistoryEntry(),
-                timestamp: Timestamper().split('T').join(' ').slice(0, -6),
+                timestamp: timestamper().split('T').join(' ').slice(0, -6),
             });
             if (newHistoryArr.length > 15) newHistoryArr.pop();
             setHistoryArr(newHistoryArr);
@@ -276,7 +276,7 @@ const Todo = () => {
         let event = {
             color: design,
             data: [],
-            timestamp: Timestamper().split('T').join(' ').slice(0, -6),
+            timestamp: timestamper().split('T').join(' ').slice(0, -6),
         };
 
         if (XL > 0) event.data.push(addAction('XL', XL));
@@ -292,7 +292,7 @@ const Todo = () => {
             const newHistoryArr = [...historyArr];
             newHistoryArr.unshift({
                 text: addHistoryEntry(),
-                timestamp: Timestamper().split('T').join(' ').slice(0, -6),
+                timestamp: timestamper().split('T').join(' ').slice(0, -6),
             });
             if (newHistoryArr.length > 15) newHistoryArr.pop();
             setHistoryArr(newHistoryArr);
@@ -323,7 +323,7 @@ const Todo = () => {
         let event = {
             color: design,
             data: [],
-            timestamp: Timestamper().split('T').join(' ').slice(0, -6),
+            timestamp: timestamper().split('T').join(' ').slice(0, -6),
         };
         if (XL > 0) event.data.push(removeAction('XL', XL));
         if (L > 0) event.data.push(removeAction('L', L));
@@ -337,7 +337,7 @@ const Todo = () => {
             const newHistoryArr = [...historyArr];
             newHistoryArr.unshift({
                 text: removeHistoryEntry(),
-                timestamp: Timestamper().split('T').join(' ').slice(0, -6),
+                timestamp: timestamper().split('T').join(' ').slice(0, -6),
             });
             if (newHistoryArr.length > 15) newHistoryArr.pop();
             setHistoryArr(newHistoryArr);

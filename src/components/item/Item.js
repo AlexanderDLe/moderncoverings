@@ -1,16 +1,15 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useActions } from '../utils/useActions';
 
-import { Link } from 'react-router-dom';
+import Linker from '../reusables/Linker/Linker';
 import keys from '../../config/keys';
 import axios from 'axios';
+import { ItemStyles } from './ItemStyles';
+import useMediaQueries from '../utils/useMediaQueries';
 
-import { useMediaQuery } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
@@ -18,128 +17,24 @@ import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
-import Modal from '@material-ui/core/Modal';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-
-import MaskOrderForm from './forms/types/MaskOrderForm';
-import ElasticOrderForm from './forms/types/ElasticOrderForm';
-import BagOrderForm from './forms/types/BagOrderForm';
-import ShieldOrderForm from './forms/types/ShieldOrderForm';
-import { selection as maskSelection } from '../designs/MaskDesigns';
-import { selection as bagSelection } from '../designs/BagSets';
+import ItemImage from './ItemImage/ItemImage';
 import CircularProgress from '@material-ui/core/CircularProgress';
-
-const selection = { ...maskSelection, ...bagSelection };
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        position: 'relative',
-        width: '100%',
-        maxWidth: 450,
-        borderBottom: `2px solid ${theme.palette.primary.main}`,
-        paddingBottom: 8,
-        margin: 16,
-        marginTop: 40,
-        marginBottom: 40,
-        borderRadius: '0',
-    },
-    bestseller: {
-        position: 'absolute',
-        color: 'red',
-        right: 16,
-        top: 16,
-        textAlign: 'center',
-    },
-    media: {
-        height: 280,
-    },
-    smallMedia: {
-        height: 230,
-    },
-    link: {
-        textDecoration: 'none',
-        color: '#3f51b5',
-    },
-    buttonLink: {
-        textDecoration: 'none',
-        color: 'white',
-    },
-    customizeBox: {
-        paddingTop: 16,
-        display: 'flex',
-    },
-    itemActions: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        margin: '0px 8px',
-    },
-    modal: {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: '100%',
-        maxWidth: '1080px',
-        backgroundColor: theme.palette.background.paper,
-        border: '2px solid #000',
-        boxShadow: theme.shadows[5],
-    },
-    smallQuery: {
-        display: 'flex',
-        flexDirection: 'column',
-    },
-    innerModal: {
-        position: 'relative',
-        padding: 0,
-        margin: 0,
-    },
-    modalLeftChevron: {
-        cursor: 'pointer',
-        position: 'absolute',
-        top: '50%',
-        left: '10px',
-        fontSize: '2rem',
-    },
-    modalRightChevron: {
-        cursor: 'pointer',
-        position: 'absolute',
-        top: '50%',
-        right: '10px',
-        fontSize: '2rem',
-    },
-    title: {
-        paddingBottom: 0,
-        marginBottom: 0,
-        fontFamily: 'Raleway',
-    },
-    goToCartLink: {
-        width: '100%',
-    },
-    addToCartButton: {
-        width: '100%',
-    },
-}));
+import Form from './forms/Form';
+import selection from '../../designs';
+import ImageModal from './ImageModal/ImageModal';
+import { setDefaultOption, HandleOptionChange } from './ItemLogic';
 
 const API = keys.designsAPI;
 
 const Item = ({ match }) => {
+    const styles = ItemStyles();
     const { addOrder } = useActions();
-    const navMediaQuery = useMediaQuery('(min-width:420px)');
-    const navMediaQuery600 = useMediaQuery('(min-width:600px)');
+    const { min420px, min600px } = useMediaQueries();
 
-    const classes = useStyles();
     const data = selection[match.params.id];
-    // console.log(data);
+    const defaultOption = setDefaultOption(data.type);
 
-    const defaultSize =
-        data.type === 'Mask' || data.type === 'Bag'
-            ? 'L'
-            : data.type === 'Elastic'
-            ? '200 Yards'
-            : '1x';
-
-    const [size, setSize] = React.useState(defaultSize);
+    const { option, handleOptionChange } = HandleOptionChange(defaultOption);
     const [amount, setAmount] = React.useState(1);
     const [modalOpen, setModalOpen] = React.useState(false);
     const queueRef = useRef([]);
@@ -159,11 +54,9 @@ const Item = ({ match }) => {
                 const availability = response.data[data.param]
                     ? response.data[data.param]
                     : false;
-                // console.log(response.data[data]);
                 setAvail(availability);
                 setLoading(false);
             } catch (error) {
-                // console.log(error);
                 setAvail(false);
                 setLoading(false);
             }
@@ -172,9 +65,6 @@ const Item = ({ match }) => {
     }, [data]);
 
     // Mask Order Configuration
-    const handleChange = (event) => {
-        setSize(event.target.value);
-    };
     const handleAmountChange = (event) => {
         // Use Math.ceil to round up any decimals
         console.log(event.target.value);
@@ -186,8 +76,8 @@ const Item = ({ match }) => {
         else if (data.type === 'Bag') {
             price = data.price;
             if (addWaistBag) price += waistBagPrice;
-        } else if (data.type === 'Elastic') price = data.price[size];
-        else if (data.type === 'Shield') price = data.price[size];
+        } else if (data.type === 'Elastic') price = data.price[option];
+        else if (data.type === 'Shield') price = data.price[option];
 
         let productName = data.color;
         if (data.type === 'Bag') {
@@ -198,7 +88,7 @@ const Item = ({ match }) => {
         addOrder({
             type: data.type,
             color: productName,
-            size: size,
+            size: option,
             amount: amount,
             param: data.param,
             price: price,
@@ -251,139 +141,14 @@ const Item = ({ match }) => {
     const handleModalClose = () => {
         setModalOpen(false);
     };
-    const modalActions = (
-        <div className={classes.modalActions}>
-            <ChevronLeftIcon
-                onClick={handleAngleStateChange}
-                className={classes.modalLeftChevron}
-                style={{ fontSize: `${navMediaQuery ? '' : ''}` }}
-            />
-            <ChevronRightIcon
-                onClick={handleAngleStateChange}
-                className={classes.modalRightChevron}
-            />
-        </div>
-    );
-    const modalContent = (
-        <div className={classes.modal}>
-            <div className={classes.innerModal}>
-                <img
-                    src={
-                        require(`../../img/ProductPhotos/${angledState}/${data.img}`)
-                            .default
-                    }
-                    alt="Mask"
-                    onClick={handleModalClose}
-                    style={{ width: '100%', padding: 0 }}
-                />
-                {data.angled ? modalActions : ''}
-            </div>
-        </div>
-    );
 
-    const renderMaskForm = () => {
-        return (
-            <MaskOrderForm
-                handleChange={handleChange}
-                amount={amount}
-                size={size}
-                handleAmountChange={handleAmountChange}
-                price={data.price}
-                XLUnavailable={data.XLUnavailable ? true : false}
-                incrementAmount={incrementAmount}
-                decrementAmount={decrementAmount}
-            />
-        );
-    };
-    const renderElasticForm = () => {
-        return (
-            <ElasticOrderForm
-                handleChange={handleChange}
-                amount={amount}
-                size={size}
-                navMediaQuery={navMediaQuery}
-                handleAmountChange={handleAmountChange}
-                incrementAmount={incrementAmount}
-                decrementAmount={decrementAmount}
-            />
-        );
-    };
-    const renderShieldForm = () => {
-        return (
-            <ShieldOrderForm
-                handleChange={handleChange}
-                amount={amount}
-                size={size}
-                navMediaQuery={navMediaQuery}
-                handleAmountChange={handleAmountChange}
-                incrementAmount={incrementAmount}
-                decrementAmount={decrementAmount}
-            />
-        );
-    };
-    const renderBagForm = () => {
-        return (
-            <BagOrderForm
-                handleChange={handleChange}
-                amount={amount}
-                size={size}
-                navMediaQuery={navMediaQuery}
-                handleAmountChange={handleAmountChange}
-                price={data.price}
-                XLUnavailable={data.XLUnavailable ? true : false}
-                incrementAmount={incrementAmount}
-                decrementAmount={decrementAmount}
-                addWaistBag={addWaistBag}
-                setAddWaistBag={setAddWaistBag}
-                waistBagPrice={waistBagPrice}
-            />
-        );
-    };
-    const renderForm = () => {
-        // console.log('DATA TYPE', data.type);
-        if (!avail) {
-            return (
-                <div style={{ textAlign: 'center' }}>
-                    Sorry, this design is no longer available.
-                </div>
-            );
-        } else if (data.type === 'Mask') {
-            console.log('Render mask form.');
-            return renderMaskForm();
-        } else if (data.type === 'Elastic') {
-            return renderElasticForm();
-        } else if (data.type === 'Shield') {
-            return renderShieldForm();
-        } else if (data.type === 'Bag') {
-            console.log('Render bag form.');
-            return renderBagForm();
-        }
-    };
-
-    const renderBackLink = () => {
-        if (data.type === 'Bag') {
-            return (
-                <Link to="/selection/bags" className={classes.link}>
-                    <Button size="small" color="primary">
-                        Bag Set Selection
-                    </Button>
-                </Link>
-            );
-        } else {
-            return (
-                <Link to="/selection/masks" className={classes.link}>
-                    <Button size="small" color="primary">
-                        Mask Selection
-                    </Button>
-                </Link>
-            );
-        }
-    };
+    const BagLink = <Linker path="/selection/bags" text="Bag Set Selection" />;
+    const MaskLink = <Linker path="/selection/masks" text="Mask Selection" />;
 
     return (
         <Card
-            style={{ marginTop: navMediaQuery600 ? 40 : 16 }}
-            className={classes.root}
+            style={{ marginTop: min600px ? 40 : 16 }}
+            className={styles.root}
             elevation={1}
         >
             {loading ? (
@@ -397,9 +162,9 @@ const Item = ({ match }) => {
                 </div>
             ) : (
                 <React.Fragment>
-                    <CardContent className={classes.title}>
+                    <CardContent className={styles.title}>
                         <Typography
-                            className={classes.title}
+                            className={styles.title}
                             gutterBottom
                             variant="h4"
                             component="h2"
@@ -407,56 +172,40 @@ const Item = ({ match }) => {
                             {data.color}
                         </Typography>
                     </CardContent>
-                    <CardContent style={{ position: 'relative' }}>
-                        <CardMedia
-                            className={
-                                navMediaQuery
-                                    ? classes.media
-                                    : classes.smallMedia
-                            }
-                            image={
-                                require(`../../img/ProductPhotos/${angledState}/${data.img}`)
-                                    .default
-                            }
-                            title={data.color}
-                            onClick={handleModalOpen}
-                            style={{ cursor: 'pointer' }}
-                        />
-                        {data.angled ? (
-                            <React.Fragment>
-                                <ChevronLeftIcon
-                                    onClick={handleAngleStateChange}
-                                    className={classes.modalLeftChevron}
-                                    style={{
-                                        fontSize: `${navMediaQuery ? '' : ''}`,
-                                    }}
-                                />
-                                <ChevronRightIcon
-                                    onClick={handleAngleStateChange}
-                                    className={classes.modalRightChevron}
-                                />
-                            </React.Fragment>
-                        ) : (
-                            ''
-                        )}
-                    </CardContent>
-                    {renderForm()}
-                    <CardActions className={classes.itemActions}>
-                        {renderBackLink()}
-                        <Link to="/cart" className={classes.link}>
-                            <Button size="small" color="primary">
-                                Go To Cart
-                            </Button>
-                        </Link>
+                    <ItemImage
+                        min420px={min420px}
+                        handleModalOpen={handleModalOpen}
+                        handleAngleStateChange={handleAngleStateChange}
+                        angledState={angledState}
+                        data={data}
+                    />
+                    <Form
+                        type={data.type}
+                        avail={avail}
+                        amount={amount}
+                        size={option}
+                        price={data.price}
+                        XLUnavailable={data.XLUnavailable ? true : false}
+                        addWaistBag={addWaistBag}
+                        waistBagPrice={waistBagPrice}
+                        handleOptionChange={handleOptionChange}
+                        handleAmountChange={handleAmountChange}
+                        incrementAmount={incrementAmount}
+                        decrementAmount={decrementAmount}
+                        setAddWaistBag={setAddWaistBag}
+                    />
+                    <CardActions className={styles.itemActions}>
+                        {data.type === 'Bag' ? BagLink : MaskLink}
+                        <Linker path="/cart" text="Go To Cart" />
                     </CardActions>
                     {avail ? (
-                        <CardActions className={classes.itemActions}>
+                        <CardActions className={styles.itemActions}>
                             <Button
                                 variant="contained"
                                 onClick={handleAddItem()}
                                 size="medium"
                                 color="primary"
-                                className={classes.addToCartButton}
+                                className={styles.addToCartButton}
                             >
                                 Add To Cart
                             </Button>
@@ -466,14 +215,15 @@ const Item = ({ match }) => {
                     )}
                 </React.Fragment>
             )}
-            <Modal
-                open={modalOpen}
-                onClose={handleModalClose}
-                aria-labelledby="Mask Image"
-                aria-describedby="Modal to pop up facemask image."
-            >
-                {modalContent}
-            </Modal>
+
+            <ImageModal
+                handleAngleStateChange={handleAngleStateChange}
+                min420px={min420px}
+                angledState={angledState}
+                handleModalClose={handleModalClose}
+                modalOpen={modalOpen}
+                data={data}
+            />
             <Snackbar
                 key={messageInfo ? messageInfo.key : undefined}
                 anchorOrigin={{
@@ -490,7 +240,7 @@ const Item = ({ match }) => {
                         <IconButton
                             aria-label="close"
                             color="inherit"
-                            className={classes.close}
+                            className={styles.close}
                             onClick={handleClose}
                         >
                             <CloseIcon />

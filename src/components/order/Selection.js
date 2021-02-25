@@ -6,8 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import { selection as maskSelection } from '../designs/MaskDesigns';
-import { selection as bagSelection } from '../designs/BagSets';
+import { selection as maskSelection } from '../../designs/MaskDesigns';
+import { selection as bagSelection } from '../../designs/BagSets';
 import MCSelectionHero from './MCSelectionHero';
 import SelectionContainer from './SelectionContainer';
 let selection = [];

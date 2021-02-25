@@ -18,7 +18,7 @@ import Modal from '@material-ui/core/Modal';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
-import { selection } from '../../designs/MaskDesigns';
+import { selection } from '../../../designs/MaskDesigns';
 
 const useStyles = makeStyles((theme) => ({
     root: {

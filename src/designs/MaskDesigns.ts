@@ -417,7 +417,7 @@ export const selection = {
         angled: true,
         tags: ['brown', 'hibiscus'],
     },
-        ///////////////
+    ///////////////
     // PATTERNED //
     //////////////
     navycamo: {

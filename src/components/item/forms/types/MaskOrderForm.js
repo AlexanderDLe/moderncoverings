@@ -5,14 +5,14 @@ import { FormStyles } from '../FormStyles';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import AmountField from '../AmountField';
-import RenderFormControlLabel from '../RenderFormControlLabel';
+import AmountField from '../reusables/AmountField';
+import RenderFormControlLabel from '../reusables/RenderFormControlLabel';
 
 const MaskOrderForm = ({
     price,
     size,
     amount,
-    handleChange,
+    handleOptionChange,
     handleAmountChange,
     XLUnavailable,
     incrementAmount,
@@ -30,7 +30,7 @@ const MaskOrderForm = ({
                     aria-label="Mask Size"
                     name="Size"
                     value={size}
-                    onChange={handleChange}
+                    onChange={handleOptionChange}
                 >
                     <RenderFormControlLabel
                         value="XL"
