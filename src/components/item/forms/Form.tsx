@@ -7,17 +7,15 @@ import ShieldOrderForm from './types/ShieldOrderForm';
 interface Props {
     avail: boolean;
     type: string;
-    handleOptionChange: (e: any) => void;
     amount: number;
     size: string;
+    price: number;
+    addWaistBag: boolean;
+    handleOptionChange: (e: any) => void;
     handleAmountChange: (e: any) => void;
-    price: string;
-    XLUnavailable?: boolean;
     incrementAmount: () => void;
     decrementAmount: () => void;
-    addWaistBag: boolean;
-    setAddWaistBag: React.Dispatch<React.SetStateAction<boolean>>;
-    waistBagPrice: number;
+    handleAddWaistBag: (value: boolean) => void;
 }
 
 const Form = ({
@@ -26,14 +24,12 @@ const Form = ({
     amount,
     size,
     price,
-    XLUnavailable,
     addWaistBag,
-    waistBagPrice,
     handleOptionChange,
     handleAmountChange,
     incrementAmount,
     decrementAmount,
-    setAddWaistBag,
+    handleAddWaistBag,
 }: Props) => {
     const renderMaskForm = () => {
         return (
@@ -43,7 +39,6 @@ const Form = ({
                 size={size}
                 handleAmountChange={handleAmountChange}
                 price={price}
-                XLUnavailable={XLUnavailable ? true : false}
                 incrementAmount={incrementAmount}
                 decrementAmount={decrementAmount}
             />
@@ -82,12 +77,10 @@ const Form = ({
                 size={size}
                 handleAmountChange={handleAmountChange}
                 price={price}
-                XLUnavailable={XLUnavailable ? true : false}
                 incrementAmount={incrementAmount}
                 decrementAmount={decrementAmount}
                 addWaistBag={addWaistBag}
-                setAddWaistBag={setAddWaistBag}
-                waistBagPrice={waistBagPrice}
+                handleAddWaistBag={handleAddWaistBag}
             />
         );
     };

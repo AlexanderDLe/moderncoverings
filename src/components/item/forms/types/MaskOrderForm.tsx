@@ -1,6 +1,7 @@
 import React from 'react';
 import CardContent from '@material-ui/core/CardContent';
 import { FormStyles } from '../FormStyles';
+import { MaskForm } from './FormInterface';
 
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControl from '@material-ui/core/FormControl';
@@ -14,10 +15,9 @@ const MaskOrderForm = ({
     amount,
     handleOptionChange,
     handleAmountChange,
-    XLUnavailable,
     incrementAmount,
     decrementAmount,
-}) => {
+}: MaskForm) => {
     const styles = FormStyles();
 
     return (
@@ -37,7 +37,6 @@ const MaskOrderForm = ({
                         label="XL Adult"
                         measurement='10" x 6"'
                         description="Large Adults"
-                        XLUnavailable={XLUnavailable}
                     />
                     <RenderFormControlLabel
                         value="L"

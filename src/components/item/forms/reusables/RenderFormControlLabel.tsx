@@ -9,14 +9,12 @@ interface Props {
     label: string;
     measurement?: string;
     description?: string;
-    XLUnavailable?: boolean;
 }
 const RenderFormControlLabel = ({
     value,
     label,
     measurement,
     description,
-    XLUnavailable,
 }: Props) => {
     const styles = LabelStyles();
     const radioQuery = useMediaQueries().min420px
@@ -37,11 +35,10 @@ const RenderFormControlLabel = ({
                     <span className={spanQuery}>
                         {measurement}
                         <br />
-                        {XLUnavailable ? 'Unavailable' : description}
+                        {description}
                     </span>
                 </div>
             }
-            disabled={XLUnavailable}
         />
     );
 };

@@ -7,9 +7,9 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 interface Props {
     min420px: boolean;
-    handleModalOpen: () => void;
+    handleModalOpen: any;
     handleAngleStateChange: () => void;
-    angledState: boolean;
+    angledState: string;
     data: any;
 }
 
@@ -31,7 +31,7 @@ const ItemImage = ({
                         .default
                 }
                 title={data.color}
-                onClick={handleModalOpen}
+                onClick={() => handleModalOpen(true)}
                 style={{ cursor: 'pointer' }}
             />
             {data.angled ? (

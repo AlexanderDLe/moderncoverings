@@ -4,14 +4,23 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { ImageModalStyles } from './ImageModalStyles';
 
+interface Props {
+    handleAngleStateChange: any;
+    min420px: boolean;
+    angledState: string;
+    handleModalOpen: any;
+    modalOpen: boolean;
+    data: any;
+}
+
 const ImageModal = ({
     handleAngleStateChange,
     min420px,
     angledState,
-    handleModalClose,
+    handleModalOpen,
     modalOpen,
     data,
-}: any) => {
+}: Props) => {
     const styles = ImageModalStyles();
 
     const modalActions = (
@@ -36,7 +45,7 @@ const ImageModal = ({
                             .default
                     }
                     alt="Mask"
-                    onClick={handleModalClose}
+                    onClick={() => handleModalOpen(false)}
                     style={{ width: '100%', padding: 0 }}
                 />
                 {data.angled ? modalActions : ''}
@@ -47,7 +56,7 @@ const ImageModal = ({
     return (
         <Modal
             open={modalOpen}
-            onClose={handleModalClose}
+            onClose={() => handleModalOpen(false)}
             aria-labelledby="Mask Image"
             aria-describedby="Modal to pop up facemask image."
         >

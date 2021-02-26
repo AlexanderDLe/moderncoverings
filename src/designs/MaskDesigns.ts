@@ -1,6 +1,8 @@
+import { Designs } from './index';
+
 const maskPrice = 12.5;
 
-export const selection = {
+export const selection: Designs = {
     ////////////
     // SOLIDS //
     ///////////
@@ -1148,7 +1150,6 @@ export const selection = {
         price: maskPrice,
         category: 'pattern',
         angled: true,
-        XLUnavailable: true,
         tags: ['orange'],
     },
     clarinet: {

@@ -1,6 +1,7 @@
 import React from 'react';
 import CardContent from '@material-ui/core/CardContent';
 import { FormStyles } from '../FormStyles';
+import { BagForm } from './FormInterface';
 
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControl from '@material-ui/core/FormControl';
@@ -8,6 +9,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import AmountField from '../reusables/AmountField';
 import RenderFormControlLabel from '../reusables/RenderFormControlLabel';
+import { waistBagPrice } from '../../../../designs/BagSets';
 
 const BagOrderForm = ({
     price,
@@ -15,13 +17,11 @@ const BagOrderForm = ({
     amount,
     handleOptionChange,
     handleAmountChange,
-    XLUnavailable,
     incrementAmount,
     decrementAmount,
     addWaistBag,
-    setAddWaistBag,
-    waistBagPrice,
-}) => {
+    handleAddWaistBag,
+}: BagForm) => {
     const styles = FormStyles();
 
     const renderPrice = () => {
@@ -37,7 +37,7 @@ const BagOrderForm = ({
                     className={styles.checkbox}
                     checked={addWaistBag}
                     onClick={() => {
-                        setAddWaistBag(!addWaistBag);
+                        handleAddWaistBag(!addWaistBag);
                     }}
                     color="primary"
                 />
@@ -61,7 +61,6 @@ const BagOrderForm = ({
                             label="XL Adult"
                             measurement='10" x 6"'
                             description="Large Adults"
-                            XLUnavailable={XLUnavailable}
                         />
                         <RenderFormControlLabel
                             value="L"
