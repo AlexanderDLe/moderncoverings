@@ -5,7 +5,7 @@ import { LandingStyles } from './LandingStyles';
 import LandingHero from './LandingHero';
 import LandingCopy from './LandingCopy';
 const LandingCDC = lazy(() => import('./LandingAbout'));
-const Cards = lazy(() => import('./LandingCards/Cards'));
+const Cards = lazy(() => import('./LandingCards/LandingCards'));
 const Testimonials = lazy(() => import('./Testimonials'));
 
 const Landing = () => {

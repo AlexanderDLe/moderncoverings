@@ -9,7 +9,7 @@ import LayersPNG from '../../../img/Icons/LayersColored.png';
 import AdjustablePNG from '../../../img/Icons/AdjustableColored.png';
 import ComfortPNG from '../../../img/Icons/ComfortColored.png';
 import ReusablePNG from '../../../img/Icons/ReusableColored.png';
-
+//
 const Cards = () => {
     const styles = CardsStyles();
 
